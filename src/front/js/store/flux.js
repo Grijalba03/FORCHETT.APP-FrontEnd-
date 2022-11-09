@@ -15,7 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           initial: "white",
         },
       ],
-      characters: [],
+      person: [],
       planets: [],
       vehicles: [],
       character: [],

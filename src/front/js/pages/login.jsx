@@ -31,7 +31,7 @@ export const Login = () => {
       body: JSON.stringify(obj),
     });
  */
-
+    console.log("hola4");
     let response = await actions.login("/login", obj, "POST"); //response es una promesa
     console.log("36: ", response);
     if (response.status == 200) {
@@ -40,7 +40,7 @@ export const Login = () => {
       Swal.fire({
         icon: "success",
         title: "Welcome",
-        text: `Bienvenido, ${store.email}`,
+        text: `Bienvenido, ${email}`,
         footer: '<a href="">Why do I have this issue?</a>',
       });
     } else {
@@ -53,7 +53,7 @@ export const Login = () => {
     }
     //console.log(response);
     //response = await response.json(); //response es un objeto de Javascript
-    console.table(response);
+    console.table("hola37", response);
     //token = response.token;
     setToken(response.token);
     console.log("token", token);

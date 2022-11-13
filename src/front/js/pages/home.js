@@ -18,7 +18,7 @@ export const Home = () => {
   return (
     <div className="container">
       <div>
-        <h1> Characters</h1>
+        <h1> </h1>
       </div>
       <div className=" d-flex flex-row flex-nowrap overflow-auto pb-5">
         {/* {store.characters.map((element) => {
@@ -27,7 +27,7 @@ export const Home = () => {
       </div>
 
       <div className="container">
-        <h1>Planets</h1>
+        <h1></h1>
         <div className=" d-flex flex-row flex-nowrap overflow-auto pb-5 mb-3">
           {/* {store.planets.map((element) => {
 			  return <PlanetsCard name={element.name} uid={element.uid} />;
@@ -35,7 +35,7 @@ export const Home = () => {
         </div>
 
         <div className="container">
-          <h1>Spaceships</h1>
+          <h1></h1>
           <div className=" d-flex flex-row flex-nowrap overflow-auto pb-5 mb-3">
             {/* {store.vehicles.map((element) => {
 				return <SpaceshipsCard name={element.name} uid={element.uid} />;

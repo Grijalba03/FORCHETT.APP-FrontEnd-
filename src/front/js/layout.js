@@ -14,7 +14,7 @@ import { Vehicle } from "./pages/vehicle.jsx";
 
 import injectContext from "./store/appContext";
 
-import { Navbar } from "./component/navbar";
+import { Header } from "./component/header";
 import { Footer } from "./component/footer";
 
 //create your first component
@@ -27,7 +27,7 @@ const Layout = () => {
     <div>
       <BrowserRouter basename={basename}>
         <ScrollToTop>
-          <Navbar />
+          <Header />
           <Routes>
             <Route element={<Home />} path="/" />
             <Route element={<Demo />} path="/demo" />

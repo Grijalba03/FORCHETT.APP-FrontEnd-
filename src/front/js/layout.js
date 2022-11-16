@@ -9,7 +9,7 @@ import { SignUp } from "./pages/signup.jsx"; //Este es el componente de la pági
 import { Login } from "./pages/login.jsx";
 import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
 import { Person } from "./pages/person.jsx";
-import { Planet } from "./pages/planet.jsx";
+import { Favorites } from "./pages/favorites";
 import { Vehicle } from "./pages/vehicle.jsx";
 
 import injectContext from "./store/appContext";
@@ -38,7 +38,7 @@ const Layout = () => {
             <Route element={<Login />} path="/login" />
             <Route element={<ListaUsuarios />} path="/listaUsuarios" />
             <Route element={<Person />} path="/person/:theid" />
-            <Route element={<Planet />} path="/planet/:theid" />
+            <Route element={<Favorites />} path="/favorites" />
             <Route element={<Vehicle />} path="/vehicle/:theid" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>

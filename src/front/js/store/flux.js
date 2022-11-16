@@ -16,12 +16,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       person: [],
-      planets: [],
+      favorites: [],
       vehicles: [],
       character: [],
-      planet: [],
       vehicle: [],
-      favorites: [],
       ...userStore,
     },
     actions: {
@@ -103,11 +101,11 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((resp) => setStore({ character: resp.result.properties }))
           .catch((err) => console.error(err));
       },
-      getPlanet: async (uid) => {
+      getFavorites: async (uid) => {
         let BACKEND_URL = process.env.BACKEND_URL;
         fetch(`${BACKEND_URL}${uid}`)
           .then((resp) => resp.json())
-          .then((resp) => setStore({ planet: resp.result.properties }))
+          .then((resp) => setStore({ favorites: resp.result.properties }))
           .catch((err) => console.error(err));
       },
       getSpaceship: async (uid) => {
@@ -122,11 +120,6 @@ const getState = ({ getStore, getActions, setStore }) => {
         fetch(`${BACKEND_URL}/people`)
           .then((resp) => resp.json())
           .then((resp) => setStore({ characters: resp.results }))
-          .catch((err) => console.error(err));
-
-        fetch(`${BACKEND_URL}/planets`)
-          .then((resp) => resp.json())
-          .then((resp) => setStore({ planets: resp.results }))
           .catch((err) => console.error(err));
 
         fetch(`${BACKEND_URL}/vehicles`)

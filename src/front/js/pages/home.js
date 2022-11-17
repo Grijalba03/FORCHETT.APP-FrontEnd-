@@ -8,9 +8,9 @@ import "../../styles/home.css";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
-  console.log(store.characters),
-    console.log(store.planets),
-    console.log(store.vehicles);
+  // console.log(store.characters),
+  //   console.log(store.planets),
+  //   console.log(store.vehicles);
 
   {
     /* Here are the imported cards----------------------------------------------------------------------------------------------------- */
@@ -18,7 +18,7 @@ export const Home = () => {
   return (
     <div className="container">
       <div>
-        <h1> </h1>
+        <h1> cualquier cosita</h1>
       </div>
       <div className=" d-flex flex-row flex-nowrap overflow-auto pb-5">
         {/* {store.characters.map((element) => {

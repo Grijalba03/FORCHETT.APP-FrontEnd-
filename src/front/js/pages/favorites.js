@@ -6,7 +6,7 @@ import { Context } from "../store/appContext";
 export const Favorites = () => {
   return (
     <div className="container">
-      <h1> Hola</h1>
+      <div className=""></div>
     </div>
   );
 };

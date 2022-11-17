@@ -31,15 +31,15 @@ const Layout = () => {
           <Header />
           <MainMenu />
           <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<Demo />} path="/demo" />
-            <Route element={<Single />} path="/single/:theid" />
-            <Route element={<SignUp />} path="/register" />
-            <Route element={<Login />} path="/login" />
-            <Route element={<ListaUsuarios />} path="/listaUsuarios" />
-            <Route element={<Person />} path="/person/:theid" />
-            <Route element={<Favorites />} path="/favorites" />
-            <Route element={<Vehicle />} path="/vehicle/:theid" />
+            <Route element={<Home />} exact path="/" />
+            <Route element={<Demo />} exact path="/demo" />
+            <Route element={<Single />} exact path="/single/:theid" />
+            <Route element={<SignUp />} exact path="/register" />
+            <Route element={<Login />} exact path="/login" />
+            <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />
+            <Route element={<Person />} exact path="/person/:theid" />
+            <Route element={<Favorites />} exact path="/favorites" />
+            <Route element={<Vehicle />} exact path="/vehicle/:theid" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           {/* <Footer /> */}

@@ -18,7 +18,7 @@ export const Home = () => {
   return (
     <div className="container">
       <div>
-        <h1> cualquier cosita</h1>
+        <h1></h1>
       </div>
       <div className=" d-flex flex-row flex-nowrap overflow-auto pb-5">
         {/* {store.characters.map((element) => {

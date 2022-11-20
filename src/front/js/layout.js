@@ -7,6 +7,7 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { SignUp } from "./pages/signup.jsx"; //Este es el componente de la página para registrar usuario
 import { Login } from "./pages/login.jsx";
+import { Categories } from "./pages/categories.jsx";
 import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
 import { Person } from "./pages/person.jsx";
 import { Planet } from "./pages/planet.jsx";
@@ -36,6 +37,7 @@ const Layout = () => {
             <Route element={<Single />} path="/single/:theid" />
             <Route element={<SignUp />} path="/register" />
             <Route element={<Login />} path="/login" />
+            <Route element={<Categories />} path="/categories" />
             <Route element={<ListaUsuarios />} path="/listaUsuarios" />
             <Route element={<Person />} path="/person/:theid" />
             <Route element={<Planet />} path="/planet/:theid" />

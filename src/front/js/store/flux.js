@@ -15,6 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
           initial: "white",
         },
       ],
+      categories: [],
       person: [],
       planets: [],
       vehicles: [],
@@ -134,6 +135,13 @@ const getState = ({ getStore, getActions, setStore }) => {
           .then((resp) => setStore({ vehicles: resp.results }))
           .catch((err) => console.error(err));
       },
+      getCategories: async () => {
+        let BACKEND_URL = process.env.BACKEND_URL;
+        fetch(`${BACKEND_URL}/categories`)
+          .then((resp) => resp.json())
+          .then((resp) => setStore({ categories: resp.result.properties }))
+          .catch((err) => console.error(err));
+      }
     },
   };
 };

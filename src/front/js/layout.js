@@ -10,7 +10,7 @@ import { Login } from "./pages/login.jsx";
 import { Categories } from "./pages/categories.jsx";
 import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
 import { Person } from "./pages/person.jsx";
-import { Planet } from "./pages/planet.jsx";
+import { Favorites } from "./pages/favorites";
 import { Vehicle } from "./pages/vehicle.jsx";
 
 import injectContext from "./store/appContext";
@@ -32,17 +32,17 @@ const Layout = () => {
           <Header />
           <MainMenu />
           <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<Demo />} path="/demo" />
-            <Route element={<Single />} path="/single/:theid" />
-            <Route element={<SignUp />} path="/register" />
-            <Route element={<Login />} path="/login" />
-            <Route element={<Categories />} path="/categories" />
-            <Route element={<ListaUsuarios />} path="/listaUsuarios" />
-            <Route element={<Person />} path="/person/:theid" />
-            <Route element={<Planet />} path="/planet/:theid" />
-            <Route element={<Vehicle />} path="/vehicle/:theid" />
-            <Route element={<h1>Not found!</h1>} />
+            <Route element={<Home />} exact path="/" />
+            <Route element={<Demo />} exact path="/demo" />
+            <Route element={<Single />} exact path="/single/:theid" />
+            <Route element={<SignUp />} exact path="/register" />
+            <Route element={<Login />} exact path="/login" />
+            <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />
+            <Route element={<Person />} exact path="/person/:theid" />
+             <Route element={<Categories />} path="/categories" />
+            <Route element={<Favorites />} exact path="/favorites" />
+            <Route element={<Vehicle />} exact path="/vehicle/:theid" />
+            <Route element={<h1>Not found!</h1>} />xvsdsgvdfsdd cajcs dchSDcdc kscsd njsd
           </Routes>
           {/* <Footer /> */}
         </ScrollToTop>

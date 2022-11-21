@@ -17,12 +17,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       ],
       cat: [],
       person: [],
-      planets: [],
+      favorites: [],
       vehicles: [],
       character: [],
-      planet: [],
       vehicle: [],
-      favorites: [],
       ...userStore,
     },
     actions: {
@@ -97,6 +95,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         let x = aux.filter((element, i) => element.uid != uid);
         setStore({ favorites: x });
       },
+
       // getCharacter: async (uid) => {
       //   let BACKEND_URL = process.env.BACKEND_URL;
       //   fetch(`${BACKEND_URL}${uid}`)
@@ -135,6 +134,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       //     .then((resp) => setStore({ vehicles: resp.results }))
       //     .catch((err) => console.error(err));
       // },
+
     },
   };
 };

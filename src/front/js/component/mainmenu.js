@@ -1,5 +1,5 @@
-// import { Link } from "react-router-dom";
-// import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/mainmenu.css";
@@ -7,8 +7,9 @@ import "../../styles/mainmenu.css";
 export const MainMenu = () => {
   const [isOpen, setIsopen] = useState(false);
 
-  const MainMenu = () => {
-    isOpen === true ? setIsopen(false) : setIsopen(true);
+  const menu = () => {
+    // isOpen === true ? setIsopen(false) : setIsopen(true);
+    setIsopen(!isOpen);
   };
 
   return (
@@ -16,7 +17,7 @@ export const MainMenu = () => {
       <div className="text-center">
         <button
           type="button"
-          onClick={MainMenu}
+          onClick={menu}
           className="btn btn-primary rounded-circle"
         >
           <i className="fa-solid fa-bars"></i>
@@ -39,56 +40,78 @@ export const MainMenu = () => {
       <div className={`sidebar ${isOpen == true ? "active" : ""}`}>
         <div className="sd-header">
           <h3 className="mb-0">Main Menu</h3>
-          <div className="btn btn-primary" onClick={MainMenu}>
+          <div className="btn btn-primary" onClick={menu}>
             <i className="fa fa-times"></i>
           </div>
         </div>
         <div className="sd-body">
           <ul>
             <li>
-              <a className="sd-link">Register</a>
+              <Link to="/register" className="sd-link">
+                Register
+              </Link>
             </li>
             <li>
-              <a className="sd-link">Login</a>
+              <Link to="/register" className="sd-link">
+                Login
+              </Link>
             </li>
             <li>
-              <a className="sd-link">Explore</a>
+              <Link to="/register" className="sd-link">
+                Explore
+              </Link>
             </li>
             <li>
-              <a className="sd-link">Random</a>
+              <Link to="/register" className="sd-link">
+                Random
+              </Link>
             </li>
             <h4>Categories</h4>
             <li>
-              <a className="sd-link">Breakfast</a>
+              <Link to="/register" className="sd-link">
+                Breakfast
+              </Link>
             </li>
             <li>
-              <a className="sd-link">Lunch</a>
+              <Link to="/register" className="sd-link">
+                Lunch
+              </Link>
             </li>
             <li>
-              <a className="sd-link">Brunch</a>
+              <Link to="/register" className="sd-link">
+                Brunch
+              </Link>
             </li>
             <li>
-              <a className="sd-link">Dinner</a>
+              <Link to="/register" className="sd-link">
+                Dinner
+              </Link>
             </li>
             <li>
-              <a className="sd-link">Salads</a>
+              <Link to="/register" className="sd-link">
+                Salads
+              </Link>
             </li>
             <li>
-              <a className="sd-link">View more...</a>
+              <Link to="/register" className="sd-link">
+                View more...
+              </Link>
             </li>
             <h4>Extra</h4>
             <li>
-              <a className="sd-link">blablablah</a>
+              <Link to="/register" className="sd-link">
+                blablablah
+              </Link>
             </li>
           </ul>
         </div>
       </div>
       <div
         className={`sidebar-overlay ${isOpen == true ? "active" : ""}`}
-        onClick={MainMenu}
+        onClick={menu}
       ></div>
     </div>
   );
 };
 
-ReactDOM.render(<MainMenu />, document.getElementById("app"));
+// ReactDOM.render(<MainMenu />, document.getElementById("app"));

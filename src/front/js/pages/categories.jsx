@@ -9,10 +9,11 @@ export const Categories = () => {
 
   useEffect(() => {
     async function fetchData() {
-      let categories = await actions.fetchProtegido(`/categories`);
+      let categories = await actions.fetchGenerico(`/categories`);
       console.log("Categorias:", categories);
       if (categories.status == 200) {
         categories = await categories.json();
+        return categories;
         setCat(categories);
         console.log(categories);
       } else {
@@ -20,7 +21,7 @@ export const Categories = () => {
         console.log(categories);
       }
     }
-    fetchData();
+    setCat(fetchData());
   }, []);
 
   return (

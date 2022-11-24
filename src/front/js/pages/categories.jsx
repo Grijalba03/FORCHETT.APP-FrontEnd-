@@ -3,21 +3,23 @@ import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export const Categories = () => {
-  const { store, actions } = useContext(Context); //nos traemos las categorias desde store
-  const [cat, setCat] = useState({});
+  const { store, actions } = useContext(Context); //nos traemos las categorias desde store destructurado
+  const [cat, setCat] = useState([]);
   const history = useNavigate();
 
   useEffect(() => {
     async function fetchData() {
-      let categories = await actions.fetchProtegido(`/categories`);
-      console.log("Categorias:", categories);
-      if (categories.status == 200) {
-        categories = await categories.json();
-        setCat(categories);
-        console.log(categories);
+      let response = await actions.fetchGenerico("/categories");
+      if (response.status == 200) {
+        response = await response.json();
+        setCat(response);
+        //	setStore({...store cat: response}); ???
+        store.cat = response;
+
+        console.log(response);
       } else {
-        categories = await categories.json();
-        console.log(categories);
+        response = await response.json();
+        console.log(response);
       }
     }
     fetchData();
@@ -29,6 +31,14 @@ export const Categories = () => {
         <div>
           <h1>Categories</h1>
           <p>Choose your favorite category</p>
+
+          {cat.length > 0 && cat ? (
+            cat.map((item, index) => {
+              return <li key={index}>{item.category_name}</li>;
+            })
+          ) : (
+            <h1>No categories available</h1>
+          )}
         </div>
 
         {/* Hacemos un map del arreglo de categorias para mostrarlas en una lista a la que se le pueda hacer scroll hacia la derecha */}
@@ -57,7 +67,7 @@ export const Categories = () => {
               <div key={index} className="col mx-1 px-1">
                 <h1 className="text-danger mt-5"> {item.name}</h1>{" "}
                 {/* Aquí se despliega el nombre de la categoría */}
-                {store.recipe.map((item, index) => {
+                {store.recipes.map((item, index) => {
                   {
                     /* Luego recorremos el arreglo de recetas */
                   }

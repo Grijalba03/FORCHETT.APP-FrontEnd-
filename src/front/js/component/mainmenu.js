@@ -68,7 +68,7 @@ export const MainMenu = () => {
             </li>
             <h4>Categories</h4>
             <li>
-              <Link to="/register" className="sd-link">
+              <Link to="/categories" className="sd-link">
                 Breakfast
               </Link>
             </li>

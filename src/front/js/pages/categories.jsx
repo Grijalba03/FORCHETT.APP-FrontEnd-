@@ -3,31 +3,28 @@ import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 
 export const Categories = () => {
-  const { store, actions } = useContext(Context); //nos traemos las categorias desde store
+  const { store, actions } = useContext(Context); //nos traemos las categorias desde store destructurado
   const [cat, setCat] = useState([]);
- // const store = getStore; ??
+  // const store = getStore; ??
   const history = useNavigate();
 
   useEffect(() => {
     async function fetchData() {
       let response = await actions.fetchGenerico("/categories");
       if (response.status == 200) {
-				response = await response.json();
+        response = await response.json();
         setCat(response);
-			//	setStore({...store cat: response}); ???
+        //	setStore({...store cat: response}); ???
+        store.cat = response;
 
-				console.log(response)
-			} else {
-				response = await response.json();
-				console.log(response);
-			}
+        console.log(response);
+      } else {
+        response = await response.json();
+        console.log(response);
+      }
     }
     fetchData();
   }, []);
-  
-
-
-
 
   return (
     <>
@@ -35,20 +32,14 @@ export const Categories = () => {
         <div>
           <h1>Categories</h1>
           <p>Choose your favorite category</p>
-        
-            {cat.length > 0 && cat ? (
-              cat.map((item, index) => {
-                return (
-                  <li key={index}>
-                   
-                      Category: {item.category_name}
-                    
-                  </li>
-                );
-              })
-            ) : (
-              <h1>No categories available</h1>
-            )}
+
+          {cat.length > 0 && cat ? (
+            cat.map((item, index) => {
+              return <li key={index}>Category: {item.category_name}</li>;
+            })
+          ) : (
+            <h1>No categories available</h1>
+          )}
         </div>
 
         {/* Hacemos un map del arreglo de categorias para mostrarlas en una lista a la que se le pueda hacer scroll hacia la derecha */}

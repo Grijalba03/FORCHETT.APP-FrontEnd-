@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 export const Categories = () => {
   const { store, actions } = useContext(Context); //nos traemos las categorias desde store destructurado
   const [cat, setCat] = useState([]);
-  // const store = getStore; ??
   const history = useNavigate();
 
   useEffect(() => {
@@ -35,7 +34,7 @@ export const Categories = () => {
 
           {cat.length > 0 && cat ? (
             cat.map((item, index) => {
-              return <li key={index}>Category: {item.category_name}</li>;
+              return <li key={index}>{item.category_name}</li>;
             })
           ) : (
             <h1>No categories available</h1>
@@ -68,7 +67,7 @@ export const Categories = () => {
               <div key={index} className="col mx-1 px-1">
                 <h1 className="text-danger mt-5"> {item.name}</h1>{" "}
                 {/* Aquí se despliega el nombre de la categoría */}
-                {store.recipe.map((item, index) => {
+                {store.recipes.map((item, index) => {
                   {
                     /* Luego recorremos el arreglo de recetas */
                   }

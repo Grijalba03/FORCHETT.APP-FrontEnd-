@@ -18,6 +18,7 @@ import injectContext from "./store/appContext";
 import { Header } from "./component/header";
 import { Footer } from "./component/footer";
 import { MainMenu } from "./component/mainmenu";
+import { RecipesList } from "./component/recipes";
 
 //create your first component
 const Layout = () => {
@@ -31,6 +32,7 @@ const Layout = () => {
         <ScrollToTop>
           <Header />
           <MainMenu />
+          <RecipesList />
           <Routes>
             <Route element={<Home />} exact path="/" />
             <Route element={<Demo />} exact path="/demo" />
@@ -39,10 +41,11 @@ const Layout = () => {
             <Route element={<Login />} exact path="/login" />
             <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />
             <Route element={<Person />} exact path="/person/:theid" />
-             <Route element={<Categories />} path="/categories" />
+            <Route element={<Categories />} path="/categories" />
+            <Route element={<RecipesList />} path="/recipes" />
             <Route element={<Favorites />} exact path="/favorites" />
             <Route element={<Vehicle />} exact path="/vehicle/:theid" />
-            <Route element={<h1>Not found!</h1>} />xvsdsgvdfsdd cajcs dchSDcdc kscsd njsd
+            <Route element={<h1>Not found!</h1>} />
           </Routes>
           {/* <Footer /> */}
         </ScrollToTop>

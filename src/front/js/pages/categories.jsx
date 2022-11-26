@@ -4,10 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 import { RecipesList } from "../component/recipes";
 
 
-
 export const Categories = () => {
   const { store, actions } = useContext(Context); //nos traemos las categorias desde store destructurado
-  const [cat, setCat] = useState([]);
+  //const [cat, setCat] = useState([]);
+  const [recarga, setRecarga] = useState(false);
   const history = useNavigate();
 
   useEffect(() => {
@@ -25,21 +25,23 @@ export const Categories = () => {
         console.log(response);
       }
     }
+
+
+
+
     fetchData();
-  }, []);
+  }, [recarga]);
 
   return (
     <>
-
-      <RecipesList/>
-
-      <div className="d-flex justify-content-center mt-5">
+        <div className="d-flex justify-content-center mt-5">
         <div>
           <h1>Categories</h1>
           <p>Choose your favorite category</p>
-
-          {cat.length > 0 && cat ? (
-            cat.map((item, index) => {
+          <RecipesList estadoRecarga={recarga} funcionRecarga={setRecarga}/>
+          
+          {store.cat  && store.cat.length > 0 ? (
+            store.cat.map((item, index) => {
               return <li key={index}>{item.category_name}</li>;
             })
           ) : (
@@ -65,13 +67,13 @@ export const Categories = () => {
         {/* Luego hacemos un map del arreglo de categorias para mostrarlas en una lista a la que se le pueda hacer scroll hacia abajo */}
 
         <div className="d-flex flex-row flex-nowrap mt-3 mb-3">
-          {store.cat.map((item, index) => {
+          {store.recipes.map((item, index) => {
             {
               /* Primero recorremos el arreglo de categorias */
             }
             return (
               <div key={index} className="col mx-1 px-1">
-                <h1 className="text-danger mt-5"> {item.name}</h1>{" "}
+                <h1 className="text-danger mt-5">store.recipes.title</h1>{" "}
                 {/* Aquí se despliega el nombre de la categoría */}
                 {store.recipes.map((item, index) => {
                   {

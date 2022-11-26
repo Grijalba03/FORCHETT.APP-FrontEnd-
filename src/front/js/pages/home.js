@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import rigoImageUrl from "../../img/rigo-baby.jpg";
-import { RecipesList } from "../component/recipes";
+import { RecipesList } from "../component/recipes.js";
 import "../../styles/home.css";
 // import { CharactersCard } from "../component/characterscard";
 // import { PlanetsCard } from "../component/Planetscard";
@@ -20,6 +20,7 @@ export const Home = () => {
   return (
     
     <div className="container">
+
       <div>
         <h1></h1>
       </div>

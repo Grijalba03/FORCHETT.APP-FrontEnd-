@@ -20,7 +20,6 @@ export const Home = () => {
   return (
     
     <div className="container">
-      <RecipesList/>
       <div>
         <h1></h1>
       </div>

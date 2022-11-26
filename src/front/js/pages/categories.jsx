@@ -1,6 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
+import { RecipesList } from "../component/recipes";
+
+
 
 export const Categories = () => {
   const { store, actions } = useContext(Context); //nos traemos las categorias desde store destructurado
@@ -27,6 +30,9 @@ export const Categories = () => {
 
   return (
     <>
+
+      <RecipesList/>
+
       <div className="d-flex justify-content-center mt-5">
         <div>
           <h1>Categories</h1>

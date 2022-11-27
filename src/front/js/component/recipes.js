@@ -5,7 +5,6 @@ import ReactDOM from "react-dom";
 
 export const RecipesList = (props) => {
   const { store, actions } = useContext(Context); //nos traemos las recetas desde store destructurado
-  //const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
     async function fetchData() {
@@ -24,10 +23,10 @@ export const RecipesList = (props) => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-5">
       {store.recipes && store.recipes.length > 0 ? (
         <>
-          <h1>COOKING RECIPES</h1>
+          <h1 className="text-center">Cooking Recipes</h1>
           <div className="container spacing">
             <div className="d-flex flex-row flex-nowrap mt-3 mb-3">
               {store.recipes.map((item, index) => {
@@ -85,7 +84,7 @@ export const RecipesList = (props) => {
           </div>
         </>
       ) : (
-        <h1>Test</h1>
+        <h1 className="text-center">No recipes available</h1>
       )}
     </div>
   );

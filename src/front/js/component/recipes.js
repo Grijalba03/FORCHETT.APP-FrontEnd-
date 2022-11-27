@@ -28,7 +28,7 @@ export const RecipesList = (props) => {
         <>
           <h1 className="text-center">Cooking Recipes</h1>
           <div className="container spacing">
-            <div className="d-flex flex-row flex-nowrap mt-3 mb-3">
+            <div className="d-flex mt-3 mb-3">
               {store.recipes.map((item, index) => {
                 return (
                   <div key={index} className="col mx-1 px-1">
@@ -59,8 +59,8 @@ export const RecipesList = (props) => {
                             VIEW
                           </Link>
                           <Link
-                            to={`/categories`}
                             className="btn btn-outline-primary"
+                            to={`/categories/${item.id}`}
                           >
                             CATEGORY
                           </Link>

@@ -34,10 +34,10 @@ export const Categories = () => {
         <div className="container">     
                   <h1 className="text-center">Categories</h1>
                   <p className="text-center">Choose your favorite category</p> 
-                   <div className="d-flex flex-row flex-nowrap w-100" style={{ overflowX: "scroll" }}>
+                   <div className="d-flex justify-content-evenly">
                         {store.cat  && store.cat.length > 0 ? (  
                           store.cat.map((item, index) => {
-                            return <div className="circle" key={index}><Link className="category-name" to={`/categories/${item.id}`}><p className="category-name">{item.category_name}</p></Link></div>;
+                            return <div className="circle p-2" key={index}><Link className="category-name" to={`/categories/${item.id}`}><p className="category-name">{item.category_name}</p></Link></div>;
                           })  
 
                         ) : (<h1 className="text-center">No categories available</h1>)}

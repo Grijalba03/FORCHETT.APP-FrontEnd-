@@ -1,10 +1,10 @@
 .circle {
-  width: 100px;
-  height: 100px;
   background: rgb(252, 177, 134);
   border-radius: 50px;
-  margin: 8px;
-  display:inline-block;
+  margin: 10px;
+  padding: 20px;
+  border-color: black;
+  
 }
 
 .category-name {

@@ -37,7 +37,7 @@ export const Categories = () => {
                    <div className="d-flex justify-content-evenly">
                         {store.cat  && store.cat.length > 0 ? (  
                           store.cat.map((item, index) => {
-                            return <div className="circle p-2" key={index}><Link className="category-name" to={`/categories/${item.id}`}><p className="category-name">{item.category_name}</p></Link></div>;
+                            return <div className="circle p-2 rounded-circle" key={index}><Link className="category-name" to={`/categories/${item.id}`}><p className="category-name">{item.category_name}</p></Link></div>;
                           })  
 
                         ) : (<h1 className="text-center">No categories available</h1>)}

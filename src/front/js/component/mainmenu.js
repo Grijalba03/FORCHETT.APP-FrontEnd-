@@ -93,7 +93,7 @@ export const MainMenu = () => {
               </Link>
             </li>
             <li>
-              <Link to="/register" className="sd-link">
+              <Link to="/categories" className="sd-link">
                 View more...
               </Link>
             </li>

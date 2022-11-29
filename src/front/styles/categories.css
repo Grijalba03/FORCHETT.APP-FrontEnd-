@@ -1,0 +1,16 @@
+.circle {
+  background: rgb(252, 177, 134);
+  width:100px;
+  height:100px;
+  margin: 5px;
+  padding: 5px;
+  
+}
+
+ .category-name {
+  color: black;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+  text-decoration: none;
+}

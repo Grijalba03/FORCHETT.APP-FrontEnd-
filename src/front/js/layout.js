@@ -32,7 +32,6 @@ const Layout = () => {
         <ScrollToTop>
           <Header />
           <MainMenu />
-          <RecipesList />
           <Routes>
             <Route element={<Home />} exact path="/" />
             <Route element={<Demo />} exact path="/demo" />
@@ -42,7 +41,6 @@ const Layout = () => {
             <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />
             <Route element={<Person />} exact path="/person/:theid" />
             <Route element={<Categories />} path="/categories" />
-            <Route element={<RecipesList />} path="/recipes" />
             <Route element={<Favorites />} exact path="/favorites" />
             <Route element={<Vehicle />} exact path="/vehicle/:theid" />
             <Route element={<h1>Not found!</h1>} />

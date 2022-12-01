@@ -22,8 +22,23 @@ export const Categories = () => {
     }
 
     fetchData();
+
+    async function fetchRecipes() {
+      let response = await actions.fetchGenerico("/recipes");
+      if (response.status == 200) {
+        response = await response.json();
+        store.recipes = response;
+        console.log(response);
+        props.funcionRecarga(!props.estadoRecarga);
+      } else {
+        response = await response.json();
+        console.log(response);
+      }
+    }
+    fetchRecipes();
   }, [recarga]);
 
+  console.log(store.recipes);
   return (
     <>
       <div className="container">
@@ -45,17 +60,17 @@ export const Categories = () => {
           )}
         </div>
 
-        <div className="d-block">
-          {store.cat && store.cat.length > 0 ? (
-            store.cat.map((item, index) => {
+        <div className="d-flex justify-content-evenly">
+          {store.recipes && store.recipes.length > 0 ? (
+            store.recipes.map((item, index) => {
               return (
                 <div className="d-flex justify-content-start" key={index}>
-                  <div className="category-name">{item.category_name}</div>
+                  <div className="category-name">{item.title}</div>
                 </div>
               );
             })
           ) : (
-            <h1 className="text-center">No categories available</h1>
+            <h1 className="text-center">No recipes available</h1>
           )}
         </div>
       </div>

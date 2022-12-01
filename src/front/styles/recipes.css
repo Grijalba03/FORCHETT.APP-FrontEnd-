@@ -1,0 +1,16 @@
+.recipe-buttons{
+
+    color: rgb(152, 70, 230);
+    font-weight: bold;
+    text-decoration: none;
+    padding-right: 15px;    
+
+}
+
+.heart{
+    border: none;
+}
+
+.card-background{
+background-color: #F6F6F6;
+}

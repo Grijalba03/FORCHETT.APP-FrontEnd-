@@ -7,11 +7,10 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { SignUp } from "./pages/signup.jsx"; //Este es el componente de la página para registrar usuario
 import { Login } from "./pages/login.jsx";
-import { Categories } from "./pages/categories.jsx";
 import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
-import { Person } from "./pages/person.jsx";
-import { Favorites } from "./pages/favorites";
-import { Vehicle } from "./pages/vehicle.jsx";
+// import { Person } from "./pages/person.jsx";
+// import { Planet } from "./pages/planet.jsx";
+import { UserProfile } from "./pages/userProfile.jsx";
 
 import injectContext from "./store/appContext";
 
@@ -33,16 +32,17 @@ const Layout = () => {
           <Header />
           <MainMenu />
           <Routes>
-            <Route element={<Home />} exact path="/" />
-            <Route element={<Demo />} exact path="/demo" />
-            <Route element={<Single />} exact path="/single/:theid" />
-            <Route element={<SignUp />} exact path="/register" />
-            <Route element={<Login />} exact path="/login" />
-            <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />
-            <Route element={<Person />} exact path="/person/:theid" />
+
+            <Route element={<Home />} path="/" />
+            <Route element={<Demo />} path="/demo" />
+            <Route element={<Single />} path="/single/:theid" />
+            <Route element={<SignUp />} path="/signup" />
+            <Route element={<Login />} path="/login" />
+            <Route element={<ListaUsuarios />} path="/listaUsuarios" />
             <Route element={<Categories />} path="/categories" />
-            <Route element={<Favorites />} exact path="/favorites" />
-            <Route element={<Vehicle />} exact path="/vehicle/:theid" />
+            <Route element={<Favorites />} exact path="/favorites"/>
+            <Route element={<UserProfile />} path="/userprofile" />
+
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           {/* <Footer /> */}

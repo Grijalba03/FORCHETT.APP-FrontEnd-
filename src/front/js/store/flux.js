@@ -19,9 +19,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       recipes: [],
       person: [],
       favorites: [],
-      vehicles: [],
-      character: [],
-      vehicle: [],
+      userProfile: [],
+      // character: [],
+      // vehicle: [],
       ...userStore,
     },
     actions: {
@@ -122,7 +122,6 @@ const getState = ({ getStore, getActions, setStore }) => {
       //     .then((resp) => setStore({ vehicles: resp.results }))
       //     .catch((err) => console.error(err));
       // },
-
     },
   };
 };

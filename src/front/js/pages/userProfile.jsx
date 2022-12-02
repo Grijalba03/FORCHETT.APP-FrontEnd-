@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/userProfile.css";
 
 
 export const UserProfile = () => {
@@ -27,36 +28,42 @@ export const UserProfile = () => {
   return (
     <>
       <div className="container">
-        <div className="profilebg mx-auto">
+        <div className="profilebg border border 3- mx-auto">
           <img
             src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
             className="profile-img-top rounded-circle mx-auto d-block"
             alt="..."
-          />
+          /> {""}
           <h5 className="username text-center"> UserName</h5>
           <button
             type="button"
-            className=" buttons under username btn btn-secondary btn-sm"
+            className=" buttons-under-username btn btn-secondary btn-sm"
           >
             Youtube
           </button>{" "}
           <button
             type="button"
-            className=" buttons under username btn btn-secondary btn-sm"
+            className=" buttons-under-username btn btn-secondary btn-sm"
           >
             Facebook
-          </button>
+          </button>{" "}
           <button
             type="button"
-            className=" buttons under username btn btn-secondary btn-sm"
+            className=" buttons-under-username btn btn-secondary btn-sm"
           >
             Twitter
+          </button>{" "}
+          <button
+            type="button"
+            className=" buttons-under-username btn btn-secondary btn-sm"
+          >
+            Instagram
           </button>
         </div>
         <div className="favoritecards mx-auto">
           <h3 className="myfavoritestitle text-center">
-            {" "}
-            COOKING RECIPES BY USERNAME
+            
+            MY FAVORITES
           </h3>
         </div>
         <div className="row row-cols-1 row-cols-md-3 g-4 ">
@@ -68,7 +75,7 @@ export const UserProfile = () => {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">Drinks</h5>
+                <h5 className="card-title text-center">Breakfast</h5>
               </div>
             </div>
           </div>
@@ -80,7 +87,7 @@ export const UserProfile = () => {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">Breakfast</h5>
+                <h5 className="card-title text-center">Lunch</h5>
               </div>
             </div>
           </div>
@@ -92,7 +99,79 @@ export const UserProfile = () => {
                 alt="..."
               />
               <div className="card-body">
-                <h5 className="card-title">Brunch</h5>
+                <h5 className="card-title text-center">Dinner</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card-4 h-300">
+              <img
+                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title text-center">Brunch</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card-5 h-300">
+              <img
+                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title text-center">Kids</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card-6 h-300">
+              <img
+                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title text-center">Salads</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card-7 h-300">
+              <img
+                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title text-center">Drinks</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card-8 h-300">
+              <img
+                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title text-center">Desserts</h5>
+              </div>
+            </div>
+          </div>
+          <div className="col">
+            <div className="card-9 h-300">
+              <img
+                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
+                className="card-img-top"
+                alt="..."
+              />
+              <div className="card-body">
+                <h5 className="card-title text-center">Snacks</h5>
               </div>
             </div>
           </div>

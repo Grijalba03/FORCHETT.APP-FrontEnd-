@@ -59,7 +59,7 @@ export const Categories = () => {
             <h1 className="text-center">No categories available</h1>
           )}
         </div>
-
+        {/* 
         <div className="d-flex justify-content-evenly">
           {store.recipes && store.recipes.length > 0 ? (
             store.recipes.map((item, index) => {
@@ -72,6 +72,45 @@ export const Categories = () => {
           ) : (
             <h1 className="text-center">No recipes available</h1>
           )}
+        </div> */}
+
+        <div>
+          <h1>Breakfast</h1>
+          {store.recipes
+            .filter((auxiliar) => auxiliar.category == 1)
+            .map((filteredAuxiliar) => (
+              <u>
+                <div>{filteredAuxiliar.title}</div>
+                <div>{filteredAuxiliar.description}</div>
+                <div>{filteredAuxiliar.id}</div>
+              </u>
+            ))}
+        </div>
+
+        <div>
+          <h1>Lunch</h1>
+          {store.recipes
+            .filter((auxiliar) => auxiliar.category == 2)
+            .map((filteredAuxiliar) => (
+              <u>
+                <div>{filteredAuxiliar.title}</div>
+                <div>{filteredAuxiliar.description}</div>
+                <div>{filteredAuxiliar.id}</div>
+              </u>
+            ))}
+        </div>
+
+        <div>
+          <h1>Drinks</h1>
+          {store.recipes
+            .filter((auxiliar) => auxiliar.category == 3)
+            .map((filteredAuxiliar) => (
+              <u>
+                <div>{filteredAuxiliar.title}</div>
+                <div>{filteredAuxiliar.description}</div>
+                <div>{filteredAuxiliar.id}</div>
+              </u>
+            ))}
         </div>
       </div>
     </>

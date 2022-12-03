@@ -59,58 +59,505 @@ export const Categories = () => {
             <h1 className="text-center">No categories available</h1>
           )}
         </div>
-        {/* 
-        <div className="d-flex justify-content-evenly">
-          {store.recipes && store.recipes.length > 0 ? (
-            store.recipes.map((item, index) => {
-              return (
-                <div className="d-flex justify-content-start" key={index}>
-                  <div className="category-name">{item.title}</div>
-                </div>
-              );
-            })
-          ) : (
-            <h1 className="text-center">No recipes available</h1>
-          )}
-        </div> */}
 
-        <div>
-          <h1>Breakfast</h1>
-          {store.recipes
-            .filter((auxiliar) => auxiliar.category == 1)
-            .map((filteredAuxiliar) => (
-              <u>
-                <div>{filteredAuxiliar.title}</div>
-                <div>{filteredAuxiliar.description}</div>
-                <div>{filteredAuxiliar.id}</div>
-              </u>
-            ))}
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/1`}><h1>Breakfast</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 1)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
         </div>
 
-        <div>
-          <h1>Lunch</h1>
-          {store.recipes
-            .filter((auxiliar) => auxiliar.category == 2)
-            .map((filteredAuxiliar) => (
-              <u>
-                <div>{filteredAuxiliar.title}</div>
-                <div>{filteredAuxiliar.description}</div>
-                <div>{filteredAuxiliar.id}</div>
-              </u>
-            ))}
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/2`}><h1>Brunch</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 2)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
         </div>
 
-        <div>
-          <h1>Drinks</h1>
-          {store.recipes
-            .filter((auxiliar) => auxiliar.category == 3)
-            .map((filteredAuxiliar) => (
-              <u>
-                <div>{filteredAuxiliar.title}</div>
-                <div>{filteredAuxiliar.description}</div>
-                <div>{filteredAuxiliar.id}</div>
-              </u>
-            ))}
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/3`}><h1>Lunch</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 3)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/4`}><h1>Snacks</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 4)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/5`}><h1>Dinner</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 5)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/6`}><h1>Salads</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 6)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/7`}><h1>Kids</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 7)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/8`}><h1>Vegetarian</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 8)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/9`}><h1>Vegan</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 9)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5">
+        <Link className="recipe-buttons" to={`/categories/10`}><h1>Drinks</h1></Link>
+          <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.recipes
+                .filter((auxiliar) => auxiliar.category == 10)
+                .map((filteredAuxiliar) => (
+                  <div className="col mx-1 px-1">
+                    <div
+                      className="card card-background"
+                      style={{ width: "18rem" }}
+                    >
+                      <div>
+                        {/* Cajita con imagen y rating */}
+                        <img
+                          src="https://via.placeholder.com/400x200"
+                          className="card-img-top rounded"
+                          alt="..."
+                        />
+                        <p>{filteredAuxiliar.rating}</p>
+                      </div>
+                      <div className="card-body card-background">
+                        {/* Cajita con titulo, descripcion y view / category / like */}
+                        <h5 className="card-title">{filteredAuxiliar.title}</h5>
+                        <p>{filteredAuxiliar.description}</p>
+                      </div>
+                      <div className="d-flex justify-content-between mx-3 my-2 card-background">
+                        <div className="align-items-center">
+                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                            CLICK TO VIEW
+                          </Link>
+                        </div>
+                        
+                          <button 
+                            onClick={(e) => {
+                              actions.addfavorites(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="far fa-heart"></i>
+                          </button>
+                        
+                      </div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+          </div>
         </div>
       </div>
     </>

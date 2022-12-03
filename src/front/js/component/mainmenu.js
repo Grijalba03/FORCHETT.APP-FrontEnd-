@@ -68,27 +68,27 @@ export const MainMenu = () => {
             </li>
             <h4>Categories</h4>
             <li>
-              <Link to="/categories" className="sd-link">
+              <Link to="/categories/1" className="sd-link">
                 Breakfast
               </Link>
             </li>
             <li>
-              <Link to="/register" className="sd-link">
+              <Link to="/categories/3" className="sd-link">
                 Lunch
               </Link>
             </li>
             <li>
-              <Link to="/register" className="sd-link">
+              <Link to="/categories/2" className="sd-link">
                 Brunch
               </Link>
             </li>
             <li>
-              <Link to="/register" className="sd-link">
+              <Link to="/categories/5" className="sd-link">
                 Dinner
               </Link>
             </li>
             <li>
-              <Link to="/register" className="sd-link">
+              <Link to="/categories/6" className="sd-link">
                 Salads
               </Link>
             </li>

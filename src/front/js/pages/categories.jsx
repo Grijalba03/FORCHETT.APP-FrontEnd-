@@ -88,7 +88,7 @@ export const Categories = () => {
         </div>
 
         <div>
-          <h1>Lunch</h1>
+          <h1>Brunch</h1>
           {store.recipes
             .filter((auxiliar) => auxiliar.category == 2)
             .map((filteredAuxiliar) => (
@@ -101,9 +101,87 @@ export const Categories = () => {
         </div>
 
         <div>
-          <h1>Drinks</h1>
+          <h1>Lunch</h1>
           {store.recipes
             .filter((auxiliar) => auxiliar.category == 3)
+            .map((filteredAuxiliar) => (
+              <u>
+                <div>{filteredAuxiliar.title}</div>
+                <div>{filteredAuxiliar.description}</div>
+                <div>{filteredAuxiliar.id}</div>
+              </u>
+            ))}
+        </div>
+
+        <div>
+          <h1>Snacks</h1>
+          {store.recipes
+            .filter((auxiliar) => auxiliar.category == 4)
+            .map((filteredAuxiliar) => (
+              <u>
+                <div>{filteredAuxiliar.title}</div>
+                <div>{filteredAuxiliar.description}</div>
+                <div>{filteredAuxiliar.id}</div>
+              </u>
+            ))}
+        </div>
+
+        <div>
+          <h1>Dinner</h1>
+          {store.recipes
+            .filter((auxiliar) => auxiliar.category == 5)
+            .map((filteredAuxiliar) => (
+              <u>
+                <div>{filteredAuxiliar.title}</div>
+                <div>{filteredAuxiliar.description}</div>
+                <div>{filteredAuxiliar.id}</div>
+              </u>
+            ))}
+        </div>
+
+        <div>
+          <h1>Drinks</h1>
+          {store.recipes
+            .filter((auxiliar) => auxiliar.category == 6)
+            .map((filteredAuxiliar) => (
+              <u>
+                <div>{filteredAuxiliar.title}</div>
+                <div>{filteredAuxiliar.description}</div>
+                <div>{filteredAuxiliar.id}</div>
+              </u>
+            ))}
+        </div>
+
+        <div>
+          <h1>Vegetarian</h1>
+          {store.recipes
+            .filter((auxiliar) => auxiliar.category == 7)
+            .map((filteredAuxiliar) => (
+              <u>
+                <div>{filteredAuxiliar.title}</div>
+                <div>{filteredAuxiliar.description}</div>
+                <div>{filteredAuxiliar.id}</div>
+              </u>
+            ))}
+        </div>
+
+        <div>
+          <h1>Vegan</h1>
+          {store.recipes
+            .filter((auxiliar) => auxiliar.category == 8)
+            .map((filteredAuxiliar) => (
+              <u>
+                <div>{filteredAuxiliar.title}</div>
+                <div>{filteredAuxiliar.description}</div>
+                <div>{filteredAuxiliar.id}</div>
+              </u>
+            ))}
+        </div>
+
+        <div>
+          <h1>Kids</h1>
+          {store.recipes
+            .filter((auxiliar) => auxiliar.category == 9)
             .map((filteredAuxiliar) => (
               <u>
                 <div>{filteredAuxiliar.title}</div>

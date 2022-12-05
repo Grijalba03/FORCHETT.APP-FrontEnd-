@@ -10,9 +10,9 @@ import { Login } from "./pages/login.jsx";
 import { Categories } from "./pages/categories.jsx";
 import { Categoriessingle } from "./pages/categoriesSingle.jsx";
 import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
-import { Person } from "./pages/person.jsx";
-import { Favorites } from "./pages/favorites";
-import { Vehicle } from "./pages/vehicle.jsx";
+// import { Person } from "./pages/person.jsx";
+// import { Planet } from "./pages/planet.jsx";
+import { UserProfile } from "./pages/userProfile.jsx";
 
 import injectContext from "./store/appContext";
 
@@ -47,6 +47,7 @@ const Layout = () => {
             <Route element={<Categoriessingle />} exact path="/categories/:theid" />
             <Route element={<Favorites />} exact path="/favorites" />
             <Route element={<Vehicle />} exact path="/vehicle/:theid" />
+            <Route element={<UserProfile />} path="/userprofile" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           {/* <Footer /> */}

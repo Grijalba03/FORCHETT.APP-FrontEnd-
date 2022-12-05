@@ -21,9 +21,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       recipesingle: {},
       person: [],
       favorites: [],
-      vehicles: [],
-      character: [],
-      vehicle: [],
+      userProfile: [],
+      // character: [],
+      // vehicle: [],
       ...userStore,
     },
     actions: {

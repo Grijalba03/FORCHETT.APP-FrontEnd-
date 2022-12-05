@@ -8,6 +8,7 @@ import { Single } from "./pages/single";
 import { SignUp } from "./pages/signup.jsx"; //Este es el componente de la página para registrar usuario
 import { Login } from "./pages/login.jsx";
 import { Categories } from "./pages/categories.jsx";
+import { Categoriessingle } from "./pages/categoriesSingle.jsx";
 import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
 import { Person } from "./pages/person.jsx";
 import { Favorites } from "./pages/favorites";
@@ -43,6 +44,7 @@ const Layout = () => {
             <Route element={<Person />} exact path="/person/:theid" />
             <Route element={<Recipesingle />} exact path="/recipes/:theid" />
             <Route element={<Categories />} path="/categories" />
+            <Route element={<Categoriessingle />} exact path="/categories/:theid" />
             <Route element={<Favorites />} exact path="/favorites" />
             <Route element={<Vehicle />} exact path="/vehicle/:theid" />
             <Route element={<h1>Not found!</h1>} />

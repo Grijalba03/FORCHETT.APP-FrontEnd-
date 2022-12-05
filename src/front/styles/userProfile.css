@@ -1,5 +1,19 @@
-.buttons-under-username{ 
+.profilebg{
+        margin-bottom: 25px;
+        background-color: rgb(243, 188, 243);
+}
+
+
+.profileButtons{ 
+        
+        text-align: center;
+        margin-bottom: 10px;
     
+} 
+
+.username { 
+        margin-top: 15px;
+        margin-bottom: 15px;
 }
 
 
@@ -11,4 +25,8 @@
         margin: 5px;
         padding: 5px;
     
+}
+
+.myfavoritestitle{ 
+        margin-bottom: 25px;
 }

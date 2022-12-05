@@ -28,13 +28,14 @@ export const UserProfile = () => {
   return (
     <>
       <div className="container">
-        <div className="profilebg border border 3- mx-auto">
+        <div className="profilebg rounded border border 3- mx-auto">
           <img
             src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
             className="profile-img-top rounded-circle mx-auto d-block"
             alt="..."
           /> {""}
           <h5 className="username text-center"> UserName</h5>
+          <div className="profileButtons"> 
           <button
             type="button"
             className=" buttons-under-username btn btn-secondary btn-sm"
@@ -59,6 +60,7 @@ export const UserProfile = () => {
           >
             Instagram
           </button>
+          </div>
         </div>
         <div className="favoritecards mx-auto">
           <h3 className="myfavoritestitle text-center">

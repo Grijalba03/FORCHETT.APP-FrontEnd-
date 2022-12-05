@@ -58,7 +58,7 @@ export const RecipesList = (props) => {
                         <div>
                           <Link
                             className="recipe-buttons"
-                            to={`/recipe/${item.id}`}
+                            to={`/recipes/${item.id}`}
                           >
                             VIEW
                           </Link>

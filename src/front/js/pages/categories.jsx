@@ -61,7 +61,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/1`}><h1>Breakfast</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/1`}>
+            <h1>Breakfast</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -88,20 +90,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -111,7 +115,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/2`}><h1>Brunch</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/2`}>
+            <h1>Brunch</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -138,20 +144,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -161,7 +169,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/3`}><h1>Lunch</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/3`}>
+            <h1>Lunch</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -188,20 +198,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -211,7 +223,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/4`}><h1>Snacks</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/4`}>
+            <h1>Snacks</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -238,20 +252,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -261,7 +277,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/5`}><h1>Dinner</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/5`}>
+            <h1>Dinner</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -288,20 +306,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -311,7 +331,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/6`}><h1>Salads</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/6`}>
+            <h1>Salads</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -338,20 +360,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -361,7 +385,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/7`}><h1>Kids</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/7`}>
+            <h1>Kids</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -388,20 +414,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -411,7 +439,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/8`}><h1>Vegetarian</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/8`}>
+            <h1>Vegetarian</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -438,20 +468,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -461,7 +493,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/9`}><h1>Vegan</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/9`}>
+            <h1>Vegan</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -488,20 +522,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -511,7 +547,9 @@ export const Categories = () => {
         </div>
 
         <div className="mt-5">
-        <Link className="recipe-buttons" to={`/categories/10`}><h1>Drinks</h1></Link>
+          <Link className="recipe-buttons" to={`/categories/10`}>
+            <h1>Drinks</h1>
+          </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
               {store.recipes
@@ -538,20 +576,22 @@ export const Categories = () => {
                       </div>
                       <div className="d-flex justify-content-between mx-3 my-2 card-background">
                         <div className="align-items-center">
-                          <Link className="recipe-buttons px-5" to={`/recipe/${filteredAuxiliar.id}`}>
+                          <Link
+                            className="recipe-buttons px-5"
+                            to={`/recipes/${filteredAuxiliar.id}`}
+                          >
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        
-                          <button 
-                            onClick={(e) => {
-                              actions.addfavorites(filteredAuxiliar.title);
-                            }}
-                            className="heart align-items-end"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        
+
+                        <button
+                          onClick={(e) => {
+                            actions.addfavorites(filteredAuxiliar.title);
+                          }}
+                          className="heart align-items-end"
+                        >
+                          <i className="far fa-heart"></i>
+                        </button>
                       </div>
                     </div>
                   </div>

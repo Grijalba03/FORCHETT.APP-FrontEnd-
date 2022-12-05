@@ -19,6 +19,7 @@ import { Header } from "./component/header";
 import { Footer } from "./component/footer";
 import { MainMenu } from "./component/mainmenu";
 import { RecipesList } from "./component/recipes";
+import { Recipesingle } from "./pages/recipeSingle.jsx";
 
 //create your first component
 const Layout = () => {
@@ -40,6 +41,7 @@ const Layout = () => {
             <Route element={<Login />} exact path="/login" />
             <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />
             <Route element={<Person />} exact path="/person/:theid" />
+            <Route element={<Recipesingle />} exact path="/recipes/:theid" />
             <Route element={<Categories />} path="/categories" />
             <Route element={<Favorites />} exact path="/favorites" />
             <Route element={<Vehicle />} exact path="/vehicle/:theid" />

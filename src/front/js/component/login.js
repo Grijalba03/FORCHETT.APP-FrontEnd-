@@ -22,15 +22,7 @@ export const Login = () => {
       password: password,
     };
 
-    /*  let BACKEND_URL = process.env.BACKEND_URL;
-    console.log(BACKEND_URL);
 
-    let response = await fetch(`${BACKEND_URL}/signup`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(obj),
-    });
- */
     console.log("hola4");
     let response = await actions.login("/login", obj, "POST"); //response es una promesa
     console.log("36: ", response);

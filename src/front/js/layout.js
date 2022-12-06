@@ -6,7 +6,7 @@ import { Home } from "./pages/home";
 import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { SignUp } from "./pages/signup.jsx"; //Este es el componente de la página para registrar usuario
-import { Login } from "./pages/login.jsx";
+// import { Login } from "./pages/login.jsx";
 import { Categories } from "./pages/categories.jsx";
 import { Categoriessingle } from "./pages/categoriesSingle.jsx";
 import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
@@ -21,6 +21,7 @@ import { Footer } from "./component/footer";
 import { MainMenu } from "./component/mainmenu";
 import { RecipesList } from "./component/recipes";
 import { Recipesingle } from "./pages/recipeSingle.jsx";
+import { Login } from "./component/login";
 
 //create your first component
 const Layout = () => {
@@ -34,12 +35,13 @@ const Layout = () => {
         <ScrollToTop>
           <Header />
           <MainMenu />
+          {/* <Login /> */}
           <Routes>
             <Route element={<Home />} exact path="/" />
             <Route element={<Demo />} exact path="/demo" />
             <Route element={<Single />} exact path="/single/:theid" />
             <Route element={<SignUp />} exact path="/register" />
-            <Route element={<Login />} exact path="/login" />
+            {/* <Route element={<Login />} exact path="/login" /> */}
             <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />          
             <Route element={<Recipesingle />} exact path="/recipes/:theid" />
             <Route element={<Categories />} path="/categories" />

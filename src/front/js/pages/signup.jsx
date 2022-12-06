@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
+
 export const SignUp = () => {
   const { store, actions } = useContext(Context);
 
@@ -40,6 +41,9 @@ export const SignUp = () => {
     console.log(response);
     alert(response.mensaje);
   };
+
+  // myvalue = Swal.fire("Any fool can use a computer")
+
 
   return (
     <>

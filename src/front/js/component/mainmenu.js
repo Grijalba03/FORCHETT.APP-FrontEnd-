@@ -1,16 +1,135 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/mainmenu.css";
+import Swal from "sweetalert2";
+import { Login } from "./login";
 
 export const MainMenu = () => {
   const [isOpen, setIsopen] = useState(false);
+
+  const { store, actions } = useContext(Context);
+  const history = useNavigate();
+  const [token, setToken] = useState("");
 
   const menu = () => {
     // isOpen === true ? setIsopen(false) : setIsopen(true);
     setIsopen(!isOpen);
   };
+
+  function loginPopup() {
+    value = Swal.fire({
+      title: "Account Login",
+      html: `<input type="text" id="username" class="swal2-input" placeholder="Username">
+      <input type="password" id="password" class="swal2-input" placeholder="Password">`,
+      confirmButtonText: "Sign in",
+      showCancelButton: true,
+      focusConfirm: false,
+      preConfirm: () => {
+        const username = Swal.getPopup().querySelector("#username").value;
+        const password = Swal.getPopup().querySelector("#password").value;
+        if (!username || !password) {
+          Swal.showValidationMessage(`Please enter login and password`);
+        }
+        return { username: username, password: password };
+      },
+    }).then((result) => {
+
+      Swal.fire(
+        `
+        username: ${result.value.username}
+        Password: ${result.value.password}
+      `.trim()
+      );
+      console.log("username: ", result.value.username);
+
+      const loginReq = async (e) => {
+        e.preventDefault();
+        console.log("login Func");
+
+        //const data = new FormData(e.target);
+        let username = result.value.username;
+        let password = result.value.password;
+
+        console.log(username, email, password1, password2);
+
+        let obj = {
+          username: username,
+          password: password,
+        };
+
+        let response = await actions.login("/login", obj, "POST");
+        console.log("login RES: ", response);
+        if (response.status == 200) {
+          //let respuestaJson = await response.json();
+          //console.log("41: ", respuestaJson);
+          Swal.fire({
+            icon: "success",
+            title: "Welcome",
+            text: `Bienvenido, ${email}`,
+            footer: '<a href="">Why do I have this issue?</a>',
+          });
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "No pudo iniciar sesión",
+            footer: '<a href="">Why do I have this issue?</a>',
+          });
+        }
+        //console.log(response);
+        //response = await response.json(); //response es un objeto de Javascript
+        console.table("hola37", response);
+        //token = response.token;
+        setToken(response.token);
+        console.log("token", token);
+
+        //alert(response.token);
+      };
+    });
+    return value;
+  }
+
+  function signupPopup() {
+    value = Swal.fire({
+      title: "Create Your Account",
+      html: `<input type="text" id="username" class="swal2-input" placeholder="Username">
+      <input type="text" id="email" class="swal2-input" placeholder="Email">
+      <input type="password" id="password1" class="swal2-input" placeholder="Password">
+      <input type="password" id="password2" class="swal2-input" placeholder="Confirm Password">
+      <br>
+      <p>By registering with FORCHETTA.APP, you agree to accept our Privacy Policy and our Terms & Conditions
+      </p>`,
+      confirmButtonText: "CREATE ACCOUNT",
+      focusConfirm: false,
+      preConfirm: () => {
+        const username = Swal.getPopup().querySelector("#username").value;
+        const email = Swal.getPopup().querySelector("#email").value;
+        const password1 = Swal.getPopup().querySelector("#password1").value;
+        const password2 = Swal.getPopup().querySelector("#password2").value;
+        if (!username || !email || !password1 || !password2) {
+          Swal.showValidationMessage(`Please enter login and password`);
+        }
+        return {
+          username: username,
+          email: email,
+          password1: password1,
+          password2: password2,
+        };
+      },
+    }).then((result) => {
+      Swal.fire(
+        `
+        Username: ${result.value.username}
+        Email: ${result.value.email}
+        Password1: ${result.value.password1}
+        Password2: ${result.value.password2}
+      `.trim()
+      );
+    });
+    return value;
+  }
 
   return (
     <div className="container-menu">
@@ -25,10 +144,13 @@ export const MainMenu = () => {
         <p>Menu</p>
       </div>
       <div className="text-center">
-        <i className="fa-regular fa-circle-user iconmod"></i>
+        <i
+          className="fa-regular fa-circle-user iconmod"
+          onClick={loginPopup}
+        ></i>
       </div>
       <div className="text-center">
-        <i className="fa-solid fa-user-plus iconmod"></i>
+        <i className="fa-solid fa-user-plus iconmod" onClick={signupPopup}></i>
       </div>
       <div className="text-center">
         <i className="fa-solid fa-right-to-bracket iconmod"></i>

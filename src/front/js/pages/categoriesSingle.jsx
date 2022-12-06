@@ -14,7 +14,7 @@ export const Categoriessingle = (props) => {
       if (response.status == 200) {
         response = await response.json();
         setSinglecat(response);
-        console.log(singlecat);
+        console.log(response);
       } else {
         response = await response.json();
         console.log(response);
@@ -43,6 +43,12 @@ export const Categoriessingle = (props) => {
         {singlecat ? (
           <div>
             <h1 className="display-4">{singlecat.category_name ? singlecat.category_name : "Loading"}</h1>
+            <p>{singlecat.found.map((item, index) => {
+              return(
+                <div key={index}>{item.title}</div>
+
+              )
+            })} </p>
             
           </div>
         ) : (

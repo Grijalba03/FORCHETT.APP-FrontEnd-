@@ -7,8 +7,10 @@ import { Demo } from "./pages/demo";
 import { Single } from "./pages/single";
 import { SignUp } from "./pages/signup.jsx"; //Este es el componente de la página para registrar usuario
 import { Login } from "./pages/login.jsx";
+import { Categories } from "./pages/categories.jsx";
+import { Categoriessingle } from "./pages/categoriesSingle.jsx";
 import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
-// import { Person } from "./pages/person.jsx";
+import { Favorites } from "./pages/favorites";
 // import { Planet } from "./pages/planet.jsx";
 import { UserProfile } from "./pages/userProfile.jsx";
 
@@ -17,6 +19,8 @@ import injectContext from "./store/appContext";
 import { Header } from "./component/header";
 import { Footer } from "./component/footer";
 import { MainMenu } from "./component/mainmenu";
+import { RecipesList } from "./component/recipes";
+import { Recipesingle } from "./pages/recipeSingle.jsx";
 
 //create your first component
 const Layout = () => {
@@ -31,14 +35,16 @@ const Layout = () => {
           <Header />
           <MainMenu />
           <Routes>
-            <Route element={<Home />} path="/" />
-            <Route element={<Demo />} path="/demo" />
-            <Route element={<Single />} path="/single/:theid" />
-            <Route element={<SignUp />} path="/signup" />
-            <Route element={<Login />} path="/login" />
-            <Route element={<ListaUsuarios />} path="/listaUsuarios" />
-            {/* <Route element={<Person />} path="/person/:theid" /> */}
-            {/* <Route element={<Planet />} path="/planet/:theid" /> */}
+            <Route element={<Home />} exact path="/" />
+            <Route element={<Demo />} exact path="/demo" />
+            <Route element={<Single />} exact path="/single/:theid" />
+            <Route element={<SignUp />} exact path="/register" />
+            <Route element={<Login />} exact path="/login" />
+            <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />          
+            <Route element={<Recipesingle />} exact path="/recipes/:theid" />
+            <Route element={<Categories />} path="/categories" />
+            <Route element={<Categoriessingle />} exact path="/categories/:theid" />
+            <Route element={<Favorites />} exact path="/favorites" />
             <Route element={<UserProfile />} path="/userprofile" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>

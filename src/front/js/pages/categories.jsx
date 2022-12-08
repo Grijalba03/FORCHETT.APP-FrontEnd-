@@ -494,7 +494,7 @@ export const Categories = () => {
 
         <div className="mt-5">
           <Link className="recipe-buttons" to={`/categories/9`}>
-            <h1>Vegan</h1>
+            <h1>Kids</h1>
           </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">
@@ -548,7 +548,7 @@ export const Categories = () => {
 
         <div className="mt-5">
           <Link className="recipe-buttons" to={`/categories/10`}>
-            <h1>Drinks</h1>
+            <h1>Snacks</h1>
           </Link>
           <div className="container spacing">
             <div className="d-flex mt-3 mb-3">

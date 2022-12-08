@@ -89,3 +89,60 @@ div h1{
     height: 100px;
     background-color: rgb(235, 231, 231);
 }
+
+.recipeimage{
+  background-color: rgb(235, 231, 231);
+  margin-top: 75px;
+  width: 400px;
+  height: 300px;
+}
+
+.usernamebox{
+  padding-top:25px;
+  color: rgb(152, 70, 230);
+  border-color: rgb(152, 70, 230);
+  width: 400px;
+  height: 150px;
+}
+
+.usernamebox:hover{
+  color: rgb(152, 70, 230);
+  border-color: rgb(152, 70, 230);
+  background-color: #ffffff;
+}
+
+.usercircle{
+  background:  rgb(235, 231, 231);
+  width:75px;
+  height:75px;
+  }
+
+  .usernameinfo{
+    padding-left:25px;
+    padding-top: 25px;
+  }
+
+  .favorite{
+    font-weight: bold;
+    color: rgb(152, 70, 230);
+    border-color: rgb(152, 70, 230);
+    background-color: #ffffff;
+    width: 400px;
+  }
+
+  .favorite:hover{
+    color: #ffffff;
+    border-color: rgb(152, 70, 230);
+    background-color: rgb(152, 70, 230);
+  }
+
+  .sidebox{
+    width: 400px;
+  }
+
+  .promoted{
+    background-color: rgb(202, 201, 201);
+    width: 300px;
+    height: 300px;
+    margin: auto;
+  }

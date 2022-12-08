@@ -49,8 +49,6 @@ export const Categoriessingle = (props) => {
                 <div className="d-flex mt-3 mb-3">
                   {singlecat.found.map((item, index) => {
                     return (
-                      // <div key={index}>{item.title}</div>
-
                       <div key={index} className="col mx-1 px-1">
                         <div
                           className="card card-background"

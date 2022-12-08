@@ -73,22 +73,22 @@ export const MainMenu = () => {
               </Link>
             </li>
             <li>
-              <Link to="/categories/3" className="sd-link">
+              <Link to="/categories/2" className="sd-link">
                 Lunch
               </Link>
             </li>
             <li>
-              <Link to="/categories/2" className="sd-link">
+              <Link to="/categories/3" className="sd-link">
                 Brunch
               </Link>
             </li>
             <li>
-              <Link to="/categories/5" className="sd-link">
+              <Link to="/categories/4" className="sd-link">
                 Dinner
               </Link>
             </li>
             <li>
-              <Link to="/categories/6" className="sd-link">
+              <Link to="/categories/5" className="sd-link">
                 Salads
               </Link>
             </li>
@@ -100,7 +100,7 @@ export const MainMenu = () => {
             <h4>Extra</h4>
             <li>
               <Link to="/register" className="sd-link">
-                blablablah
+                Recommendations
               </Link>
             </li>
           </ul>

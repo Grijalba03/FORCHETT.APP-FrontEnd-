@@ -4,7 +4,6 @@ import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/mainmenu.css";
 import Swal from "sweetalert2";
-import { Login } from "./login";
 
 export const MainMenu = () => {
   const [isOpen, setIsopen] = useState(false);
@@ -18,8 +17,44 @@ export const MainMenu = () => {
     setIsopen(!isOpen);
   };
 
+  const userLogin = async (e) => {
+    // e.preventDefault();
+    console.log("Login module");
+
+    // const data = new FormData(e.target);
+    // let email = data.get("email");
+    // let password = data.get("password");
+    // console.log(email, password);
+
+    // let obj = {
+    //   email: email,
+    //   password: password,
+    // };
+    // console.log("hola4");
+    // let response = await actions.login("/login", obj, "POST");
+    // console.log("36: ", response);
+    // if (response.status == 200) {
+    //   Swal.fire({
+    //     icon: "success",
+    //     title: "Welcome",
+    //     text: `Bienvenido, ${email}`,
+    //     footer: '<a href="">Why do I have this issue?</a>',
+    //   });
+    // } else {
+    //   Swal.fire({
+    //     icon: "error",
+    //     title: "Oops...",
+    //     text: "No pudo iniciar sesión",
+    //     footer: '<a href="">Why do I have this issue?</a>',
+    //   });
+    // }
+    // console.table("hola37", response);
+    // setToken(response.token);
+    // console.log("token", token);
+  };
+
   function loginPopup() {
-    value = Swal.fire({
+    let value = Swal.fire({
       title: "Account Login",
       html: `<input type="text" id="username" class="swal2-input" placeholder="Username">
       <input type="password" id="password" class="swal2-input" placeholder="Password">`,
@@ -35,14 +70,15 @@ export const MainMenu = () => {
         return { username: username, password: password };
       },
     }).then((result) => {
+      console.log("Heyyyyyyyyy");
 
-      Swal.fire(
-        `
-        username: ${result.value.username}
-        Password: ${result.value.password}
-      `.trim()
-      );
-      console.log("username: ", result.value.username);
+      // Swal.fire(
+      //   `
+      //   username: ${result.value.username}
+      //   Password: ${result.value.password}
+      // `.trim()
+      // );
+      // console.log("username: ", result.value.username);
 
       const loginReq = async (e) => {
         e.preventDefault();
@@ -58,6 +94,7 @@ export const MainMenu = () => {
           username: username,
           password: password,
         };
+        console.log("Heyyy2222");
 
         let response = await actions.login("/login", obj, "POST");
         console.log("login RES: ", response);
@@ -78,15 +115,21 @@ export const MainMenu = () => {
             footer: '<a href="">Why do I have this issue?</a>',
           });
         }
-        //console.log(response);
-        //response = await response.json(); //response es un objeto de Javascript
         console.table("hola37", response);
-        //token = response.token;
         setToken(response.token);
         console.log("token", token);
 
         //alert(response.token);
       };
+
+      loginReq.then(
+        function () {
+          console.log("funco");
+        },
+        function (error) {
+          console.log("Error");
+        }
+      );
     });
     return value;
   }

@@ -1,6 +1,6 @@
 .profilebg{
         margin-bottom: 25px;
-        background-color: rgb(243, 188, 243);
+        background-color: rgb(223, 198, 248);
 }
 
 
@@ -29,4 +29,8 @@
 
 .myfavoritestitle{ 
         margin-bottom: 25px;
+}
+
+.returnHomeButton { 
+
 }

@@ -45,7 +45,7 @@ const Layout = () => {
             <Route element={<Categories />} path="/categories" />
             <Route element={<Categoriessingle />} exact path="/categories/:theid" />
             <Route element={<Favorites />} exact path="/favorites" />
-            <Route element={<UserProfile />} path="/userprofile" />
+            <Route element={<UserProfile />} path="/userprofile/:username" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           {/* <Footer /> */}

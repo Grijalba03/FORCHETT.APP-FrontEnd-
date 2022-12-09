@@ -1,29 +1,32 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom"; 
+import PropTypes from "prop-types";
 import { Context } from "../store/appContext";
 import "../../styles/userProfile.css";
 
 
 export const UserProfile = () => {
   const { store, actions } = useContext(Context); 
-  const [recarga, setRecarga] = useState(false );
+  const [username, setUsername] = useState("");
   const history = useNavigate(); 
+  const usernameProfile = useParams();
 
 
   useEffect(() => { 
-    async function fetchData() { 
-      let response = await actions.fetchGenerico("/profile/<string:username>"); 
+    async function fetchUsername() { 
+      let response = await actions.fetchGenerico("/profile/"+usernameProfile.username); 
       if (response.status == 200) {
     
         response = await response.json();
         store.UserProfile = response; 
+        console.log(response)
       } else { 
         response = await response.json();
         }
   }
 
-    fetchData(); 
-  }, [recarga]);
+    fetchUsername(); 
+  }, []);
 
   return (
     <>
@@ -64,119 +67,24 @@ export const UserProfile = () => {
         </div>
         <div className="favoritecards mx-auto">
           <h3 className="myfavoritestitle text-center">
+              My Recipes 
             
-            MY FAVORITES
           </h3>
         </div>
-        <div className="row row-cols-1 row-cols-md-3 g-4 ">
-          <div className="col">
-            <div className="card-1 h-300">
-              <img
-                src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title text-center">Breakfast</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card-2 h-300">
-              <img
-                src="https://starwars-visualguide.com/assets/img/characters/2.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title text-center">Lunch</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card-3 h-300">
-              <img
-                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title text-center">Dinner</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card-4 h-300">
-              <img
-                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title text-center">Brunch</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card-5 h-300">
-              <img
-                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title text-center">Kids</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card-6 h-300">
-              <img
-                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title text-center">Salads</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card-7 h-300">
-              <img
-                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title text-center">Drinks</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card-8 h-300">
-              <img
-                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title text-center">Desserts</h5>
-              </div>
-            </div>
-          </div>
-          <div className="col">
-            <div className="card-9 h-300">
-              <img
-                src="https://starwars-visualguide.com/assets/img/characters/14.jpg"
-                className="card-img-top"
-                alt="..."
-              />
-              <div className="card-body">
-                <h5 className="card-title text-center">Snacks</h5>
-              </div>
-            </div>
-          </div>
+        <div className="recipesContainer">
+          
+
+        </div>
+        <div className="returnHomeButton text-center"> 
+          <Link to="/">
+              <span
+                className="btn btn-primary btn-lg align-items-center"
+                href="#"
+                role="button"
+              >
+                Return to Home
+              </span>
+          </Link> 
         </div>
       </div>
     </>

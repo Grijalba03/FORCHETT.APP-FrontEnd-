@@ -34,6 +34,9 @@ export const MainMenu = () => {
         <i className="fa-solid fa-right-to-bracket iconmod"></i>
       </div>
       <div className="text-center">
+        <Link className="myFavorites" to={`/MyFavorites/`}>
+            <h1>Brunch</h1>
+          </Link>
         <i className="fa-solid fa-heart iconmod"></i>
       </div>
 

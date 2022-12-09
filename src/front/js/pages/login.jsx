@@ -7,9 +7,9 @@ export const Login = () => {
   const { store, actions } = useContext(Context);
   const history = useNavigate();
   const [token, setToken] = useState("");
-  const registrar = async (e) => {
+  const userLogin = async (e) => {
     e.preventDefault();
-    console.log("Entramos en la función de registrar");
+    console.log("Entramos en la función de userLogin");
 
     const data = new FormData(e.target);
     // let email = data.get("email");
@@ -34,14 +34,14 @@ export const Login = () => {
       Swal.fire({
         icon: "success",
         title: "Welcome",
-        text: `Bienvenido, ${username}`,
-        footer: '<Link to="/user/account">Usser account</Link>',
+        text: `Hello, ${username}`,
+        footer: `FORCHETT.APP Member's Area`,
       });
     } else {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "No pudo iniciar sesión",
+        text: "Error, failed to login.",
         footer: '<a href="">Why do I have this issue?</a>',
       });
     }
@@ -71,7 +71,8 @@ export const Login = () => {
       <div className="container">
         <form
           onSubmit={(evento) => {
-            registrar(evento);
+            userLogin(evento);
+            history("/");
           }}
         >
           <div className="row d-flex">

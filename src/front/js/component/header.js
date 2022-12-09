@@ -3,6 +3,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import logourl from "../../img/forchettapp.png";
 import "../../styles/header.css";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   // const { store, actions } = useContext(Context);
@@ -11,7 +12,9 @@ export const Header = () => {
     <div className="container-fluid">
       <div className="row p-3 bg-white">
         <div className="col-4">
+        <Link to="/" className="sd-link">
           <img src={logourl} />
+        </Link>
         </div>
         <div className="col-4">
           <div className="row">

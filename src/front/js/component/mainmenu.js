@@ -25,10 +25,14 @@ export const MainMenu = () => {
         <p>Menu</p>
       </div>
       <div className="text-center">
+        <Link to="/login" className="sd-link">
         <i className="fa-regular fa-circle-user iconmod"></i>
+        </Link>
       </div>
       <div className="text-center">
-        <i className="fa-solid fa-user-plus iconmod"></i>
+      <Link to="/signup" className="sd-link">
+      <i className="fa-solid fa-user-plus iconmod"></i>
+        </Link>
       </div>
       <div className="text-center">
         <i className="fa-solid fa-right-to-bracket iconmod"></i>

@@ -27,20 +27,21 @@ export const UserAccount = () => {
     let obj = {
       "current-password": currentPassword,
       "new-password": newPassword,
-      "confirm-password": confirmPassword,
+      "confirm-password": confirmPassword
     };
 
     console.log("hola4");
     // let response = await actions.login(
-    let response = await actions.fetchProtegido2(
+    let response = await actions.fetchProtegido(
       "/account/password/" + username,
       obj,
-      "POST"
+      "PUT"
     );
+    console.log("resss: ", response);
     console.log("36-response: ", response);
     if (response.status == 200) {
-      //let respuestaJson = await response.json();
-      //console.log("41: ", respuestaJson);
+      let respuestaJson = await response.json();
+      console.log("41: ", respuestaJson);
       Swal.fire({
         icon: "success",
         title: "Yes!",
@@ -57,7 +58,7 @@ export const UserAccount = () => {
     }
     //console.log(response);
     //response = await response.json(); //response es un objeto de Javascript
-    console.table("hola37", response);
+    //console.table("hola37", response);
     //token = response.token;
     setToken(response.token);
     console.log("token", token);

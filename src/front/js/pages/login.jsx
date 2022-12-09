@@ -69,6 +69,11 @@ export const Login = () => {
   return (
     <>
       <div className="container">
+        <div className="row">
+          <div className="col-12 pt-5 pb-5 text-center">
+            <h2>Login</h2>
+          </div>
+        </div>
         <form
           onSubmit={(evento) => {
             userLogin(evento);

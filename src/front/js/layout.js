@@ -21,6 +21,7 @@ import { Footer } from "./component/footer";
 import { MainMenu } from "./component/mainmenu";
 import { RecipesList } from "./component/recipes";
 import { Recipesingle } from "./pages/recipeSingle.jsx";
+import { UserAccount } from "./pages/userAccount.jsx";
 
 //create your first component
 const Layout = () => {
@@ -38,7 +39,7 @@ const Layout = () => {
             <Route element={<Home />} exact path="/" />
             <Route element={<Demo />} exact path="/demo" />
             <Route element={<Single />} exact path="/single/:theid" />
-            <Route element={<SignUp />} exact path="/register" />
+            <Route element={<SignUp />} exact path="/signup" />
             <Route element={<Login />} exact path="/login" />
             <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />          
             <Route element={<Recipesingle />} exact path="/recipes/:theid" />
@@ -46,6 +47,7 @@ const Layout = () => {
             <Route element={<Categoriessingle />} exact path="/categories/:theid" />
             <Route element={<Favorites />} exact path="/favorites" />
             <Route element={<UserProfile />} path="/userprofile" />
+            <Route element={<UserAccount />} path="/user/account" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           {/* <Footer /> */}

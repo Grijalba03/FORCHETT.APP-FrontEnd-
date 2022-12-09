@@ -1,0 +1,16 @@
+.avatarHead {
+  background: rgba(98, 0, 232, 0.08);
+  border-radius: 15px;
+  height: 180px;
+}
+
+.avatarMod {
+  width: 150px;
+  padding-top: 18px;
+  margin-left: 10px;
+}
+
+.username {
+  font-size: 22px;
+  margin-left: 13px;
+}

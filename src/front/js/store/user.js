@@ -27,7 +27,8 @@ export function userActions(getStore, getActions, setStore) {
       localStorage.setItem("token", responseJson.token);
       sessionStorage.setItem("token", responseJson.token);
       setStore({ ...store, token: responseJson.token });
-      setStore({ ...store, email: data.email });
+      // setStore({ ...store, email: data.email });
+      setStore({ ...store, username: data.username });
       return response;
     },
   };

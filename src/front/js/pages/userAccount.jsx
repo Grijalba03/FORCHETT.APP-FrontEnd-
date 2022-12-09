@@ -45,7 +45,7 @@ export const UserAccount = () => {
             }}
           >
             <div className="row">
-              <div className="col">
+              <div className="col-12">
                 <div className="row">
                   <h1>Email</h1>
                 </div>
@@ -58,7 +58,7 @@ export const UserAccount = () => {
                   />
                 </div>
               </div>
-              <div className="col">
+              <div className="col-12">
                 <div className="row">
                   <h1>Current Password</h1>
                 </div>
@@ -71,7 +71,7 @@ export const UserAccount = () => {
                   />
                 </div>
               </div>
-              <div className="col">
+              <div className="col-12">
                 <div className="row">
                   <h1>New Password</h1>
                 </div>
@@ -91,9 +91,112 @@ export const UserAccount = () => {
               </button>
             </div>
           </form>
+
         </div>
         <div className="col-6">
-          <p>Profile</p>
+          <h2>Profile Information</h2>
+
+
+          <form
+            onSubmit={(data2) => {
+              update(data2);
+            }}
+          >
+            <div className="row">
+              <div className="col-12">
+                <div className="row">
+                  <h1>Dietary Preference</h1>
+                </div>
+                <div className="row">
+                  <input
+                    name="text"
+                    placeholder="Dietary Preference"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="row">
+                  <h1>User title</h1>
+                </div>
+                <div className="row">
+                  <input
+                    name="text"
+                    placeholder="User title"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="row">
+                  <h1>Description</h1>
+                </div>
+                <div className="row">
+                  <input
+                    name="text"
+                    placeholder="Description"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="row">
+                  <h1>Meta</h1>
+                </div>
+                <div className="row">
+                  <input
+                    name="text"
+                    placeholder="Meta"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="row">
+                  <h1>Instagram</h1>
+                </div>
+                <div className="row">
+                  <input
+                    name="text"
+                    placeholder="Instagram"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="row">
+                  <h1>Twitter</h1>
+                </div>
+                <div className="row">
+                  <input
+                    name="text"
+                    placeholder="Twitter"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="row">
+                  <h1>Youtube</h1>
+                </div>
+                <div className="row">
+                  <input
+                    name="text"
+                    placeholder="Youtube"
+                    type="text"
+                  />
+                </div>
+              </div>
+
+
+            </div>
+            <div className="row d-flex py-2">
+              <button className="btn btn-primary" type="submit">
+                Update Account
+              </button>
+            </div>
+          </form>
+
         </div>
       </div>
     </div>

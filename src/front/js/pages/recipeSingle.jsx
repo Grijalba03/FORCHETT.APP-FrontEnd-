@@ -35,7 +35,7 @@ export const Recipesingle = (props) => {
               {/* Título 1*/}
               <div>
                 <Link to={`/categories/${single.category}`}>
-                  <p class="btn btn-outline-info categoryname">
+                  <p className="btn btn-outline-info categoryname">
                     {single.category_name}
                   </p>
                 </Link>
@@ -94,42 +94,22 @@ export const Recipesingle = (props) => {
                   <div className="related2 rounded my-4 last"></div>
                 </div>
               </div>
-              <div className="shadow p-3 mb-5 bg-white rounded my-5">
+              <div className="shadow p-3 mb-5 bg-white rounded my-3">
                 <h1>REVIEW {single.title}</h1>
-                <div className="write rounded my-5">
-                  <p className="mx-2">Write a review</p>
+                <div><span className="star">★</span>
+                     <span className="star">★</span>
+                     <span className="star">★</span>
+                     <span className="star">★</span>
+                     <span className="star">★</span>
                 </div>
-                <div
-                  className="review-widget_net my-5"
-                  data-uuid="d7609226-72c8-40ec-b8ff-60686f2cf8e3"
-                  data-template="2"
-                  data-filter=""
-                  data-lang="en"
-                  data-theme="light"
-                >
-                  <center>
-                    <a
-                      href="https://www.review-widget.net/"
-                      target="_blank"
-                      rel="noopener"
-                    >
-                      <img
-                        src="https://grwapi.net/assets/spinner/spin.svg"
-                        title="Google Review Widget"
-                        alt="Google Review Widget"
-                      />
-                    </a>
-                  </center>
+                <div className="write rounded my-3">
+                  <p className="mx-2">Write your experience</p>
                 </div>
-                <script
-                  async
-                  type="text/javascript"
-                  src="https://grwapi.net/widget.min.js"
-                ></script>
+                <div className="row align-items-center"><button type="button" className="btn btn-outline-info categoryname submit my-2">Submit</button></div>
                 <div>
                   <p>
                     By submitting this review, you agree to accept our Privacy
-                    Policy and our Terms & Conditions
+                    Policy and our Terms & Conditions.
                   </p>
                 </div>
               </div>
@@ -176,21 +156,20 @@ export const Recipesingle = (props) => {
               </div>
             </div>
           </div>
+          
         ) : (
           <h1 className="text-center">No recipes available</h1>
+          
+
         )}
 
-        <div>
-          <Link to="/">
-            <span
-              className="btn btn-primary btn-lg align-items-center"
-              href="#"
-              role="button"
-            >
-              Return to Home
-            </span>
-          </Link>
+
+        <div className="row justify-content-center">            
+            <div className="col"></div>      
+            <div className="col mx-auto align-items-middle"><Link to="/"> <button className="btn btn-outline-info categoryname home my-5" role="button">Return to Home</button></Link></div>
+            <div className="col"></div>         
         </div>
+        
       </div>
     </>
   );

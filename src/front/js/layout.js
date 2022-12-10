@@ -50,7 +50,7 @@ const Layout = () => {
               path="/categories/:theid"
             />
             <Route element={<Favorites />} exact path="/favorites" />
-            <Route element={<UserProfile />} path="/userprofile/:username" />
+            <Route element={<UserProfile />} path="/user/profile/:username" />
             <Route element={<UserAccount />} path="/user/account" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>

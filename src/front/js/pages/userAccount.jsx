@@ -24,11 +24,16 @@ export const UserAccount = () => {
 
     console.log(currentPassword, newPassword, confirmPassword);
 
-    let obj = {
-      "current-password": currentPassword,
-      "new-password": newPassword,
-      "confirm-password": confirmPassword
-    };
+    // let obj = {
+    //   current-password : currentPassword,
+    //   new-password : newPassword,
+    //   confirm-password: confirmPassword
+    // };
+
+    let obj = {};
+    obj["current-password"] = currentPassword;
+    obj["new-password"] = newPassword;
+    obj["confirm-password"] = confirmPassword;
 
     console.log("hola4");
     // let response = await actions.login(
@@ -120,7 +125,7 @@ export const UserAccount = () => {
                 </div>
                 <div className="row">
                   <input
-                    name="password1"
+                    name="new-password"
                     placeholder="Type your New Password"
                     type="string"
                     required
@@ -133,7 +138,7 @@ export const UserAccount = () => {
                 </div>
                 <div className="row">
                   <input
-                    name="password2"
+                    name="confirm-password"
                     placeholder="Retype your New Password"
                     type="string"
                     required

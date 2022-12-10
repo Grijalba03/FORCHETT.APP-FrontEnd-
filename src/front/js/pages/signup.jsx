@@ -8,15 +8,13 @@ export const SignUp = () => {
   const history = useNavigate();
 
   const registrar = async (e) => {
-
-    
     e.preventDefault();
     console.log("Entramos en la función de registrar");
 
     const data = new FormData(e.target);
     let email = data.get("email");
     let password = data.get("password");
-    let username = data.get("username")
+    let username = data.get("username");
 
     console.log(email, password);
 
@@ -26,9 +24,8 @@ export const SignUp = () => {
       password: password,
     };
 
-
     let response = await actions.fetchGenerico("/signup", obj, "POST");
-    
+
     /* if (response.ok) {
       
     } else {
@@ -55,12 +52,16 @@ export const SignUp = () => {
         footer: '<a href="">Why do I have this issue?</a>',
       });
     }
-
   };
 
   return (
     <>
       <div className="container">
+        <div className="row">
+          <div className="col-12 pt-5 pb-5 text-center">
+            <h2>Signup</h2>
+          </div>
+        </div>
         <form
           onSubmit={(evento) => {
             registrar(evento);

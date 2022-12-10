@@ -146,3 +146,29 @@ div h1{
     height: 300px;
     margin: auto;
   }
+
+  .submit{
+    width: 100px;
+    margin: auto;
+  }
+
+  .home{
+    width: 150px;
+    margin: auto;
+  }
+
+  .star{
+    font-size:30px;
+  }
+
+  .star:visited {
+    color: rgb(152, 70, 230);
+  }
+  .star:hover {
+    color: rgb(152, 70, 230);
+  }
+  .star:active {
+    color: rgb(74, 15, 236);
+  }
+
+

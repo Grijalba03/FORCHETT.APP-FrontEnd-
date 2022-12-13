@@ -96,16 +96,24 @@ export const Recipesingle = (props) => {
               </div>
               <div className="shadow p-3 mb-5 bg-white rounded my-3">
                 <h1>REVIEW {single.title}</h1>
-                <div><span className="star">★</span>
-                     <span className="star">★</span>
-                     <span className="star">★</span>
-                     <span className="star">★</span>
-                     <span className="star">★</span>
+                <div>
+                  <span className="star">★</span>
+                  <span className="star">★</span>
+                  <span className="star">★</span>
+                  <span className="star">★</span>
+                  <span className="star">★</span>
                 </div>
                 <div className="write rounded my-3">
                   <p className="mx-2">Write your experience</p>
                 </div>
-                <div className="row align-items-center"><button type="button" className="btn btn-outline-info categoryname submit my-2">Submit</button></div>
+                <div className="row align-items-center">
+                  <button
+                    type="button"
+                    className="btn btn-outline-info categoryname submit my-2"
+                  >
+                    Submit
+                  </button>
+                </div>
                 <div>
                   <p>
                     By submitting this review, you agree to accept our Privacy
@@ -131,7 +139,12 @@ export const Recipesingle = (props) => {
 
               <div className="d-flex flex-column">
                 {/* Favorites box*/}
-                <div className="btn btn-outline-info my-2 favorite">
+                <div
+                  className="btn btn-outline-info my-2 favorite"
+                  onClick={(e) => {
+                    actions.addFav(item.id);
+                  }}
+                >
                   FAVORITE
                 </div>
                 {/* Social media share box*/}
@@ -156,20 +169,25 @@ export const Recipesingle = (props) => {
               </div>
             </div>
           </div>
-          
         ) : (
           <h1 className="text-center">No recipes available</h1>
-          
-
         )}
 
-
-        <div className="row justify-content-center">            
-            <div className="col"></div>      
-            <div className="col mx-auto align-items-middle"><Link to="/"> <button className="btn btn-outline-info categoryname home my-5" role="button">Return to Home</button></Link></div>
-            <div className="col"></div>         
+        <div className="row justify-content-center">
+          <div className="col"></div>
+          <div className="col mx-auto align-items-middle">
+            <Link to="/">
+              {" "}
+              <button
+                className="btn btn-outline-info categoryname home my-5"
+                role="button"
+              >
+                Return to Home
+              </button>
+            </Link>
+          </div>
+          <div className="col"></div>
         </div>
-        
       </div>
     </>
   );

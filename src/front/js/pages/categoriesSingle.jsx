@@ -85,7 +85,7 @@ export const Categoriessingle = (props) => {
 
                             <button
                               onClick={(e) => {
-                                actions.addfavorites(item.id);
+                                actions.addFav(item.id);
                               }}
                               className="heart align-items-end"
                             >

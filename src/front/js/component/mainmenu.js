@@ -25,7 +25,7 @@ export const MainMenu = () => {
         </button>
         <p>Menu</p>
       </div>
-      {store.username ? (
+      {store.username ? ( // User Account
         <div className="text-center">
           <Link to="/user/account" className="sd-link">
             <i className="fa-regular fa-circle-user iconmod"></i>
@@ -34,35 +34,37 @@ export const MainMenu = () => {
       ) : (
         <></>
       )}
-      {store.username ? (
-          <></>
-        ) : (
-          <div className="text-center">
-            <Link to="/login" className="sd-link">
-              <i className="fa-solid fa-right-to-bracket iconmod"></i>
-            </Link>
-          </div>
+      {store.username ? ( //Login
+        <></>
+      ) : (
+        <div className="text-center">
+          <Link to="/login" className="sd-link">
+            <i className="fa-solid fa-right-to-bracket iconmod"></i>
+          </Link>
+        </div>
       )}
-      {store.username ? (
-          <></>
-        ) : (
+      {store.username ? ( //Signup
+        <></>
+      ) : (
         <div className="text-center">
           <Link to="/signup" className="sd-link">
             <i className="fa-solid fa-user-plus iconmod"></i>
           </Link>
         </div>
       )}
-      {store.username ? (
-      <div className="text-center">
-        <i className="fa-solid fa-right-to-bracket iconmod"></i>
-      </div>
-            ) : (
-              <></>
-            )}
-      {store.username ? (
-      <div className="text-center">
-        <i className="fa-solid fa-heart iconmod"></i>
-      </div>
+      {store.username ? ( // Logout
+        <div className="text-center">
+          <i className="fa-solid fa-right-to-bracket iconmod"></i>
+        </div>
+      ) : (
+        <></>
+      )}
+      {store.username ? ( // Favorites
+        <div className="text-center">
+          <Link to="/user/favorites/:theid" className="sd-link">
+            <i className="fa-solid fa-heart iconmod"></i>
+          </Link>
+        </div>
       ) : (
         <></>
       )}

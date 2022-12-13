@@ -3,10 +3,51 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/favorites.css";
 
+
+
 export const Favorites = () => {
+  const { store, actions } = useContext(Context); //nos traemos los favorites desde store destructurado
+
+  useEffect(() => {
+    async function fetchData() {
+      let response = await actions.fetchGenerico("/user/favorites/"+store.user_id);
+      if (response.status == 200) {
+        response = await response.json();
+        store.favorites = response;
+        console.log(response);
+      } else {
+        response = await response.json();
+        console.log(response);
+      }
+    }
+  
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className="container">
+        {store.favorites && store.favorites.lenght > 0 ? (
+          store.favorites.map((item, index) => {
+            return (
+              <li className="ms-1 me-1 text-primary" key={index}>
+                {item.title}
+                <i
+                  onClick={() => {
+                    actions.removeFav(index);
+                  }}
+                  class="fa fa-trash"
+                  aria-hidden="true"
+                ></i>
+              </li>
+            );
+          })
+        ) : (
+          <>
+            <p>There are no favorites to display</p>
+          </>
+        )}
+
         <div className="profilebg mx-auto">
           <img
             src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
@@ -57,6 +98,23 @@ export const Favorites = () => {
             </div>
           </div>
         </div>
+
+        <div className="row justify-content-center">
+          <div className="col"></div>
+          <div className="col mx-auto align-items-middle">
+            <Link to="/">
+              {" "}
+              <button
+                className="btn btn-outline-info categoryname home my-5"
+                role="button"
+              >
+                Return to Home
+              </button>
+            </Link>
+          </div>
+          <div className="col"></div>
+        </div>
+
       </div>
     </>
   );

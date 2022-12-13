@@ -70,12 +70,7 @@ export const RecipesList = (props) => {
                           </Link>
                         </div>
                         <div>
-                          <button
-                            onClick={(e) => {
-                              actions.addfavorites(item.title);
-                            }}
-                            className="heart"
-                          >
+                          <button onClick={(e) => {actions.addFav(item.id); }} className="heart">
                             <i className="far fa-heart"></i>
                           </button>
                         </div>

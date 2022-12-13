@@ -41,11 +41,19 @@ const Layout = () => {
             <Route element={<Single />} exact path="/single/:theid" />
             <Route element={<SignUp />} exact path="/signup" />
             <Route element={<Login />} exact path="/login" />
-            <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />          
+            <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />
             <Route element={<Recipesingle />} exact path="/recipes/:theid" />
             <Route element={<Categories />} path="/categories" />
-            <Route element={<Categoriessingle />} exact path="/categories/:theid" />
-            <Route element={<Favorites />} exact path="/favorites" />
+            <Route
+              element={<Categoriessingle />}
+              exact
+              path="/categories/:theid"
+            />
+            <Route
+              element={<Favorites />}
+              exact
+              path="/user/favorites/:theid"
+            />
             <Route element={<UserProfile />} path="/userprofile" />
             <Route element={<UserAccount />} path="/user/account" />
             <Route element={<h1>Not found!</h1>} />

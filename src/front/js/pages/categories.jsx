@@ -100,7 +100,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -154,7 +154,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -208,7 +208,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -262,7 +262,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -316,7 +316,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -370,7 +370,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -424,7 +424,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -478,7 +478,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -532,7 +532,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -586,7 +586,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >

@@ -6,6 +6,7 @@ import "../../styles/mainmenu.css";
 
 export const MainMenu = () => {
   const [isOpen, setIsopen] = useState(false);
+  const { store, actions } = useContext(Context);
 
   const menu = () => {
     // isOpen === true ? setIsopen(false) : setIsopen(true);
@@ -24,19 +25,47 @@ export const MainMenu = () => {
         </button>
         <p>Menu</p>
       </div>
-      <div className="text-center">
-        <i className="fa-regular fa-circle-user iconmod"></i>
-      </div>
-      <div className="text-center">
-        <i className="fa-solid fa-user-plus iconmod"></i>
-      </div>
+      {store.username ? (
+        <div className="text-center">
+          <Link to="/user/account" className="sd-link">
+            <i className="fa-regular fa-circle-user iconmod"></i>
+          </Link>
+        </div>
+      ) : (
+        <></>
+      )}
+      {store.username ? (
+          <></>
+        ) : (
+          <div className="text-center">
+            <Link to="/login" className="sd-link">
+              <i className="fa-solid fa-right-to-bracket iconmod"></i>
+            </Link>
+          </div>
+      )}
+      {store.username ? (
+          <></>
+        ) : (
+        <div className="text-center">
+          <Link to="/signup" className="sd-link">
+            <i className="fa-solid fa-user-plus iconmod"></i>
+          </Link>
+        </div>
+      )}
+      {store.username ? (
       <div className="text-center">
         <i className="fa-solid fa-right-to-bracket iconmod"></i>
       </div>
+            ) : (
+              <></>
+            )}
+      {store.username ? (
       <div className="text-center">
         <i className="fa-solid fa-heart iconmod"></i>
       </div>
-
+      ) : (
+        <></>
+      )}
       <div className={`sidebar ${isOpen == true ? "active" : ""}`}>
         <div className="sd-header">
           <h3 className="mb-0">Main Menu</h3>
@@ -47,18 +76,13 @@ export const MainMenu = () => {
         <div className="sd-body">
           <ul>
             <li>
-              <Link to="/register" className="sd-link">
+              <Link to="/signup" className="sd-link">
                 Register
               </Link>
             </li>
             <li>
-              <Link to="/register" className="sd-link">
+              <Link to="/login" className="sd-link">
                 Login
-              </Link>
-            </li>
-            <li>
-              <Link to="/register" className="sd-link">
-                Explore
               </Link>
             </li>
             <li>
@@ -73,22 +97,22 @@ export const MainMenu = () => {
               </Link>
             </li>
             <li>
-              <Link to="/categories/3" className="sd-link">
+              <Link to="/categories/2" className="sd-link">
                 Lunch
               </Link>
             </li>
             <li>
-              <Link to="/categories/2" className="sd-link">
+              <Link to="/categories/3" className="sd-link">
                 Brunch
               </Link>
             </li>
             <li>
-              <Link to="/categories/5" className="sd-link">
+              <Link to="/categories/4" className="sd-link">
                 Dinner
               </Link>
             </li>
             <li>
-              <Link to="/categories/6" className="sd-link">
+              <Link to="/categories/5" className="sd-link">
                 Salads
               </Link>
             </li>
@@ -100,7 +124,7 @@ export const MainMenu = () => {
             <h4>Extra</h4>
             <li>
               <Link to="/register" className="sd-link">
-                blablablah
+                Recommendations
               </Link>
             </li>
           </ul>

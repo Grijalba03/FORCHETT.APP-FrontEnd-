@@ -1,9 +1,11 @@
 import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 export const SignUp = () => {
   const { store, actions } = useContext(Context);
+  const history = useNavigate();
 
   const registrar = async (e) => {
     e.preventDefault();
@@ -12,41 +14,58 @@ export const SignUp = () => {
     const data = new FormData(e.target);
     let email = data.get("email");
     let password = data.get("password");
+    let username = data.get("username");
 
     console.log(email, password);
 
     let obj = {
       email: email,
+      username: username,
       password: password,
     };
 
-    /*  let BACKEND_URL = process.env.BACKEND_URL;
-    console.log(BACKEND_URL);
+    let response = await actions.fetchGenerico("/signup", obj, "POST");
 
-    let response = await fetch(`${BACKEND_URL}/signup`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(obj),
-    });
- */
-
-    let response = await actions.fetchGenerico("/signup", obj, "POST"); //response es una promesa
     /* if (response.ok) {
       
     } else {
       
     } */
-    response = await response.json(); //response es un objeto de Javascript
-    console.log(response);
-    alert(response.mensaje);
+    // response = await response.json(); //response es un objeto de Javascript
+    // console.log(response);
+    // alert(response.mensaje);
+
+    if (response.status == 201) {
+      //let respuestaJson = await response.json();
+      //console.log("41: ", respuestaJson);
+      Swal.fire({
+        icon: "success",
+        title: "Success!!",
+        text: `Welcome ${username}, Your registration has been successful, you can now log in.`,
+        footer: '<Link to="/user/account">Usser account</Link>',
+      });
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Error on signup",
+        footer: '<a href="">Why do I have this issue?</a>',
+      });
+    }
   };
 
   return (
     <>
       <div className="container">
+        <div className="row">
+          <div className="col-12 pt-5 pb-5 text-center">
+            <h2>Signup</h2>
+          </div>
+        </div>
         <form
           onSubmit={(evento) => {
             registrar(evento);
+            history("/login");
           }}
         >
           <div className="row d-flex">
@@ -57,8 +76,21 @@ export const SignUp = () => {
               <div className="row">
                 <input
                   name="email"
-                  placeholder="agregue su email"
+                  placeholder="Type your email"
                   type="email"
+                  required
+                />
+              </div>
+            </div>
+            <div className="col mx-2">
+              <div className="row">
+                <h1>Username</h1>
+              </div>
+              <div className="row">
+                <input
+                  name="username"
+                  placeholder="Type your Username"
+                  type="text"
                   required
                 />
               </div>

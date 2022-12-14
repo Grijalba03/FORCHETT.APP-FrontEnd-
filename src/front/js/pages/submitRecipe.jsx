@@ -7,6 +7,7 @@ export const SubmitRecipe = () => {
   const { store, actions } = useContext(Context);
   const history = useNavigate();
   const [token, setToken] = useState("");
+
   const userSubmit = async (e) => {
     e.preventDefault();
     console.log("user Submit recipe func");
@@ -15,35 +16,45 @@ export const SubmitRecipe = () => {
     let title = data.get("title");
     let category = data.get("category");
     let prep = data.get("prep");
-    let preparation = data.get("password");
+    let preparation = data.get("preparation");
     let ingredients = data.get("ingredients");
     let description = data.get("description");
     let image = data.get("image");
     let bake = data.get("bake");
     let servings = data.get("servings");
 
+    console.log("fields: ", title + " " + category);
 
-    // console.log(email, password);
-    // console.log(username, password);
+    // let obj = {};
+    // obj["title"] = title;
+    // obj["category"] = category;
+    // obj["prep"] = prep;
+    // obj["preparation"] = preparation;
+    // obj["ingredients"] = ingredients;
+    // obj["description"] = description;
+    // obj["image"] = image;
+    // obj["bake"] = bake;
+    // obj["servings"] = servings;
+    // console.log("obj: ", obj);
 
     let obj = {
-        title: title,
-        category: category,
-        prep: prep,
-        preparation: preparation,
-        ingredients: ingredients,
-        description: description,
-        image: image,
-        bake: bake,
-        servings: servings
+      title: title,
+      category: category,
+      prep: prep,
+      preparation: preparation,
+      ingredients: ingredients,
+      description: description,
+      image: image,
+      bake: bake,
+      servings: servings,
     };
+    console.log("obj: ", obj);
 
-    console.log("hola4");
     let response = await actions.fetchProtegido("/submit", obj, "POST");
-    console.log("Res: ", response);
+    console.log("Response: ", response);
     if (response.status == 200) {
-      //let respuestaJson = await response.json();
-      //console.log("41: ", respuestaJson);
+      // let respuestaJson = await response.json();
+      // console.log("41: ", respuestaJson);
       Swal.fire({
         icon: "success",
         title: "Thank you!",
@@ -76,94 +87,106 @@ export const SubmitRecipe = () => {
           </div>
         </div>
         <form
-          onSubmit={(recipe) => {
-            userSubmit(recipe);
+          onSubmit={(data) => {
+            userSubmit(data);
             // history("/");
           }}
         >
           <div className="row">
             <div className="col-12">
               <h1>Title</h1>
-              <input
-                name="title"
-                placeholder="Write your Recipe Title"
-                type="text"
-                required
-              />
             </div>
-            <div className="row">
-              <div className="col-12">
-                <h1>Category</h1>
-              </div>
-              <input
-                name="category"
-                placeholder="Select category"
-                type="text"
-                required
-              />
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <h1>Preparation Time</h1>
-              </div>
-              <input name="prep" placeholder="how many " type="text" required />
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <h1>Preparation</h1>
-              </div>
-              <input
-                name="preparation"
-                placeholder="write how to do the recipe"
-                type="text"
-                required
-              />
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <h1>Description</h1>
-              </div>
-              <input
-                name="description"
-                placeholder="add a description to your recipe"
-                type="text"
-                required
-              />
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <h1>Image</h1>
-              </div>
-              <input
-                name="image"
-                placeholder="add image"
-                type="text"
-                required
-              />
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <h1>Bake Time </h1>
-              </div>
-              <input
-                name="bake"
-                placeholder="how many time to bake"
-                type="text"
-                required
-              />
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <h1>Servings</h1>
-              </div>
-              <input
-                name="servings"
-                placeholder="how many people"
-                type="text"
-                required
-              />
-            </div>
+            <input
+              name="title"
+              placeholder="Write your Recipe Title"
+              type="text"
+              required
+            />
           </div>
+          <div className="row">
+            <div className="col-12">
+              <h1>Category</h1>
+            </div>
+            {/* <select name="selectList" id="selectList">
+              <option value="1">Drinks</option>
+              <option value="2">Dronks</option>
+              <option value="3">Drunks</option>
+            </select> */}
+            <input
+              name="category"
+              placeholder="Select category"
+              type="text"
+              required
+            />
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <h1>Preparation Time</h1>
+            </div>
+            <input name="prep" placeholder="how many " type="text" required />
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <h1>Preparation</h1>
+            </div>
+            <input
+              name="preparation"
+              placeholder="write how to do the recipe"
+              type="text"
+              required
+            />
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <h1>ingredients</h1>
+            </div>
+            <input
+              name="ingredients"
+              placeholder="write ingredients list"
+              type="text"
+              required
+            />
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <h1>Description</h1>
+            </div>
+            <input
+              name="description"
+              placeholder="add a description to your recipe"
+              type="text"
+              required
+            />
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <h1>Image</h1>
+            </div>
+            <input name="image" placeholder="add image" type="text" required />
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <h1>Bake Time </h1>
+            </div>
+            <input
+              name="bake"
+              placeholder="how many time to bake"
+              type="text"
+              required
+            />
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <h1>Servings</h1>
+            </div>
+            <input
+              name="servings"
+              placeholder="how many people"
+              type="text"
+              required
+            />
+          </div>
+
           <div className="row d-flex py-2">
             <button className="btn btn-primary" type="submit">
               Submit Recipe

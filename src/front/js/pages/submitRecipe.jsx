@@ -35,7 +35,7 @@ export const SubmitRecipe = () => {
         description: description,
         image: image,
         bake: bake,
-        servings: servings,
+        servings: servings
     };
 
     console.log("hola4");
@@ -58,14 +58,13 @@ export const SubmitRecipe = () => {
         footer: '<a href="">Why do I have this issue?</a>',
       });
     }
-    //console.log(response);
-    //response = await response.json(); //response es un objeto de Javascript
-    console.table("hola37", response);
-    //token = response.token;
-    setToken(response.token);
-    console.log("token", token);
-
-    //alert(response.token);
+    // console.log(response);
+    // response = await response.json(); //response es un objeto de Javascript
+    // console.table("hola37", response);
+    // token = response.token;
+    // setToken(response.token);
+    // console.log("token", token);
+    // alert(response.token);
   };
 
   return (
@@ -171,41 +170,6 @@ export const SubmitRecipe = () => {
             </button>
           </div>
         </form>
-        <Link to="/">Ir a Home</Link>
-        {store.username ? (
-          <button type="button" onClick={() => prueba()}>
-            Endpoint protegida
-          </button>
-        ) : (
-          <h1>No ha iniciado sesión</h1>
-        )}
-        {store.username ? (
-          <button
-            type="button"
-            onClick={() => {
-              actions.logout();
-              history("/");
-            }}
-          >
-            Cerrar Sesión
-          </button>
-        ) : (
-          <></>
-        )}
-
-        {store.username ? (
-          <button
-            type="button"
-            onClick={() => {
-              // actions.logout();
-              history("/user/account");
-            }}
-          >
-            User Account
-          </button>
-        ) : (
-          <></>
-        )}
       </div>
     </>
   );

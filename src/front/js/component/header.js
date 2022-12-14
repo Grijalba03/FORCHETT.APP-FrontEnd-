@@ -39,9 +39,11 @@ export const Header = () => {
           </div>
         </div>
         <div className="col-4">
-          <button type="button" className="btn btn-primary btnmod">
-            <i className="fa-solid fa-plus"></i>
-          </button>
+          <Link to="/submit">
+            <button type="button" className="btn btn-primary btnmod">
+              <i className="fa-solid fa-plus"></i>
+            </button>
+          </Link>
         </div>
       </div>
     </div>

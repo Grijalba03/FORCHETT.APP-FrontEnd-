@@ -9,7 +9,7 @@ import { SignUp } from "./pages/signup.jsx"; //Este es el componente de la pági
 import { Login } from "./pages/login.jsx";
 import { Categories } from "./pages/categories.jsx";
 import { Categoriessingle } from "./pages/categoriesSingle.jsx";
-import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
+import { UserList } from "./pages/userList.jsx";
 import { Favorites } from "./pages/favorites";
 // import { Planet } from "./pages/planet.jsx";
 import { UserProfile } from "./pages/userProfile.jsx";
@@ -43,7 +43,7 @@ const Layout = () => {
             <Route element={<Single />} exact path="/single/:theid" />
             <Route element={<SignUp />} exact path="/signup" />
             <Route element={<Login />} exact path="/login" />
-            <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />
+            <Route element={<UserList />} exact path="/userlist" />
             <Route element={<Recipesingle />} exact path="/recipes/:theid" />
             <Route element={<Categories />} path="/categories" />
             <Route element={<SubmitRecipe />} path="/submit" />

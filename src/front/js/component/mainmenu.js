@@ -125,8 +125,8 @@ export const MainMenu = () => {
             </li>
             <h4>Extra</h4>
             <li>
-              <Link to="/register" className="sd-link">
-                Recommendations
+              <Link to="/userlist" className="sd-link">
+                Explore members
               </Link>
             </li>
           </ul>

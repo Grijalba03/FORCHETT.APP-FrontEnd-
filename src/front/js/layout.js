@@ -23,6 +23,7 @@ import { RecipesList } from "./component/recipes";
 import { Recipesingle } from "./pages/recipeSingle.jsx";
 import { UserAccount } from "./pages/userAccount.jsx";
 import { SubmitRecipe } from "./pages/submitRecipe.jsx";
+import {Cloudinary} from "./pages/cloudinary.js";
 
 //create your first component
 const Layout = () => {
@@ -50,6 +51,7 @@ const Layout = () => {
             <Route element={<Favorites />} exact path="/user/favorites/:theid" />
             <Route element={<UserProfile />} path="/userprofile" />
             <Route element={<UserAccount />} path="/user/account" />
+            <Route element={<Cloudinary />} path="/uploadCloudinary" />
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           {/* <Footer /> */}

@@ -8,6 +8,15 @@ export const Recipesingle = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   const [single, setSingle] = useState("");
+  // const userFavs = async (e) => {
+  //   // e.preventDefault();
+  //   console.log("user favs");
+  //   let favs = { 
+  //     recipe_id: single.id,
+  //     user_id: user.id
+  //   }
+  //   let response2 = await actions.fetchProtegido("/submit", favs, "POST");
+  // };
 
   useEffect(() => {
     async function fetchsingleRecipe() {
@@ -23,7 +32,8 @@ export const Recipesingle = (props) => {
     }
     fetchsingleRecipe();
   }, []);
-
+  
+  
   return (
     <>
       <div className="container">
@@ -142,7 +152,10 @@ export const Recipesingle = (props) => {
                 <div
                   className="btn btn-outline-info my-2 favorite"
                   onClick={(e) => {
-                    actions.addFav(item.id);
+                    actions.addFav("/user/favorites", { 
+                      recipe_id: single.id
+                      // user_id: user.id
+                    }, "POST" );
                   }}
                 >
                   FAVORITE

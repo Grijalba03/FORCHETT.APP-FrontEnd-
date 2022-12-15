@@ -73,11 +73,27 @@ const getState = ({ getStore, getActions, setStore }) => {
         //en este punto response es una promesa
         return response;
       },
-      addFav: (item) => {
-        let aux = getStore().favorites;
-        aux.push(item);
-        setStore({ favorites: aux });
+      
+       addFav: async (endpoint = "/user/favorites", data = undefined, metodo = "POST") => {
+        //data y metodo son parámetros opcionales
+        let BACKEND_URL = process.env.BACKEND_URL;
+        const store = getStore(); //traerse el store
+        let tokenStore = store.token;
+        // const tokenLocalStorage = localStorage.getItem("token");
+        // const tokenSessionStorage = sessionStorage.getItem("token");
+
+        let response = await fetch(BACKEND_URL + endpoint, {
+          method: metodo,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + tokenStore,
+          },
+          body: data ? JSON.stringify(data) : undefined,
+        });
+        //en este punto response es una promesa
+        return response;
       },
+      
       removeFav: (uid) => {
         let aux = getStore().favorites;
         let x = aux.filter((element, i) => element.uid != uid);

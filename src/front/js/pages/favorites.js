@@ -6,11 +6,11 @@ import "../../styles/favorites.css";
 
 
 export const Favorites = () => {
-  const { store, actions } = useContext(Context); //nos traemos los favorites desde store destructurado
+  const { store, actions } = useContext(Context); //nos traemos los favorites desde store destructurado 
 
   useEffect(() => {
     async function fetchData() {
-      let response = await actions.fetchGenerico("/user/favorites/"+store.user_id);
+      let response = await actions.fetchProtegido("/user/favorites");
       if (response.status == 200) {
         response = await response.json();
         store.favorites = response;

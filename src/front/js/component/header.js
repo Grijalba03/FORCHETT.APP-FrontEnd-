@@ -23,8 +23,8 @@ export const Header = () => {
                 <input
                   className="form-control border-end-0 border"
                   type="search"
-                  value="search"
-                  id="example-search-input"
+                  // value="search"
+                  // id="example-search-input"
                 />
                 <span className="input-group-append">
                   <button

@@ -86,13 +86,12 @@ export const CloudUpload = () => {
 
     return (
         <>
-            <h1>vista de subir imagen a cloudinary</h1>
-            <div>
-                <AdvancedImage cldImg={myImage} />
-                <AdvancedVideo cldVid={myVideo} controls />
-            </div>
+          {/* <div>
+             <AdvancedImage cldImg={myImage} />
+                <AdvancedVideo cldVid={myVideo} controls /> 
+            </div>*/}
             <button id="upload_widget" className="cloudinary-button">Upload files</button>
-            <img src=""></img>
+            
 
         </>
     )

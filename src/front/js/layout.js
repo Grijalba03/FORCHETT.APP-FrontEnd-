@@ -23,7 +23,7 @@ import { RecipesList } from "./component/recipes";
 import { Recipesingle } from "./pages/recipeSingle.jsx";
 import { UserAccount } from "./pages/userAccount.jsx";
 import { SubmitRecipe } from "./pages/submitRecipe.jsx";
-import {CloudUpload} from "./pages/cloudinary.js";
+import {CloudUpload} from "./component/cloudinary";
 
 //create your first component
 const Layout = () => {

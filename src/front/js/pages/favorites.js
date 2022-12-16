@@ -7,28 +7,47 @@ import "../../styles/favorites.css";
 
 export const Favorites = () => {
   const { store, actions } = useContext(Context); //nos traemos los favorites desde store destructurado 
+  const [favList, setfavList] = useState();
+
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     let response = await actions.fetchProtegido("/user/favorites");
+  //     if (response.status == 200) {
+  //       response = await response.json();
+  //       store.favorites = response;
+  //       console.log(response);
+  //     } else {
+  //       response = await response.json();
+  //       console.log(response);
+  //     }
+  //   }
+  
+  //   fetchData();
+  // }, []); 
 
   useEffect(() => {
-    async function fetchData() {
-      let response = await actions.fetchProtegido("/user/favorites");
-      if (response.status == 200) {
-        response = await response.json();
-        store.favorites = response;
-        console.log(response);
+    async function fetchFavorites() {
+      let favoriteList = await actions.fetchProtegido(`/user/favorites`);
+      if (favoriteList.status == 200) {
+        favoriteList = await favoriteList.json();
+        // setfavList(favoriteList);
+         store.favList = favoriteList;
+        console.log("frak", favoriteList);
       } else {
-        response = await response.json();
-        console.log(response);
+        favoriteList = await favoriteList.json();
+        console.log("frok", favoriteList);
       }
     }
-  
-    fetchData();
+    fetchFavorites();
   }, []);
 
   return (
     <>
       <div className="container">
-        {store.favorites && store.favorites.lenght > 0 ? (
-          store.favorites.map((item, index) => {
+        {/* {favList} */}
+        {/* {store.favList ? ( */}
+        {store.favList && store.favList.lenght > 0 ? (
+          store.favList.map((item, index) => {
             return (
               <li className="ms-1 me-1 text-primary" key={index}>
                 {item.title}
@@ -44,7 +63,8 @@ export const Favorites = () => {
           })
         ) : (
           <>
-            <p>There are no favorites to display</p>
+            <p>siempre no</p>
+          
           </>
         )}
 

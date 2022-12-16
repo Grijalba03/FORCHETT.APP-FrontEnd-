@@ -1,12 +1,14 @@
-//import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 import React, { useState, useEffect, useContext } from "react";
 import logourl from "../../img/forchettapp.png";
 import "../../styles/header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
+
 
 export const Header = () => {
   const { store, actions } = useContext(Context);
+  const history = useNavigate();
   // console.log(store.favorites);
 
   const userSearch = async (e) => {
@@ -30,8 +32,35 @@ export const Header = () => {
     if (response.status == 200) {
       let respuestaJson = await response.json();
       console.log("Search Query : ", respuestaJson);
+      if (respuestaJson.length > 0) {
+        Swal.fire({
+          title: "Results",
+          // text: `${respuestaJson[0].title}`,
+          html: `<a href="/recipes/${respuestaJson[0].id}">${respuestaJson[0].title}</a>`,
+          // html: `<Link to="/recipes/${respuestaJson[0].id}"><button type="button" className="btn btn-primary btnmod">${respuestaJson[0].title}</button>`,
+          // html: (
+          //   <HistoryRouter>
+          //     <Link to={`/`} onClick={() => Swal.close()}>
+          //     hey
+          //     </Link>
+          //   </HistoryRouter>
+          // ),
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: "No result :(",
+        });
+      }
+      
     } else {
       // error
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "No result :(",
+      });
     }
   };
 

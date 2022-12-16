@@ -63,7 +63,7 @@ export const Favorites = () => {
           })
         ) : (
           <>
-            <p>siempre no</p>
+          
           
           </>
         )}

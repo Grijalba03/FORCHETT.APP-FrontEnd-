@@ -13,6 +13,7 @@ export const UserProfile = () => {
       if (response.status == 200) {
         response = await response.json();
         store.UserProfile = response;
+        console.log("user profile response",response)
       } else {
         response = await response.json();
       }
@@ -35,27 +36,37 @@ export const UserProfile = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-evenly">
-        {store.images && store.images.length > 0 ? (
-          store.images.map((item, index) => {
-            return (
-              <div className="circle p-2 rounded-circle" key={index}>
-                <img src={item.ruta}></img>
-              </div>
-            );
-          })
-        ) : (
-          <h1 className="text-center">No categories available</h1>
-        )}
-      </div>
+
+        
+
 
       <div className="container">
-        <div className="profilebg mx-auto">
-          <img
-            src="http://res.cloudinary.com/dap1nkz7g/image/upload/v1671245122/forchettapp/edzfoi7skjf4tszpdgel.png"
-            className="profile-img-top rounded-circle mx-auto d-block"
-            alt="..."
-          />
+        <div className="profilebg mx-auto">   
+         {/*User Image */}
+         <div className="container spacing">
+            <div className="d-flex mt-3 mb-3">
+              {store.images.filter((auxiliar) => auxiliar.user_id == store.userList.user_id)
+                .map((filteredAuxiliar) => (
+                  <div>
+                     <img src={filteredAuxiliar.ruta}/>                       
+                  </div>
+                ))}
+            </div>
+          </div>
+
+
+        <div className="d-flex justify-content-evenly">
+          {store.images && store.images.length > 0 ? (
+            store.images.map((item, index) => {
+              return (
+                <div key={index}><img src={item.ruta} className="profile-img-top rounded-circle mx-auto d-block"></img></div>
+              );
+            })
+          ) : (
+            <h1 className="text-center">No images available</h1>
+          )}
+        </div>
+          {/*Username and social media links */}
           <h5 className="username text-center"> UserName</h5>
           <button
             type="button"
@@ -120,6 +131,13 @@ export const UserProfile = () => {
             </div>
           </div>
         </div>
+
+        <div className="row justify-content-center">            
+            <div className="col"></div>      
+            <div className="col mx-auto align-items-middle"><Link to="/"> <button className="btn btn-outline-info categoryname home my-5" role="button">Return to Home</button></Link></div>
+            <div className="col"></div>         
+        </div>
+
       </div>
     </>
   );

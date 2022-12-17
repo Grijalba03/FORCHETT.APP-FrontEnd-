@@ -8,15 +8,6 @@ export const Recipesingle = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   const [single, setSingle] = useState("");
-  // const userFavs = async (e) => {
-  //   // e.preventDefault();
-  //   console.log("user favs");
-  //   let favs = { 
-  //     recipe_id: single.id,
-  //     user_id: user.id
-  //   }
-  //   let response2 = await actions.fetchProtegido("/submit", favs, "POST");
-  // };
 
   useEffect(() => {
     async function fetchsingleRecipe() {

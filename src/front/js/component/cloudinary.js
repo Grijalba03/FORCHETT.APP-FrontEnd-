@@ -14,6 +14,7 @@ import { byRadius } from "@cloudinary/url-gen/actions/roundCorners";
 import { FocusOn } from "@cloudinary/url-gen/qualifiers/focusOn";
 import { Gravity } from "@cloudinary/url-gen/qualifiers";
 import { AutoFocus } from "@cloudinary/url-gen/qualifiers/autoFocus";
+import "../../styles/cloudinarybutton.css";
 
 export const CloudUpload = () => {
   const { store, actions } = useContext(Context);
@@ -131,8 +132,8 @@ export const CloudUpload = () => {
              <AdvancedImage cldImg={myImage} />
                 <AdvancedVideo cldVid={myVideo} controls /> 
             </div>*/}
-      <button id="upload_widget" className="cloudinary-button">
-        Upload a file
+      <button id="upload_widget" className="cloudinary-button cldbutton">
+        Upload your profile image
       </button>
     </>
   );

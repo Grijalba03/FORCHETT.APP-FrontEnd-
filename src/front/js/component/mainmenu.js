@@ -61,7 +61,7 @@ export const MainMenu = () => {
       )}
       {store.username ? ( // Favorites
         <div className="text-center">
-          <Link to="/user/favorites/:theid" className="sd-link">
+          <Link to={`/user/favorites/${store.user_id}`} className="sd-link">
             <i className="fa-solid fa-heart iconmod"></i>
           </Link>
         </div>

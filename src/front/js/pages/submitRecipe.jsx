@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import { CloudUpload } from "../component/cloudinary";
 
 export const SubmitRecipe = () => {
   const { store, actions } = useContext(Context);
@@ -160,7 +161,10 @@ export const SubmitRecipe = () => {
           </div>
           <div className="row">
             <div className="col-12">
-              <h1>Image</h1>
+              <span>
+                <h1>Upload an image</h1>
+                <CloudUpload />
+              </span>
             </div>
             <input name="image" placeholder="add image" type="text" required />
           </div>

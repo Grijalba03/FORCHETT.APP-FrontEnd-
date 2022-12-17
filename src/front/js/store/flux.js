@@ -23,6 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       person: [],
       favorites: [],
       userProfile: [],
+      images:[],
       ...userStore,
     },
     actions: {
@@ -82,13 +83,14 @@ const getState = ({ getStore, getActions, setStore }) => {
         let tokenStore = store.token;
         // const tokenLocalStorage = localStorage.getItem("token");
         // const tokenSessionStorage = sessionStorage.getItem("token");
-
+        console.log("data",data)
         let response = await fetch(BACKEND_URL + endpoint, {
           method: metodo,
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + tokenStore,
           },
+          
           body: data ? JSON.stringify(data) : undefined,
         });
         //en este punto response es una promesa

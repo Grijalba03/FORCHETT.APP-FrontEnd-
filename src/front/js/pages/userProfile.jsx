@@ -2,34 +2,57 @@ import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-
 export const UserProfile = () => {
-  const { store, actions } = useContext(Context); 
-  const [recarga, setRecarga] = useState(false );
-  const history = useNavigate(); 
+  const { store, actions } = useContext(Context);
+  const [recarga, setRecarga] = useState(false);
+  const history = useNavigate();
 
-
-  useEffect(() => { 
-    async function fetchData() { 
-      let response = await actions.fetchGenerico("/profile/<string:username>"); 
+  useEffect(() => {
+    async function fetchData() {
+      let response = await actions.fetchGenerico("/profile/<string:username>");
       if (response.status == 200) {
-    
         response = await response.json();
-        store.UserProfile = response; 
-      } else { 
+        store.UserProfile = response;
+      } else {
         response = await response.json();
-        }
-  }
+      }
+    }
 
-    fetchData(); 
+    fetchData();
+
+    async function fetchImages() {
+      let response = await actions.fetchGenerico("/images");
+      if (response.status == 200) {
+        response = await response.json();
+        store.images = response["lista"];
+      } else {
+        response = await response.json();
+      }
+    }
+
+    fetchImages();
   }, [recarga]);
 
   return (
     <>
+      <div className="d-flex justify-content-evenly">
+        {store.images && store.images.length > 0 ? (
+          store.images.map((item, index) => {
+            return (
+              <div className="circle p-2 rounded-circle" key={index}>
+                <img src={item.ruta}></img>
+              </div>
+            );
+          })
+        ) : (
+          <h1 className="text-center">No categories available</h1>
+        )}
+      </div>
+
       <div className="container">
         <div className="profilebg mx-auto">
           <img
-            src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
+            src="http://res.cloudinary.com/dap1nkz7g/image/upload/v1671245122/forchettapp/edzfoi7skjf4tszpdgel.png"
             className="profile-img-top rounded-circle mx-auto d-block"
             alt="..."
           />

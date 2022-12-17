@@ -134,6 +134,11 @@ export const MainMenu = () => {
                 Upload images
               </Link>
             </li>
+            <li>
+              <Link to="/userprofile" className="sd-link">
+                Usuario
+              </Link>
+            </li>
           </ul>
         </div>
       </div>

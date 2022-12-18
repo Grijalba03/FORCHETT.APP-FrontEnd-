@@ -3,11 +3,9 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/favorites.css";
 
-
-
 export const Favorites = () => {
-  const { store, actions } = useContext(Context); //nos traemos los favorites desde store destructurado 
-  const [favList, setfavList] = useState();
+  const { store, actions } = useContext(Context); //nos traemos los favorites desde store destructurado
+  const [favList, setfavList] = useState([]);
 
   // useEffect(() => {
   //   async function fetchData() {
@@ -21,24 +19,27 @@ export const Favorites = () => {
   //       console.log(response);
   //     }
   //   }
-  
+
   //   fetchData();
-  // }, []); 
+  // }, []);
 
   useEffect(() => {
     async function fetchFavorites() {
       let favoriteList = await actions.fetchProtegido(`/user/favorites`);
       if (favoriteList.status == 200) {
         favoriteList = await favoriteList.json();
-        // setfavList(favoriteList);
-         store.favList = favoriteList;
-        console.log("frak", favoriteList);
+        console.log(favoriteList);
+        setfavList(favoriteList);
+        // store.favList = favoriteList;
+        console.log("frak", favList);
+        return favoriteList
       } else {
         favoriteList = await favoriteList.json();
         console.log("frok", favoriteList);
       }
     }
     fetchFavorites();
+    setfavList(async () => await fetchFavorites())
   }, []);
 
   return (
@@ -46,11 +47,11 @@ export const Favorites = () => {
       <div className="container">
         {/* {favList} */}
         {/* {store.favList ? ( */}
-        {store.favList && store.favList.lenght > 0 ? (
-          store.favList.map((item, index) => {
+        {favList && favList.length > 0 ? (
+          favList.map((item, index) => {
             return (
               <li className="ms-1 me-1 text-primary" key={index}>
-                {item.title}
+                {item.recipe_title}
                 <i
                   onClick={() => {
                     actions.removeFav(index);
@@ -63,8 +64,7 @@ export const Favorites = () => {
           })
         ) : (
           <>
-          
-          
+            <p> NO hay favoritos </p>
           </>
         )}
 
@@ -134,7 +134,6 @@ export const Favorites = () => {
           </div>
           <div className="col"></div>
         </div>
-
       </div>
     </>
   );

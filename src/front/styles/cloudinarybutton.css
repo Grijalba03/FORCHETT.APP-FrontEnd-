@@ -1,0 +1,11 @@
+.cldbutton{
+    color:rgb(170, 94, 241);
+    border-color: rgb(152, 70, 230);
+    background-color: #ffffff;
+}
+
+.cldbutton:hover{
+    color: #ffffff;
+    border-color: rgb(152, 70, 230);
+    background-color: rgb(172, 90, 248);
+}

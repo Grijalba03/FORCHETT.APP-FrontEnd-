@@ -163,7 +163,6 @@ export const SubmitRecipe = () => {
             <div className="col-12">
               <span>
                 <h1>Upload an image</h1>
-                <CloudUpload />
               </span>
             </div>
             <input name="image" placeholder="add image" type="text" required />

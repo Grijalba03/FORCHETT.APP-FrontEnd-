@@ -5,6 +5,7 @@ import "../../styles/userAccount.css";
 import Swal from "sweetalert2";
 import { AdvancedImage } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
+import {CloudUpload} from "../component/cloudinary";
 
 export const UserAccount = () => {
   const { store, actions } = useContext(Context);
@@ -125,6 +126,7 @@ export const UserAccount = () => {
     <div className="container">
       <div className="row">
         <div className="col-12 avatarHead">
+
           <Link to="/uploadCloudinary">
             <button
               className="btn btn-outline-info categoryname home my-5"
@@ -139,6 +141,8 @@ export const UserAccount = () => {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Wikipedia_Logo_1.0.png/600px-Wikipedia_Logo_1.0.png"
             alt="Test"
           /> */}
+
+
           <span className="username d-inline-block">Username</span>
         </div>
       </div>

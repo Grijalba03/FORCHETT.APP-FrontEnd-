@@ -127,7 +127,7 @@ export const UserAccount = () => {
       <div className="row">
         <div className="col-12 avatarHead">
 
-          <Link to="/uploadCloudinary">
+          <Link to="/upload">
             <button
               className="btn btn-outline-info categoryname home my-5"
               role="button"

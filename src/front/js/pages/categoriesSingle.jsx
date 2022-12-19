@@ -57,7 +57,7 @@ export const Categoriessingle = (props) => {
                           <div>
                             {/* Cajita con imagen y rating */}
                             <img
-                              src="https://via.placeholder.com/400x200"
+                              src={item.image}
                               className="card-img-top rounded"
                               alt="..."
                             />

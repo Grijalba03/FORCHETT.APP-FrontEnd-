@@ -166,6 +166,15 @@ export const SubmitRecipe = () => {
               </span>
             </div>
             <input name="image" placeholder="add image" type="text" required />
+            <Link to="/upload-recipe-image">
+            <button
+              className="btn btn-outline-info categoryname home my-5"
+              role="button"
+            >
+              {" "}
+              Submit Recipe Image
+            </button>
+          </Link>
           </div>
           <div className="row">
             <div className="col-12">

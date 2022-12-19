@@ -42,11 +42,25 @@ export const Recipesingle = (props) => {
       }
     }
     fetchsingleRecipe();
+
+    async function fetchImages() {
+      let response = await actions.fetchGenerico("/images-recipes");
+      if (response.status == 200) {
+        response = await response.json();
+        store.recipesimages = response["lista"];
+      } else {
+        response = await response.json();
+      }
+    }
+
+    fetchImages();
   }, []);
+
 
   useEffect(() => {
     document.title = single.title;
   }, [single.title]);
+
 
   return (
     <>
@@ -57,6 +71,21 @@ export const Recipesingle = (props) => {
               {" "}
               {/* Columna 1*/}
               {/* Título 1*/}
+              {/*Recipe Image starts*/}
+              <div className="container spacing">
+                <div className="d-flex mt-3 mb-3">
+                  {store.recipesimages
+                    .filter(
+                      (auxiliar) => auxiliar.user_id == store.userList.user_id
+                    )
+                    .map((filteredAuxiliar) => (
+                      <div>
+                        <img src={filteredAuxiliar.ruta} />
+                      </div>
+                    ))}
+                </div>
+              </div>
+              {/*Recipe Image ends*/}
               <div>
                 <Link to={`/categories/${single.category}`}>
                   <p className="btn btn-outline-info categoryname">
@@ -148,9 +177,19 @@ export const Recipesingle = (props) => {
             </div>
 
             {/* Columna 2*/}
-            <div className="column mx-5">
+            <div className="d-flex flex-column mx-5">
               {/* Recipe Image*/}
-              <div className="recipeimage rounded"></div>
+              <div className="container spacing">
+                <div>
+                  <div className="d-flex mt-3 mb-3">
+                    <img
+                      src={single.image}
+                      className="img-fluid card-img-top rounded"
+                    />
+                  </div>
+                </div>
+              </div>
+
               {/* Username box*/}
               <div className="btn btn-outline-info usernamebox rounded my-3 d-flex flex-row justify-content-middle">
                 <div className="usercircle p-5 rounded-circle"></div>

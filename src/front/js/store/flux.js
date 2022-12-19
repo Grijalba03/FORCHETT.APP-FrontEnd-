@@ -24,6 +24,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       favorites: [],
       userProfile: [],
       images:[],
+      recipesimages: [],
       ...userStore,
     },
     actions: {

@@ -4,10 +4,35 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/recipes.css";
 
+import ReactPlayer from "react-player";
+
+// import { yts } from "youtube-search";
+// var yts = require("youtube-search");
+
+// let YT_API = process.env.YT_API;
+
 export const Recipesingle = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   const [single, setSingle] = useState("");
+  const [ytVideos, setytVideos] = useState("");
+
+  // var opts = {
+  //   maxResults: 3,
+  //   key: YT_API,
+  // };
+
+  // function GetYoutubeVideos() {
+    // yts("chinese rice", opts, function (err, results) {
+    //   if (err) return console.log(err);
+    //   console.log(results);
+    //   let yt1 = results[0].link;
+    //   console.log("yt1", yt1);
+    //   setytVideos(results);
+    // });
+  // }
+
+  // GetYoutubeVideos();
 
   useEffect(() => {
     async function fetchsingleRecipe() {
@@ -23,8 +48,7 @@ export const Recipesingle = (props) => {
     }
     fetchsingleRecipe();
   }, []);
-  
-  
+
   return (
     <>
       <div className="container">
@@ -87,10 +111,16 @@ export const Recipesingle = (props) => {
               </div>
               <div className="shadow p-3 mb-5 bg-white rounded my-5">
                 <h1>RELATED VIDEOS</h1>
-                <div className="related1 rounded"></div>
+                <div className="related1 rounded">
+                  <ReactPlayer url="https://www.youtube.com/watch?v=jfKfPfyJRdk" />
+                </div>
                 <div className="d-flex flex-row justify-content-evenly rounded">
-                  <div className="related2 rounded my-4 first"></div>
-                  <div className="related2 rounded my-4"></div>
+                  <div className="related2 rounded my-4 first">
+                    <ReactPlayer url="https://www.youtube.com/watch?v=u92utplSMZ4" />
+                  </div>
+                  <div className="related2 rounded my-4">
+                    <ReactPlayer url="https://www.youtube.com/watch?v=MnZOn4KKrJo" />
+                  </div>
                   <div className="related2 rounded my-4"></div>
                   <div className="related2 rounded my-4 last"></div>
                 </div>
@@ -143,10 +173,14 @@ export const Recipesingle = (props) => {
                 <div
                   className="btn btn-outline-info my-2 favorite"
                   onClick={(e) => {
-                    actions.addFav("/user/favorites", { 
-                      recipe_id: single.id
-                      // user_id: user.id
-                    }, "POST" );
+                    actions.addFav(
+                      "/user/favorites",
+                      {
+                        recipe_id: single.id,
+                        // user_id: user.id
+                      },
+                      "POST"
+                    );
                   }}
                 >
                   FAVORITE

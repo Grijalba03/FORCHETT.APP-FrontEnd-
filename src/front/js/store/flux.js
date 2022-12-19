@@ -16,6 +16,7 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       cat: [],
+      ytVideos: [],
       memberlist: [],
       catsingle: {},
       recipes: [],

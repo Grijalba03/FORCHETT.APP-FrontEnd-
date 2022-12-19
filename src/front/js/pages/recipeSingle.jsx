@@ -3,6 +3,26 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/recipes.css";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  PinterestShareButton,
+  PinterestIcon,
+  RedditShareButton,
+  RedditIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  TumblrShareButton,
+  TumblrIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  PocketShareButton,
+  PocketIcon,
+  EmailShareButton,
+  EmailIcon,
+} from "next-share";
 
 export const Recipesingle = (props) => {
   const { store, actions } = useContext(Context);
@@ -15,7 +35,7 @@ export const Recipesingle = (props) => {
       if (response.status == 200) {
         response = await response.json();
         setSingle(response);
-        console.log(response);
+        console.log("ressss", response);
       } else {
         response = await response.json();
         console.log(response);
@@ -35,6 +55,12 @@ export const Recipesingle = (props) => {
 
     fetchImages();
   }, []);
+
+
+  useEffect(() => {
+    document.title = single.title;
+  }, [single.title]);
+
 
   return (
     <>
@@ -192,8 +218,66 @@ export const Recipesingle = (props) => {
                   FAVORITE
                 </div>
                 {/* Social media share box*/}
-                <div className="btn btn-outline-info my-2 favorite">SHARE</div>
+                <h2>SHARE</h2>
+                {/* <div className="btn btn-outline-info my-2 favorite">SHARE</div> */}
+                <FacebookShareButton
+                  url={window.location.href}
+                  quote={document.title}
+                  hashtag={"#Forchett.app"}
+                >
+                  <FacebookIcon size={32} round />
+                </FacebookShareButton>
+                <PinterestShareButton
+                  url={window.location.href}
+                  media={document.title}
+                >
+                  <PinterestIcon size={32} round />
+                </PinterestShareButton>
+                <RedditShareButton
+                  url={window.location.href}
+                  title={document.title}
+                >
+                  <RedditIcon size={32} round />
+                </RedditShareButton>
+                <TelegramShareButton
+                  url={window.location.href}
+                  title={document.title}
+                >
+                  <TelegramIcon size={32} round />
+                </TelegramShareButton>
+                <TumblrShareButton
+                  url={window.location.href}
+                  title={document.title}
+                >
+                  <TumblrIcon size={32} round />
+                </TumblrShareButton>
+                <TwitterShareButton
+                  url={window.location.href}
+                  title={document.title}
+                >
+                  <TwitterIcon size={32} round />
+                </TwitterShareButton>
+                <WhatsappShareButton
+                  url={window.location.href}
+                  title={document.title}
+                  separator=":: "
+                >
+                  <WhatsappIcon size={32} round />
+                </WhatsappShareButton>
+                <PocketShareButton
+                  url={window.location.href}
+                  title={"Next Share"}
+                >
+                  <PocketIcon size={32} round />
+                </PocketShareButton>
               </div>
+              <EmailShareButton
+                url={window.location.href}
+                subject={"Recipe from Forchett.App"}
+                body="body"
+              >
+                <EmailIcon size={32} round />
+              </EmailShareButton>
               {/* Ingredients box*/}
               <div className="shadow p-3 mb-5 bg-white rounded my-5 sidebox">
                 <h1>Ingredients List</h1>

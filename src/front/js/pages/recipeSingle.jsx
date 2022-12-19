@@ -7,15 +7,29 @@ import "../../styles/recipes.css";
 import ReactPlayer from "react-player";
 
 // import { yts } from "youtube-search";
-// var yts = require("youtube-search");
+var yts = require("youtube-search");
 
-// let YT_API = process.env.YT_API;
+let YT_API = process.env.YT_API;
+
+var opts = {
+  maxResults: 3,
+  key: YT_API,
+};
 
 export const Recipesingle = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   const [single, setSingle] = useState("");
-  const [ytVideos, setytVideos] = useState("");
+
+  yts("chinese rice", opts, function (err, results) {
+    if (err) return console.log(err);
+    console.log(results);
+    let yt1 = results[0].link;
+    console.log("yt1", yt1);
+    // setytVideos(results);
+  });
+
+  // const [ytVideos, setytVideos] = useState("");
 
   // var opts = {
   //   maxResults: 3,
@@ -23,13 +37,13 @@ export const Recipesingle = (props) => {
   // };
 
   // function GetYoutubeVideos() {
-    // yts("chinese rice", opts, function (err, results) {
-    //   if (err) return console.log(err);
-    //   console.log(results);
-    //   let yt1 = results[0].link;
-    //   console.log("yt1", yt1);
-    //   setytVideos(results);
-    // });
+  // yts("chinese rice", opts, function (err, results) {
+  //   if (err) return console.log(err);
+  //   console.log(results);
+  //   let yt1 = results[0].link;
+  //   console.log("yt1", yt1);
+  //   setytVideos(results);
+  // });
   // }
 
   // GetYoutubeVideos();

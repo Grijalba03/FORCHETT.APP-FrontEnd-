@@ -35,7 +35,7 @@ export const Recipesingle = (props) => {
       if (response.status == 200) {
         response = await response.json();
         setSingle(response);
-        console.log(response);
+        console.log("ressss", response);
       } else {
         response = await response.json();
         console.log(response);
@@ -43,6 +43,10 @@ export const Recipesingle = (props) => {
     }
     fetchsingleRecipe();
   }, []);
+
+  useEffect(() => {
+    document.title = single.title;
+  }, [single.title]);
 
   return (
     <>

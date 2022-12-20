@@ -60,21 +60,6 @@ export const Recipesingle = (props) => {
               {" "}
               {/* Columna 1*/}
               {/* Título 1*/}
-              {/*Recipe Image starts*/}
-              <div className="container spacing">
-                <div className="d-flex mt-3 mb-3">
-                  {store.recipesimages
-                    .filter(
-                      (auxiliar) => auxiliar.user_id == store.userList.user_id
-                    )
-                    .map((filteredAuxiliar) => (
-                      <div>
-                        <img src={filteredAuxiliar.ruta} />
-                      </div>
-                    ))}
-                </div>
-              </div>
-              {/*Recipe Image ends*/}
               <div>
                 <Link to={`/categories/${single.category}`}>
                   <p className="btn btn-outline-info categoryname">

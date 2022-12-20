@@ -34,6 +34,17 @@ export const MainMenu = () => {
       ) : (
         <></>
       )}
+
+      {store.username ? ( // User Account
+        <div className="text-center">
+          <Link to="/userprofile" className="sd-link">
+            <i class="fa-regular fa-address-card iconmod"></i>
+          </Link>
+        </div>
+      ) : (
+        <></>
+      )}
+
       {store.username ? ( //Login
         <></>
       ) : (
@@ -92,7 +103,11 @@ export const MainMenu = () => {
                 Random
               </Link>
             </li>
-            <h4>Categories</h4>
+            <h4>
+              <Link to="/categories" className="sd-link cattitle">
+                Categories
+              </Link>
+            </h4>
             <li>
               <Link to="/categories/1" className="sd-link">
                 Breakfast
@@ -129,11 +144,7 @@ export const MainMenu = () => {
                 Explore members
               </Link>
             </li>
-            <li>
-              <Link to="/upload" className="sd-link">
-                Upload images
-              </Link>
-            </li>
+
           </ul>
         </div>
       </div>

@@ -16,7 +16,7 @@ import { Gravity } from "@cloudinary/url-gen/qualifiers";
 import { AutoFocus } from "@cloudinary/url-gen/qualifiers/autoFocus";
 import "../../styles/cloudinarybutton.css";
 
-export const CloudUpload = () => {
+export const CloudUploadRecipes = () => {
   const { store, actions } = useContext(Context);
   const cloudName = "dap1nkz7g"; // deben poner el nombre de su cloud (preferiblemente extraer del .env)
   const uploadPreset = "Forchettapp"; // deben poner el nombre de su preset (preferiblemente extraer del .env)
@@ -109,7 +109,11 @@ export const CloudUpload = () => {
     async (error, result) => {
       if (!error && result && result.event === "success") {
         console.log("Done! Here is the image info: ", result.info); //en result.info.public_id contiene la ruta de la imagen en cloudinary
-        let response = await actions.fetchProtegido("/upload", { ruta: result.info.url }, "POST");
+        let response = await actions.fetchProtegido(
+          "/upload-recipe-image",
+          { ruta: result.info.url },
+          "POST"
+        );
         response = await response.json();
         console.log(response);
       }
@@ -133,7 +137,7 @@ export const CloudUpload = () => {
                 <AdvancedVideo cldVid={myVideo} controls /> 
             </div>*/}
       <button id="upload_widget" className="cloudinary-button cldbutton">
-        Upload your profile image
+        Upload your recipe image
       </button>
     </>
   );

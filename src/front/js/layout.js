@@ -13,9 +13,7 @@ import { UserList } from "./pages/userList.jsx";
 import { Favorites } from "./pages/favorites";
 // import { Planet } from "./pages/planet.jsx";
 import { UserProfile } from "./pages/userProfile.jsx";
-
 import injectContext from "./store/appContext";
-
 import { Header } from "./component/header";
 import { Footer } from "./component/footer";
 import { MainMenu } from "./component/mainmenu";
@@ -23,7 +21,8 @@ import { RecipesList } from "./component/recipes";
 import { Recipesingle } from "./pages/recipeSingle.jsx";
 import { UserAccount } from "./pages/userAccount.jsx";
 import { SubmitRecipe } from "./pages/submitRecipe.jsx";
-import {CloudUpload} from "./component/cloudinary";
+//import {CloudUpload} from "./component/cloudinary";
+//import {CloudUploadRecipes} from "./component/cloudinaryrecipes";
 
 //create your first component
 const Layout = () => {
@@ -51,7 +50,8 @@ const Layout = () => {
             <Route element={<Favorites />} exact path="/user/favorites/:theid" />
             <Route element={<UserProfile />} path="/userprofile" />
             <Route element={<UserAccount />} path="/user/account" />
-            <Route element={<CloudUpload />} path="/upload" />
+            {/* <Route element={<CloudUpload />} path="/upload" />
+            <Route element={<CloudUploadRecipes />} path="/upload-recipe-image" /> */}
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           {/* <Footer /> */}

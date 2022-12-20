@@ -3,26 +3,25 @@ import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import { userActions } from "../store/user";
 
-
 export const UserProfile = () => {
-  const { store, actions } = useContext(Context); 
-  const [recarga, setRecarga] = useState(false );
-  const history = useNavigate(); 
+  const { store, actions } = useContext(Context);
+  const [recarga, setRecarga] = useState(false);
+  const history = useNavigate();
 
-
-  useEffect(() => { 
-    async function fetchData() { 
-      let response = await actions.fetchGenerico("/profile/<string:username>"); 
+  useEffect(() => {
+    async function fetchData() {
+      let response = await actions.fetchGenerico("/profile/<string:username>");
       if (response.status == 200) {
-    
         response = await response.json();
-        store.UserProfile = response; 
-      } else { 
+        store.UserProfile = response;
+        console.log("user profile response",response)
+      } else {
         response = await response.json();
-        }
-  }
+      }
+    }
 
-    fetchData(); 
+    fetchData();
+
   }, [recarga]);
 
   return (
@@ -34,7 +33,9 @@ export const UserProfile = () => {
             className="profile-img-top rounded-circle mx-auto d-block"
             alt="..."
           /> 
-          <h5 className="username text-center">${user.username}</h5>
+          <h5 className="username text-center">${user.username}</h5> 
+               
+          {/*Username and social media links */}
           <button
             type="button"
             className=" buttons under username btn btn-secondary btn-sm"
@@ -98,6 +99,13 @@ export const UserProfile = () => {
             </div>
           </div>
         </div>
+
+        <div className="row justify-content-center">            
+            <div className="col"></div>      
+            <div className="col mx-auto align-items-middle"><Link to="/"> <button className="btn btn-outline-info categoryname home my-5" role="button">Return to Home</button></Link></div>
+            <div className="col"></div>         
+        </div>
+
       </div>
     </>
   );

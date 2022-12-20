@@ -7,22 +7,6 @@ export const Favorites = () => {
   const { store, actions } = useContext(Context); //nos traemos los favorites desde store destructurado
   const [favList, setfavList] = useState([]);
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     let response = await actions.fetchProtegido("/user/favorites");
-  //     if (response.status == 200) {
-  //       response = await response.json();
-  //       store.favorites = response;
-  //       console.log(response);
-  //     } else {
-  //       response = await response.json();
-  //       console.log(response);
-  //     }
-  //   }
-
-  //   fetchData();
-  // }, []);
-
   useEffect(() => {
     async function fetchFavorites() {
       let favoriteList = await actions.fetchProtegido(`/user/favorites`);
@@ -45,19 +29,18 @@ export const Favorites = () => {
   return (
     <>
       <div className="container">
-        {/* {favList} */}
-        {/* {store.favList ? ( */}
         {favList && favList.length > 0 ? (
           favList.map((item, index) => {
             return (
               <li className="ms-1 me-1 text-primary" key={index}>
                 {item.recipe_title}
                 <i
-                  onClick={() => {
-                    actions.removeFav(index);
-                  }}
+                  onClick={() => 
+                    actions.removeFav(item.id)
+                  }
                   class="fa fa-trash"
                   aria-hidden="true"
+                  role="button"
                 ></i>
               </li>
             );

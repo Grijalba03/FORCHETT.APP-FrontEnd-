@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
+import { userActions } from "../store/user";
 
 export const UserProfile = () => {
   const { store, actions } = useContext(Context);
@@ -26,10 +27,15 @@ export const UserProfile = () => {
   return (
     <>
       <div className="container">
-        <div className="profilebg mx-auto">   
+        <div className="profilebg mx-auto">
+          <img
+            src="https://starwars-visualguide.com/assets/img/characters/1.jpg"
+            className="profile-img-top rounded-circle mx-auto d-block"
+            alt="..."
+          /> 
+          <h5 className="username text-center">${user.username}</h5> 
                
           {/*Username and social media links */}
-          <h5 className="username text-center"> UserName</h5>
           <button
             type="button"
             className=" buttons under username btn btn-secondary btn-sm"

@@ -3,48 +3,51 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/favorites.css";
 
-
-
 export const Favorites = () => {
   const { store, actions } = useContext(Context); //nos traemos los favorites desde store destructurado
+  const [favList, setfavList] = useState([]);
 
   useEffect(() => {
-    async function fetchData() {
-      let response = await actions.fetchGenerico("/user/favorites/"+store.user_id);
-      if (response.status == 200) {
-        response = await response.json();
-        store.favorites = response;
-        console.log(response);
+    async function fetchFavorites() {
+      let favoriteList = await actions.fetchProtegido(`/user/favorites`);
+      if (favoriteList.status == 200) {
+        favoriteList = await favoriteList.json();
+        console.log(favoriteList);
+        setfavList(favoriteList);
+        // store.favList = favoriteList;
+        console.log("frak", favList);
+        return favoriteList
       } else {
-        response = await response.json();
-        console.log(response);
+        favoriteList = await favoriteList.json();
+        console.log("frok", favoriteList);
       }
     }
-  
-    fetchData();
+    fetchFavorites();
+    setfavList(async () => await fetchFavorites())
   }, []);
 
   return (
     <>
       <div className="container">
-        {store.favorites && store.favorites.lenght > 0 ? (
-          store.favorites.map((item, index) => {
+        {favList && favList.length > 0 ? (
+          favList.map((item, index) => {
             return (
               <li className="ms-1 me-1 text-primary" key={index}>
-                {item.title}
+                {item.recipe_title}
                 <i
-                  onClick={() => {
-                    actions.removeFav(index);
-                  }}
+                  onClick={() => 
+                    actions.removeFav(item.id)
+                  }
                   class="fa fa-trash"
                   aria-hidden="true"
+                  role="button"
                 ></i>
               </li>
             );
           })
         ) : (
           <>
-            <p>There are no favorites to display</p>
+            <p> NO hay favoritos </p>
           </>
         )}
 
@@ -114,7 +117,6 @@ export const Favorites = () => {
           </div>
           <div className="col"></div>
         </div>
-
       </div>
     </>
   );

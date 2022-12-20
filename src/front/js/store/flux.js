@@ -23,8 +23,10 @@ const getState = ({ getStore, getActions, setStore }) => {
       person: [],
       favorites: [],
       userProfile: [],
+      userDetails: [],
       //images:[],
       //recipesimages: [],
+
       ...userStore,
     },
     actions: {

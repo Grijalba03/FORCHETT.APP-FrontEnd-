@@ -43,17 +43,6 @@ export const Recipesingle = (props) => {
     }
     fetchsingleRecipe();
 
-    async function fetchImages() {
-      let response = await actions.fetchGenerico("/images-recipes");
-      if (response.status == 200) {
-        response = await response.json();
-        store.recipesimages = response["lista"];
-      } else {
-        response = await response.json();
-      }
-    }
-
-    fetchImages();
   }, []);
 
 

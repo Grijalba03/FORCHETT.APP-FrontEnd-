@@ -21,51 +21,13 @@ export const UserProfile = () => {
 
     fetchData();
 
-    async function fetchImages() {
-      let response = await actions.fetchGenerico("/images");
-      if (response.status == 200) {
-        response = await response.json();
-        store.images = response["lista"];
-      } else {
-        response = await response.json();
-      }
-    }
-
-    fetchImages();
   }, [recarga]);
 
   return (
     <>
-
-        
-
-
       <div className="container">
         <div className="profilebg mx-auto">   
-         {/*User Image */}
-         <div className="container spacing">
-            <div className="d-flex mt-3 mb-3">
-              {store.images.filter((auxiliar) => auxiliar.user_id == store.userList.user_id)
-                .map((filteredAuxiliar) => (
-                  <div>
-                     <img src={filteredAuxiliar.ruta}/>                       
-                  </div>
-                ))}
-            </div>
-          </div>
-
-
-        <div className="d-flex justify-content-evenly">
-          {store.images && store.images.length > 0 ? (
-            store.images.map((item, index) => {
-              return (
-                <div key={index}><img src={item.ruta} className="profile-img-top rounded-circle mx-auto d-block"></img></div>
-              );
-            })
-          ) : (
-            <h1 className="text-center">No images available</h1>
-          )}
-        </div>
+               
           {/*Username and social media links */}
           <h5 className="username text-center"> UserName</h5>
           <button

@@ -24,10 +24,12 @@ import {
   EmailIcon,
 } from "next-share";
 
+
 export const Recipesingle = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   const [single, setSingle] = useState("");
+  const [userInfo, setuserInfo] = useState([]);
 
   useEffect(() => {
     async function fetchsingleRecipe() {
@@ -41,9 +43,26 @@ export const Recipesingle = (props) => {
         console.log(response);
       }
     }
-    fetchsingleRecipe();
+    fetchsingleRecipe(); 
 
-  }, []);
+    async function fetchUserInfo() {
+      let userInfo = await actions.fetchProtegido(`/profile/`+store.username);
+      if (userInfo.status == 200) {
+        userInfo = await userInfo.json();
+        console.log("prueba",userInfo);
+        setuserInfo(userInfo);
+        store.userDetails = userInfo;
+        
+        return userInfo
+      } else {
+        userInfo = await userInfo.json();
+        console.log("si funco", userInfo)
+      }
+    }
+    fetchUserInfo(); 
+
+  }, []); 
+
 
 
   useEffect(() => {
@@ -166,10 +185,10 @@ export const Recipesingle = (props) => {
 
               {/* Username box*/}
               <div className="btn btn-outline-info usernamebox rounded my-3 d-flex flex-row justify-content-middle">
-                <div className="usercircle p-5 rounded-circle"></div>
+                <div className="usercircle p-5 rounded-circle"><img src={userInfo.image}/></div>
                 <div className="usernameinfo">
                   <p>
-                    Username<br></br>Dietary Preferences
+                    {userInfo.username}<br></br>{userInfo.dietaryPreferences}
                   </p>
                 </div>
               </div>

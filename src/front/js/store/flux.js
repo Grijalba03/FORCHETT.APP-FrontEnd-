@@ -23,8 +23,8 @@ const getState = ({ getStore, getActions, setStore }) => {
       person: [],
       favorites: [],
       userProfile: [],
-      images:[],
-      recipesimages: [],
+      //images:[],
+      //recipesimages: [],
       ...userStore,
     },
     actions: {
@@ -76,28 +76,32 @@ const getState = ({ getStore, getActions, setStore }) => {
         //en este punto response es una promesa
         return response;
       },
-      
-       addFav: async (endpoint = "/user/favorites", data = undefined, metodo = "POST") => {
+
+      addFav: async (
+        endpoint = "/user/favorites",
+        data = undefined,
+        metodo = "POST"
+      ) => {
         //data y metodo son parámetros opcionales
         let BACKEND_URL = process.env.BACKEND_URL;
         const store = getStore(); //traerse el store
         let tokenStore = store.token;
         // const tokenLocalStorage = localStorage.getItem("token");
         // const tokenSessionStorage = sessionStorage.getItem("token");
-        console.log("data",data)
+        console.log("data", data);
         let response = await fetch(BACKEND_URL + endpoint, {
           method: metodo,
           headers: {
             "Content-Type": "application/json",
             Authorization: "Bearer " + tokenStore,
           },
-          
+
           body: data ? JSON.stringify(data) : undefined,
         });
         //en este punto response es una promesa
         return response;
       },
-      
+
       removeFav: (uid) => {
         let aux = getStore().favorites;
         let x = aux.filter((element, i) => element.uid != uid);

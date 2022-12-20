@@ -4,8 +4,8 @@ import { Context } from "../store/appContext";
 import "../../styles/userAccount.css";
 import Swal from "sweetalert2";
 import { AdvancedImage } from "@cloudinary/react";
-import { Cloudinary } from "@cloudinary/url-gen";
-import {CloudUpload} from "../component/cloudinary";
+//import { Cloudinary } from "@cloudinary/url-gen";
+//import {CloudUpload} from "../component/cloudinary";
 
 export const UserAccount = () => {
   const { store, actions } = useContext(Context);
@@ -127,7 +127,7 @@ export const UserAccount = () => {
       <div className="row">
         <div className="col-12 avatarHead">
 
-          <Link to="/upload">
+          {/* <Link to="/upload">
             <button
               className="btn btn-outline-info categoryname home my-5"
               role="button"
@@ -135,13 +135,12 @@ export const UserAccount = () => {
               {" "}
               Submit Image
             </button>
-          </Link>
-          {/* <img
-            className="avatarMod d-inline-block"
+          </Link> */}
+          {/* <img className="avatarMod d-inline-block"
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Wikipedia_Logo_1.0.png/600px-Wikipedia_Logo_1.0.png"
             alt="Test"
           /> */}
-
+          <input name="image" placeholder="Add your profile image URL here" type="text" required />
 
           <span className="username d-inline-block">Username</span>
         </div>

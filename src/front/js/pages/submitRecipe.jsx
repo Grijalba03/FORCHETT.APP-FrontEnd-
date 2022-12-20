@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { CloudUpload } from "../component/cloudinary";
+//import { CloudUpload } from "../component/cloudinary";
 
 export const SubmitRecipe = () => {
   const { store, actions } = useContext(Context);
@@ -132,7 +132,7 @@ export const SubmitRecipe = () => {
             </div>
             <input
               name="preparation"
-              placeholder="write how to do the recipe"
+              placeholder="Add the steps to make your recipe"
               type="text"
               required
             />
@@ -143,7 +143,7 @@ export const SubmitRecipe = () => {
             </div>
             <input
               name="ingredients"
-              placeholder="write ingredients list"
+              placeholder="Write the list of ingredients"
               type="text"
               required
             />
@@ -154,7 +154,7 @@ export const SubmitRecipe = () => {
             </div>
             <input
               name="description"
-              placeholder="add a description to your recipe"
+              placeholder="Describe your recipe"
               type="text"
               required
             />
@@ -165,16 +165,12 @@ export const SubmitRecipe = () => {
                 <h1>Upload an image</h1>
               </span>
             </div>
-            <input name="image" placeholder="add image" type="text" required />
-            <Link to="/upload-recipe-image">
-            <button
-              className="btn btn-outline-info categoryname home my-5"
-              role="button"
-            >
+            <input name="image" placeholder="Add your image URL here" type="text" required />
+            {/* <Link to="/upload-recipe-image"><button className="btn btn-outline-info categoryname home my-5" role="button">
               {" "}
               Submit Recipe Image
             </button>
-          </Link>
+          </Link> */}
           </div>
           <div className="row">
             <div className="col-12">
@@ -182,7 +178,7 @@ export const SubmitRecipe = () => {
             </div>
             <input
               name="bake"
-              placeholder="how many time to bake"
+              placeholder="Add bake time here"
               type="text"
               required
             />
@@ -193,7 +189,7 @@ export const SubmitRecipe = () => {
             </div>
             <input
               name="servings"
-              placeholder="how many people"
+              placeholder="For how many people?"
               type="text"
               required
             />

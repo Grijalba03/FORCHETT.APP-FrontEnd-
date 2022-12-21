@@ -67,21 +67,21 @@ export const Recipesingle = (props) => {
 
   return (
     <>
-      <div className="container">
+      <div className="container my-5">
         {single ? (
           <div className="d-flex flex-row">
             <div className="d-flex flex-column mx-5">
               {" "}
               {/* Columna 1*/}
               {/* Título 1*/}
-              <div>
+              <div className="my-3">
                 <Link to={`/categories/${single.category}`}>
                   <p className="btn btn-outline-info categoryname">
                     {single.category_name}
                   </p>
                 </Link>
               </div>
-              <div>
+              <div className="my-1">
                 <h1 className="recipetitle">{single.title}</h1>
               </div>
               <div>{single.rating}</div>

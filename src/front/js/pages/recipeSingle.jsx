@@ -178,58 +178,52 @@ export const Recipesingle = (props) => {
                 </div>
               </div>
 
-              {/* Username box*/}
-              {store.username ? ( // User Account
-                <div className="btn btn-outline-info usernamebox rounded my-3 d-flex flex-row justify-content-middle">
-                  <div className="usercircle p-5 rounded-circle">
-                    <img src={userInfo.image} />
-                  </div>
-                  <div className="usernameinfo">
-                    <p>
-                      {userInfo.username}
-                      <br></br>
-                      {userInfo.dietaryPreferences}
-                    </p>
-                    {/* Favorites box*/}
-                    <div
-                      className="btn btn-outline-info my-2 favorite"
-                      onClick={(e) => {
-                        actions.addFav(
-                          "/user/favorites",
-                          {
-                            recipe_id: single.id,
-                            // user_id: user.id
-                          },
-                          "POST"
-                        );
-                      }}
-                    >
-                      FAVORITE
-                    </div>
-                  </div>
-                </div>
-              ) : (
-                <></>
-              )}
-
               <div className="d-flex flex-column">
-
-                {/* Favorites box*/}
-                <div className="btn btn-outline-info my-2 favorite"
-                  onClick={(e) => {
-                    actions.addFav(
-                      "/user/favorites",
-                      {
-                        recipe_id: single.id,
-                        // user_id: user.id
-                      },
-                      "POST"
-                    );
-                  }}
-                >
-                  FAVORITE
+                {/* Username box*/}
+                <div className="d-flex flex-column">
+                  {store.username ? ( // User Account
+                    <div className="btn btn-outline-info usernamebox rounded my-3 d-flex flex-row justify-content-middle">
+                      <div className="usercircle p-5 rounded-circle">
+                        <img src={userInfo.image} />
+                      </div>
+                      <div className="usernameinfo">
+                        <p>
+                          {userInfo.username}
+                          <br></br>
+                          {userInfo.dietaryPreferences}
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
                 </div>
-
+                {/* Favorites box*/}
+                <div className="d-flex flex-column">
+                  {store.username ? ( // User Account
+                    <div className="d-flex flex-column">
+                      <div
+                        className="btn btn-outline-info my-2 favorite"
+                        onClick={(e) => {
+                          actions.addFav(
+                            "/user/favorites",
+                            {
+                              recipe_id: single.id,
+                              // user_id: user.id
+                            },
+                            "POST"
+                          );
+                        }}
+                      >
+                        FAVORITE
+                      </div>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                </div>
+              </div>
+              <div className="d-flex flex-column">
                 {/* Social media share box*/}
                 <h2>SHARE</h2>
                 {/* <div className="btn btn-outline-info my-2 favorite">SHARE</div> */}

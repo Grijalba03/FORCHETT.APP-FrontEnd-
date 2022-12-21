@@ -4,7 +4,6 @@ import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/mainmenu.css";
 
-
 export const MainMenu = () => {
   const [isOpen, setIsopen] = useState(false);
   const { store, actions } = useContext(Context);
@@ -16,19 +15,18 @@ export const MainMenu = () => {
 
   return (
     <div className="container-menu">
-      <div className="text-center">
+      <div className="text-center fixspace">
         <button
           type="button"
           onClick={menu}
-          className="btn btn-primary rounded-circle"
+          className="btn menubtn rounded-circle"
         >
           <i className="fa-solid fa-bars"></i>
         </button>
-        <p>Menu</p>
       </div>
       {store.username ? ( // User Account
         <div className="text-center">
-          <Link to="/user/account" className="sd-link">
+          <Link to="/user/account" className="sd-link menutxtcolor">
             <i className="fa-regular fa-circle-user iconmod"></i>
           </Link>
         </div>
@@ -36,9 +34,9 @@ export const MainMenu = () => {
         <></>
       )}
 
-      {store.username ? ( // User Account
+      {store.username ? ( // User Profile
         <div className="text-center">
-          <Link to="/userprofile" className="sd-link">
+          <Link to="/userprofile" className="sd-link menutxtcolor">
             <i class="fa-regular fa-address-card iconmod"></i>
           </Link>
         </div>
@@ -50,7 +48,7 @@ export const MainMenu = () => {
         <></>
       ) : (
         <div className="text-center">
-          <Link to="/login" className="sd-link">
+          <Link to="/login" className="sd-link menutxtcolor">
             <i className="fa-solid fa-right-to-bracket iconmod"></i>
           </Link>
         </div>
@@ -59,7 +57,7 @@ export const MainMenu = () => {
         <></>
       ) : (
         <div className="text-center">
-          <Link to="/signup" className="sd-link">
+          <Link to="/signup" className="sd-link menutxtcolor">
             <i className="fa-solid fa-user-plus iconmod"></i>
           </Link>
         </div>
@@ -73,7 +71,10 @@ export const MainMenu = () => {
       )}
       {store.username ? ( // Favorites
         <div className="text-center">
-          <Link to={`/user/favorites/${store.user_id}`} className="sd-link">
+          <Link
+            to={`/user/favorites/${store.user_id}`}
+            className="sd-link menutxtcolor"
+          >
             <i className="fa-solid fa-heart iconmod"></i>
           </Link>
         </div>
@@ -83,7 +84,7 @@ export const MainMenu = () => {
       <div className={`sidebar ${isOpen == true ? "active" : ""}`}>
         <div className="sd-header">
           <h3 className="mb-0">Main Menu</h3>
-          <div className="btn btn-primary" onClick={menu}>
+          <div className="btn btncolormod" onClick={menu}>
             <i className="fa fa-times"></i>
           </div>
         </div>
@@ -145,7 +146,6 @@ export const MainMenu = () => {
                 Explore members
               </Link>
             </li>
-
           </ul>
         </div>
       </div>

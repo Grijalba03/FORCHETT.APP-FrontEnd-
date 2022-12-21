@@ -109,6 +109,8 @@ export const Header = () => {
           </div>
         </div>
         <div className="col-4">
+        {store.username ? ( // Submit recipe
+        <div className="text-center">
           <Link to="/submit">
             <button
               type="button"
@@ -117,6 +119,10 @@ export const Header = () => {
               <i className="fa-solid fa-plus"></i>
             </button>
           </Link>
+        </div>
+      ) : (
+        <></>
+      )}
         </div>
       </div>
     </div>

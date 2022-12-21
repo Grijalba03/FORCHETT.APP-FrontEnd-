@@ -69,6 +69,7 @@ export const RecipesList = (props) => {
                             {item.category_name}
                           </Link>
                         </div>
+
                         {store.username ? ( // User Account
                           <div>
                             <button
@@ -83,6 +84,7 @@ export const RecipesList = (props) => {
                         ) : (
                           <></>
                         )}
+
                       </div>
                     </div>
                   </div>

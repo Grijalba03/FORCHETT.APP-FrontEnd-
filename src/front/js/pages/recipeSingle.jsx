@@ -213,6 +213,23 @@ export const Recipesingle = (props) => {
               )}
 
               <div className="d-flex flex-column">
+
+                {/* Favorites box*/}
+                <div className="btn btn-outline-info my-2 favorite"
+                  onClick={(e) => {
+                    actions.addFav(
+                      "/user/favorites",
+                      {
+                        recipe_id: single.id,
+                        // user_id: user.id
+                      },
+                      "POST"
+                    );
+                  }}
+                >
+                  FAVORITE
+                </div>
+
                 {/* Social media share box*/}
                 <h2>SHARE</h2>
                 {/* <div className="btn btn-outline-info my-2 favorite">SHARE</div> */}

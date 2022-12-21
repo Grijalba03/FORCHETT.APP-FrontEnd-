@@ -4,6 +4,7 @@ import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/mainmenu.css";
 
+
 export const MainMenu = () => {
   const [isOpen, setIsopen] = useState(false);
   const { store, actions } = useContext(Context);

@@ -64,7 +64,12 @@ export const MainMenu = () => {
       )}
       {store.username ? ( // Logout
         <div className="text-center">
-          <Link to="/logout">
+          <Link to={() => {
+                actions.logout();
+                history("/");
+				window.location.reload(); //#reload window
+              }}>
+            
           <i className="fa-solid fa-right-to-bracket iconmod"></i>
           </Link>
         </div>

@@ -64,7 +64,9 @@ export const MainMenu = () => {
       )}
       {store.username ? ( // Logout
         <div className="text-center">
+          <Link to="/logout">
           <i className="fa-solid fa-right-to-bracket iconmod"></i>
+          </Link>
         </div>
       ) : (
         <></>

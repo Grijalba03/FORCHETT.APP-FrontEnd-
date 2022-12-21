@@ -66,6 +66,7 @@ export const RecipesList = (props) => {
                             className="recipe-buttons"
                             to={`/categories/${item.category}`}
                           >
+                            
                             {item.category_name}
                           </Link>
                         </div>

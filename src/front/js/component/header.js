@@ -62,7 +62,7 @@ export const Header = () => {
 
   return (
     <div className="container-fluid">
-      <div className="row p-3 bg-white">
+      <div className="row p-3 headerMod">
         <div className="col-4">
           <Link to="/" className="sd-link">
             <img src={logourl} />

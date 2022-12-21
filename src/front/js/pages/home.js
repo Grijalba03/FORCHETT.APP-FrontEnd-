@@ -28,7 +28,7 @@ export const Home = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container pt-5">
         <h1 className="text-center">Categories</h1>
         <p className="text-center">Choose your favorite category</p>
         <div className="gridmod">

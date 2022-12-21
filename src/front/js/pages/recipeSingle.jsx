@@ -24,7 +24,6 @@ import {
   EmailIcon,
 } from "next-share";
 
-
 export const Recipesingle = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
@@ -43,32 +42,28 @@ export const Recipesingle = (props) => {
         console.log(response);
       }
     }
-    fetchsingleRecipe(); 
+    fetchsingleRecipe();
 
     async function fetchUserInfo() {
-      let userInfo = await actions.fetchProtegido(`/profile/`+store.username);
+      let userInfo = await actions.fetchProtegido(`/profile/` + store.username);
       if (userInfo.status == 200) {
         userInfo = await userInfo.json();
-        console.log("prueba",userInfo);
+        console.log("prueba", userInfo);
         setuserInfo(userInfo);
         store.userDetails = userInfo;
-        
-        return userInfo
+
+        return userInfo;
       } else {
         userInfo = await userInfo.json();
-        console.log("si funco", userInfo)
+        console.log("si funco", userInfo);
       }
     }
-    fetchUserInfo(); 
-
-  }, []); 
-
-
+    fetchUserInfo();
+  }, []);
 
   useEffect(() => {
     document.title = single.title;
   }, [single.title]);
-
 
   return (
     <>
@@ -184,16 +179,41 @@ export const Recipesingle = (props) => {
               </div>
 
               {/* Username box*/}
-              <div className="btn btn-outline-info usernamebox rounded my-3 d-flex flex-row justify-content-middle">
-                <div className="usercircle p-5 rounded-circle"><img src={userInfo.image}/></div>
-                <div className="usernameinfo">
-                  <p>
-                    {userInfo.username}<br></br>{userInfo.dietaryPreferences}
-                  </p>
+              {store.username ? ( // User Account
+                <div className="btn btn-outline-info usernamebox rounded my-3 d-flex flex-row justify-content-middle">
+                  <div className="usercircle p-5 rounded-circle">
+                    <img src={userInfo.image} />
+                  </div>
+                  <div className="usernameinfo">
+                    <p>
+                      {userInfo.username}
+                      <br></br>
+                      {userInfo.dietaryPreferences}
+                    </p>
+                    {/* Favorites box*/}
+                    <div
+                      className="btn btn-outline-info my-2 favorite"
+                      onClick={(e) => {
+                        actions.addFav(
+                          "/user/favorites",
+                          {
+                            recipe_id: single.id,
+                            // user_id: user.id
+                          },
+                          "POST"
+                        );
+                      }}
+                    >
+                      FAVORITE
+                    </div>
+                  </div>
                 </div>
-              </div>
+              ) : (
+                <></>
+              )}
 
               <div className="d-flex flex-column">
+
                 {/* Favorites box*/}
                 <div className="btn btn-outline-info my-2 favorite"
                   onClick={(e) => {
@@ -209,6 +229,7 @@ export const Recipesingle = (props) => {
                 >
                   FAVORITE
                 </div>
+
                 {/* Social media share box*/}
                 <h2>SHARE</h2>
                 {/* <div className="btn btn-outline-info my-2 favorite">SHARE</div> */}

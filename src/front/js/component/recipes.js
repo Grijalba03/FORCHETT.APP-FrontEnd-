@@ -69,11 +69,22 @@ export const RecipesList = (props) => {
                             {item.category_name}
                           </Link>
                         </div>
-                        <div>
-                          <button onClick={(e) => {actions.addFav(item.id); }} className="heart">
-                            <i className="fa-solid fa-heart"></i>
-                          </button>
-                        </div>
+
+                        {store.username ? ( // User Account
+                          <div>
+                            <button
+                              onClick={(e) => {
+                                actions.addFav(item.id);
+                              }}
+                              className="heart"
+                            >
+                              <i className="far fa-heart"></i>
+                            </button>
+                          </div>
+                        ) : (
+                          <></>
+                        )}
+
                       </div>
                     </div>
                   </div>

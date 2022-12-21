@@ -72,7 +72,7 @@ export const Login = () => {
         <div className="row">
           <div className="col-12 pt-5 pb-5 text-center">
             <i className="fa-solid fa-id-card-clip iconmodlog"></i>
-            <h2 className="pt-3">User login</h2>
+            <h2 className="pt-3">USER LOGIN</h2>
           </div>
         </div>
         <form

@@ -59,7 +59,8 @@ export const SignUp = () => {
       <div className="container">
         <div className="row">
           <div className="col-12 pt-5 pb-5 text-center">
-            <h2>Signup</h2>
+            <i class="fa-solid fa-user-plus iconmodlog"></i>
+            <h2 className="pt-3">SIGNUP</h2>
           </div>
         </div>
         <form
@@ -110,12 +111,16 @@ export const SignUp = () => {
             </div>
           </div>
           <div className="row d-flex py-2">
-            <button className="btn btn-primary" type="submit">
-              Registrar
+            <button className="btn forchettBtn" type="submit">
+              Signup
             </button>
           </div>
         </form>
-        <Link to="/">Ir a Home</Link>
+        <Link to="/login">
+          <p className="text-center forchettTxt pt-5">
+            Already have an account? Login.
+          </p>
+        </Link>
       </div>
     </>
   );

@@ -9,33 +9,44 @@
   border: none;
 }
 
+.heart i:hover {
+  color: blueviolet;
+}
+
+.heart i:active {
+  color:rgba(98, 0, 232, 0.08);
+}
+.heart i:focus {
+  color:  rgba(98, 0, 232, 0.08);
+}
+.heart i:target {
+  color: rgba(98, 0, 232, 0.08);
+}
+
 .card-background {
   background-color: #f6f6f6;
 }
 
-.recipetitle{
-    font-size: 50px;
+.recipetitle {
+  font-size: 50px;
 }
 
-.categoryname{
-    color:rgb(170, 94, 241);
-    border-color: rgb(152, 70, 230);
+.categoryname {
+  color: rgb(170, 94, 241);
+  border-color: rgb(152, 70, 230);
 }
 
-.categoryname:hover{
-    color: #ffffff;
-    border-color: rgb(152, 70, 230);
-    background-color: rgb(172, 90, 248);
+.categoryname:hover {
+  color: #ffffff;
+  border-color: rgb(152, 70, 230);
+  background-color: rgb(172, 90, 248);
 }
-
-
 
 .facts {
   background-color: rgb(223, 198, 248);
   width: 300px;
   height: 150px;
   line-height: 50%;
-  
 }
 
 .facts h1 {
@@ -59,116 +70,125 @@
   padding-bottom: 15px;
 }
 
-.related1{
-    background-color: rgb(202, 201, 201);
-    margin:auto;
-    width: 600px;
-    height: 300px;
+.related1 {
+  background-color: rgb(202, 201, 201);
+  margin: auto;
+  width: 600px;
+  height: 300px;
 }
 
-.related2{
-    background-color: rgb(202, 201, 201);
-    width: 80px;
-    height: 80px;
+.related2 {
+  background-color: rgb(202, 201, 201);
+  width: 80px;
+  height: 80px;
 }
 
-.first{
-    margin-left: 90px;
+.first {
+  margin-left: 90px;
 }
 
-.last{
-    margin-right: 90px;
+.last {
+  margin-right: 90px;
 }
 
-div h1{
-    font-size: 20px;
+div h1 {
+  font-size: 20px;
 }
 
-.write{
-    width: 600px;
-    height: 100px;
-    background-color: rgb(235, 231, 231);
+.write {
+  width: 600px;
+  height: 100px;
+  background-color: rgb(235, 231, 231);
 }
 
-.recipeimage{
+.recipeimage {
   background-color: rgb(235, 231, 231);
   margin-top: 75px;
   width: 400px;
   height: 300px;
 }
 
-.usernamebox{
-  padding-top:25px;
+.usernamebox {
+  padding-top: 25px;
   color: rgb(152, 70, 230);
   border-color: rgb(152, 70, 230);
   width: 400px;
   height: 150px;
 }
 
-.usernamebox:hover{
+.usernamebox:hover {
   color: rgb(152, 70, 230);
   border-color: rgb(152, 70, 230);
   background-color: #ffffff;
 }
 
-.usercircle{
-  background:  rgb(235, 231, 231);
-  width:75px;
-  height:75px;
-  }
+.usercircle {
+  background: rgb(235, 231, 231);
+  width: 75px;
+  height: 75px;
+}
 
-  .usernameinfo{
-    padding-left:25px;
-    padding-top: 25px;
-  }
+.usernameinfo {
+  padding-left: 25px;
+  padding-top: 25px;
+}
 
-  .favorite{
-    font-weight: bold;
-    color: rgb(152, 70, 230);
-    border-color: rgb(152, 70, 230);
-    background-color: #ffffff;
-    width: 400px;
-  }
+.favorite {
+  font-weight: bold;
+  color: rgb(152, 70, 230);
+  border-color: rgb(152, 70, 230);
+  background-color: #ffffff;
+  width: 400px;
+}
 
-  .favorite:hover{
-    color: #ffffff;
-    border-color: rgb(152, 70, 230);
-    background-color: rgb(152, 70, 230);
-  }
-
-  .sidebox{
-    width: 400px;
-  }
-
-  .promoted{
-    background-color: rgb(202, 201, 201);
-    width: 300px;
-    height: 300px;
-    margin: auto;
-  }
-
-  .submit{
-    width: 100px;
-    margin: auto;
-  }
-
-  .home{
-    width: 150px;
-    margin: auto;
-  }
-
-  .star{
-    font-size:30px;
-  }
-
-  .star:visited {
-    color: rgb(152, 70, 230);
-  }
-  .star:hover {
-    color: rgb(152, 70, 230);
-  }
-  .star:active {
-    color: rgb(74, 15, 236);
-  }
+.favorite:hover {
+  color: #ffffff;
+  border-color: rgb(152, 70, 230);
+  background-color: rgb(152, 70, 230);
+}
 
 
+.favorite:active {
+  color: rgb(152, 70, 230);
+}
+.favorite:focus {
+  color: rgb(152, 70, 230);
+}
+.favorite:target {
+  color: rgb(152, 70, 230);
+}
+
+.sidebox {
+  width: 400px;
+}
+
+.promoted {
+  background-color: rgb(202, 201, 201);
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+
+.submit {
+  width: 100px;
+  margin: auto;
+}
+
+.home {
+  width: 150px;
+  margin: auto;
+}
+
+.star {
+  font-size: 30px;
+}
+
+.star:visited {
+  color: rgb(152, 70, 230);
+}
+.star:hover {
+  color: rgb(152, 70, 230);
+}
+.star:active {
+  color: rgb(74, 15, 236);
+}

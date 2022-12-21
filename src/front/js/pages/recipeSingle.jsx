@@ -195,8 +195,7 @@ export const Recipesingle = (props) => {
 
               <div className="d-flex flex-column">
                 {/* Favorites box*/}
-                <div
-                  className="btn btn-outline-info my-2 favorite"
+                <div className="btn btn-outline-info my-2 favorite"
                   onClick={(e) => {
                     actions.addFav(
                       "/user/favorites",

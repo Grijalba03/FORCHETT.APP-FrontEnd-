@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
-import { userActions } from "../store/user";
+import { userActions } from "../store/user"; 
+import "../../styles/userProfile.css";
 
 export const UserProfile = () => {
   const { store, actions } = useContext(Context);
@@ -55,13 +56,15 @@ export const UserProfile = () => {
             alt="..."
           /> 
           <h5 className="username text-center">{store.username}</h5> 
+          <h6 className="dietaryPreferences text-center">{userInfo.dietaryPreferences} </h6>
                
           {/*Username and social media links */}
-          
-          <a className="btn btn-primary" href={userInfo.youtube}  role="button">YouTube</a>
-          <a className="btn btn-primary" href={userInfo.meta}  role="button">Meta</a>
-          <a className="btn btn-primary" href={userInfo.instagram}  role="button">Instagram</a>
-          <a className="btn btn-primary" href={userInfo.twitter}  role="button">Twitter</a>
+          <div className="socialMedia">
+          <a className="btn buttonSocial" href={userInfo.youtube}  role="button">YouTube</a>
+          <a className="btn buttonSocial" href={userInfo.meta}  role="button">Meta</a>
+          <a className="btn buttonSocial" href={userInfo.instagram}  role="button">Instagram</a>
+          <a className="btn buttonSocial" href={userInfo.twitter}  role="button">Twitter</a>
+          </div>
         </div>
         <div className="favoritecards mx-auto">
           <h3 className="myfavoritestitle text-center">

@@ -7,6 +7,7 @@
 
 .profile-img-top {
   background-size: contain;
+  padding-top: 20px;
   width: 300px;
   height: 300px;
 }
@@ -15,4 +16,33 @@
   /* text-align: center; */
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.userfont{
+  font-size: 40px;
+}
+
+.myprofile{
+
+  font-size: 30px;
+}
+
+.tipofav{
+  font-size: 30px;
+  color: blueviolet;
+}
+
+
+.basurero:hover {
+  color: blueviolet;
+}
+
+.basurero:active {
+  color: rgba(98, 0, 232, 0.08);
+}
+.basurero:focus {
+  color: rgba(98, 0, 232, 0.08);
+}
+.basurero:target {
+  color: rgba(98, 0, 232, 0.08);
 }

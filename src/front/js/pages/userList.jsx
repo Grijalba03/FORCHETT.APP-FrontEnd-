@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/recipes.css";
 
 export const UserList = () => {
   const { store, actions } = useContext(Context);
@@ -10,7 +11,7 @@ export const UserList = () => {
 
   useEffect(() => {
     async function fetchUserList() {
-      let memberList = await actions.fetchGenerico(`/userlist/`);
+      let memberList = await actions.fetchGenerico(`/userlist`);
       if (memberList.status == 200) {
         memberList = await memberList.json();
         setUserlist(memberList);
@@ -27,33 +28,34 @@ export const UserList = () => {
   return (
     <div className="container">
       {/* {console.log('heyy', memberList)} */}
-      <h1 className="text-center">User List</h1>
+      <h1 className="text-center tipo my-5">Users List</h1>
       <div className="d-flex justify-content-evenly">
         {userlist && userlist.length > 0 ? (
           userlist.map((item, index) => {
             return (
-              // <div className="circle p-2 rounded-circle" key={index}>
-              //   <Link
-              //     className="category-name"
-              //     to={`/user/profile/${item.username}`}
-              //   >
-              //     <p className="category-name">{item.username}</p>
-              //     <p>frakk</p>
-              //   </Link>
-              // </div>
-              <div key={index} className="card">
-                <img src="https://via.placeholder.com/400x200" 
-                className="card-img-top" alt="..."/>
-                <div className="card-body">
-                  <h3 className="card-title">{item.username}</h3>
-                  <h5 className="card-title">{item.title}</h5>
-                  <h5 className="card-title">{item.dietaryPreferences}</h5>
-                  <Link
-                  className="category-name"
-                  to={`/user/profile/${item.username}`}
-                  >
-                  Profile
-                  </Link>
+              <div key={index} className="card card-background">
+                <div className="containingimage">
+                  {" "}
+                  <img
+                    src={item.image}
+                    className="card-img-top card-img-top rounded"
+                    alt="..."
+                  />
+                </div>
+                <div className="card-body card-background">
+                  <div className="card-body">
+                    <h3 className="card-title">{item.username}</h3>
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title">{item.title}</h5>
+                  </div>
+                  <div className="card-body">
+                    <h5 className="card-title">{item.dietaryPreferences}</h5>
+                    {/* <Link
+                      className="" to={`/userprofile`}>
+                      Profile
+                      </Link> */}
+                  </div>
                 </div>
               </div>
             );

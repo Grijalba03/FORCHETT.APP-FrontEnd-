@@ -71,7 +71,8 @@ export const Login = () => {
       <div className="container">
         <div className="row">
           <div className="col-12 pt-5 pb-5 text-center">
-            <h2>Login</h2>
+            <i className="fa-solid fa-id-card-clip iconmodlog"></i>
+            <h2 className="pt-3">User login</h2>
           </div>
         </div>
         <form
@@ -109,18 +110,24 @@ export const Login = () => {
             </div>
           </div>
           <div className="row d-flex py-2">
-            <button className="btn btn-primary" type="submit">
-              Iniciar Sesión
+            <button className="btn forchettBtn" type="submit">
+              Log in
             </button>
           </div>
         </form>
-        <Link to="/">Ir a Home</Link>
         {store.username ? (
           <button type="button" onClick={() => prueba()}>
             Endpoint protegida
           </button>
         ) : (
-          <h1>No ha iniciado sesión</h1>
+          <>
+            <Link to="/signup">
+              <p className="text-center pt-5 forchettTxt">
+                <i className="fa-solid fa-user-plus"></i> Don't have an account?
+                register.
+              </p>
+            </Link>
+          </>
         )}
         {store.username ? (
           <button

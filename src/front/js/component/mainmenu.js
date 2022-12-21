@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
@@ -7,6 +7,7 @@ import "../../styles/mainmenu.css";
 export const MainMenu = () => {
   const [isOpen, setIsopen] = useState(false);
   const { store, actions } = useContext(Context);
+  const history = useNavigate();
 
   const menu = () => {
     // isOpen === true ? setIsopen(false) : setIsopen(true);
@@ -64,14 +65,27 @@ export const MainMenu = () => {
       )}
       {store.username ? ( // Logout
         <div className="text-center">
-          <Link to={() => {
+          {/* <Link to={() => {
                 actions.logout();
                 history("/");
 				window.location.reload(); //#reload window
               }}>
             
           <i className="fa-solid fa-right-to-bracket iconmod"></i>
-          </Link>
+          </Link> */}
+
+<button
+            //   type="submit"
+              type="button"
+              className="btn btn-danger"
+              onClick={() => {
+                actions.logout();
+                history("/");
+				window.location.reload(); //#reload window
+              }}
+            >
+              Cerrar Sesión
+            </button>
         </div>
       ) : (
         <></>

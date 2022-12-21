@@ -4,3 +4,15 @@
 body {
     background-color: #f7f7f7;
 }
+.iconmodlog {
+    font-size: 60px;
+    color: #ae89d1;
+}
+.forchettBtn {
+    border-color: #ffffff !important;
+    background-color: #ae89d1 !important;
+    color: #fff;
+}
+.forchettTxt {
+    color: rebeccapurple;
+}

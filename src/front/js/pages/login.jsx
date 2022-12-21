@@ -103,7 +103,7 @@ export const Login = () => {
                 <input
                   name="password"
                   placeholder="agregue su password"
-                  type="string"
+                  type="password"
                   required
                 />
               </div>

@@ -63,18 +63,21 @@ export const MainMenu = () => {
           </Link>
         </div>
       )}
-      {store.username ? ( // Logout
+      {store.username ? ( // Favorites
         <div className="text-center">
-          {/* <Link to={() => {
-                actions.logout();
-                history("/");
-				window.location.reload(); //#reload window
-              }}>
-            
-          <i className="fa-solid fa-right-to-bracket iconmod"></i>
-          </Link> */}
-
-<button
+          <Link
+            to={`/user/favorites/${store.user_id}`}
+            className="sd-link menutxtcolor"
+          >
+            <i className="fa-solid fa-heart iconmod"></i>
+          </Link>
+        </div>
+      ) : (
+        <></>
+      )}
+      {store.username ? ( // Logout
+        <div className="text-center logout">
+        <button
             //   type="submit"
               type="button"
               className="btn btn-danger"
@@ -84,20 +87,8 @@ export const MainMenu = () => {
 				window.location.reload(); //#reload window
               }}
             >
-              Cerrar Sesión
+              Logout
             </button>
-        </div>
-      ) : (
-        <></>
-      )}
-      {store.username ? ( // Favorites
-        <div className="text-center">
-          <Link
-            to={`/user/favorites/${store.user_id}`}
-            className="sd-link menutxtcolor"
-          >
-            <i className="fa-solid fa-heart iconmod"></i>
-          </Link>
         </div>
       ) : (
         <></>

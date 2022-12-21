@@ -77,7 +77,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -100,7 +100,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -131,7 +131,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -151,10 +151,9 @@ export const Categories = () => {
                             CLICK TO VIEW
                           </Link>
                         </div>
-
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -185,7 +184,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -208,7 +207,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -239,7 +238,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -262,7 +261,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -293,7 +292,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -316,7 +315,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -347,7 +346,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -370,7 +369,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -401,7 +400,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -424,7 +423,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -455,7 +454,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -478,7 +477,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -509,7 +508,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -532,7 +531,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -563,7 +562,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -586,7 +585,7 @@ export const Categories = () => {
 
                         <button
                           onClick={(e) => {
-                            actions.addfavorites(filteredAuxiliar.title);
+                            actions.addFav(filteredAuxiliar.title);
                           }}
                           className="heart align-items-end"
                         >
@@ -598,6 +597,22 @@ export const Categories = () => {
                 ))}
             </div>
           </div>
+        </div>
+
+        <div className="row justify-content-center">
+          <div className="col"></div>
+          <div className="col mx-auto align-items-middle">
+            <Link to="/">
+              {" "}
+              <button
+                className="btn btn-outline-info categoryname home my-5"
+                role="button"
+              >
+                Return to Home
+              </button>
+            </Link>
+          </div>
+          <div className="col"></div>
         </div>
       </div>
     </>

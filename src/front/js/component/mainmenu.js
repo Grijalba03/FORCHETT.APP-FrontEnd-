@@ -25,7 +25,7 @@ export const MainMenu = () => {
         </button>
         <p>Menu</p>
       </div>
-      {store.username ? (
+      {store.username ? ( // User Account
         <div className="text-center">
           <Link to="/user/account" className="sd-link">
             <i className="fa-regular fa-circle-user iconmod"></i>
@@ -34,18 +34,29 @@ export const MainMenu = () => {
       ) : (
         <></>
       )}
-      {store.username ? (
-          <></>
-        ) : (
-          <div className="text-center">
-            <Link to="/login" className="sd-link">
-              <i className="fa-solid fa-right-to-bracket iconmod"></i>
-            </Link>
-          </div>
+
+      {store.username ? ( // User Account
+        <div className="text-center">
+          <Link to="/userprofile" className="sd-link">
+            <i class="fa-regular fa-address-card iconmod"></i>
+          </Link>
+        </div>
+      ) : (
+        <></>
       )}
-      {store.username ? (
-          <></>
-        ) : (
+
+      {store.username ? ( //Login
+        <></>
+      ) : (
+        <div className="text-center">
+          <Link to="/login" className="sd-link">
+            <i className="fa-solid fa-right-to-bracket iconmod"></i>
+          </Link>
+        </div>
+      )}
+      {store.username ? ( //Signup
+        <></>
+      ) : (
         <div className="text-center">
           <Link to="/signup" className="sd-link">
             <i className="fa-solid fa-user-plus iconmod"></i>
@@ -66,6 +77,19 @@ export const MainMenu = () => {
           </Link>
         <i className="fa-solid fa-heart iconmod"></i>
       </div>
+      {store.username ? ( // Logout
+        <div className="text-center">
+          <i className="fa-solid fa-right-to-bracket iconmod"></i>
+        </div>
+      ) : (
+        <></>
+      )}
+      {store.username ? ( // Favorites
+        <div className="text-center">
+          <Link to={`/user/favorites/${store.user_id}`} className="sd-link">
+            <i className="fa-solid fa-heart iconmod"></i>
+          </Link>
+        </div>
       ) : (
         <></>
       )}
@@ -93,7 +117,11 @@ export const MainMenu = () => {
                 Random
               </Link>
             </li>
-            <h4>Categories</h4>
+            <h4>
+              <Link to="/categories" className="sd-link cattitle">
+                Categories
+              </Link>
+            </h4>
             <li>
               <Link to="/categories/1" className="sd-link">
                 Breakfast
@@ -126,10 +154,11 @@ export const MainMenu = () => {
             </li>
             <h4>Extra</h4>
             <li>
-              <Link to="/register" className="sd-link">
-                Recommendations
+              <Link to="/userlist" className="sd-link">
+                Explore members
               </Link>
             </li>
+
           </ul>
         </div>
       </div>

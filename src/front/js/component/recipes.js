@@ -41,7 +41,7 @@ export const RecipesList = (props) => {
                         {" "}
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={item.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -69,16 +69,20 @@ export const RecipesList = (props) => {
                             {item.category_name}
                           </Link>
                         </div>
-                        <div>
-                          <button
-                            onClick={(e) => {
-                              actions.addfavorites(item.title);
-                            }}
-                            className="heart"
-                          >
-                            <i className="far fa-heart"></i>
-                          </button>
-                        </div>
+                        {store.username ? ( // User Account
+                          <div>
+                            <button
+                              onClick={(e) => {
+                                actions.addFav(item.id);
+                              }}
+                              className="heart"
+                            >
+                              <i className="far fa-heart"></i>
+                            </button>
+                          </div>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>

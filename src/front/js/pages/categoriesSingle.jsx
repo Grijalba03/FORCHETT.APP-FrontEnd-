@@ -57,7 +57,7 @@ export const Categoriessingle = (props) => {
                           <div>
                             {/* Cajita con imagen y rating */}
                             <img
-                              src="https://via.placeholder.com/400x200"
+                              src={item.image}
                               className="card-img-top rounded"
                               alt="..."
                             />
@@ -85,7 +85,7 @@ export const Categoriessingle = (props) => {
 
                             <button
                               onClick={(e) => {
-                                actions.addfavorites(item.id);
+                                actions.addFav(item.id);
                               }}
                               className="heart align-items-end"
                             >
@@ -103,16 +103,20 @@ export const Categoriessingle = (props) => {
             <h1 className="text-center">No categories available</h1>
           )}
 
-          <div>
-            <Link to="/">
-              <span
-                className="btn btn-primary btn-lg align-items-center"
-                href="#"
-                role="button"
-              >
-                Return to Home
-              </span>
-            </Link>
+          <div className="row justify-content-center">
+            <div className="col"></div>
+            <div className="col mx-auto align-items-middle">
+              <Link to="/">
+                {" "}
+                <button
+                  className="btn btn-outline-info categoryname home my-5"
+                  role="button"
+                >
+                  Return to Home
+                </button>
+              </Link>
+            </div>
+            <div className="col"></div>
           </div>
         </div>
       </div>

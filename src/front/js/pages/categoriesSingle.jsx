@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
+import "../../styles/categories.css";
 
 export const Categoriessingle = (props) => {
   const { store, actions } = useContext(Context); //nos traemos las categorias desde store destructurado
@@ -83,14 +84,20 @@ export const Categoriessingle = (props) => {
                               </Link>
                             </div>
 
-                            <button
+                            {store.username ? ( // User Account
+                              <button
                               onClick={(e) => {
                                 actions.addFav(item.id);
                               }}
                               className="heart align-items-end"
                             >
-                              <i className="far fa-heart"></i>
+                              <i className="fa-solid fa-heart heart"></i>
                             </button>
+                            ) : (
+                              <></>
+                            )}
+
+                            
                           </div>
                         </div>
                       </div>

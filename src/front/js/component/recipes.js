@@ -78,7 +78,7 @@ export const RecipesList = (props) => {
                               }}
                               className="heart"
                             >
-                              <i className="far fa-heart"></i>
+                              <i className="fa-solid fa-heart heart"></i>
                             </button>
                           </div>
                         ) : (

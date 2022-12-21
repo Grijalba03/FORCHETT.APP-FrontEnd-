@@ -27,7 +27,7 @@ export const RecipesList = (props) => {
     <div className="mt-5">
       {store.recipes && store.recipes.length > 0 ? (
         <>
-          <h1 className="text-center">Cooking Recipes</h1>
+          <h1 className="text-center tipo">Cooking Recipes</h1>
           <div className="container spacing">
             <div className="row d-flex mt-3 mb-3">
               {store.recipes.map((item, index) => {

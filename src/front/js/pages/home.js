@@ -28,9 +28,11 @@ export const Home = () => {
 
   return (
     <>
-      <div className="container pt-5">
-        <h1 className="text-center">Categories</h1>
-        <p className="text-center">Choose your favorite category</p>
+
+      <div className="container pt-5 my-5">
+        <h1 className="text-center tipo my-5">Categories</h1>
+        <p className="text-center tipo2">Choose your favorite category</p>
+
         <div className="gridmod">
           {store.cat && store.cat.length > 0 ? (
             store.cat.map((item, index) => {
@@ -43,7 +45,7 @@ export const Home = () => {
               );
             })
           ) : (
-            <h1 className="text-center">No categories available</h1>
+            <h1 className="text-center tipo">No categories available</h1>
           )}
         </div>
 

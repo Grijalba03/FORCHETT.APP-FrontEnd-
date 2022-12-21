@@ -63,3 +63,13 @@ h1 {
   height: 200px;
   padding: 10px;
 }
+
+.tipo{
+  font-size: 40px;
+  color: blueviolet;
+}
+
+.tipo2{
+  font-size: 30px;
+  color: blueviolet;
+}

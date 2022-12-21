@@ -1,41 +1,31 @@
-.profilebg{
-        margin-bottom: 25px;
-        background-color: rgb(223, 198, 248);
+.profilebg {
+  margin-bottom: 25px;
+  background-color: rgb(223, 198, 248);
 }
 
-.socialMedia{ 
-        
-        text-align: center;
-        margin-bottom: 10px;
-        
-    
-} 
-.buttonSocial { 
-        color: rgb(251, 251, 251);
-        background-color: rgb(172, 106, 235);
-        margin-right: 10px;
-        margin-top: 10px;
-
+.socialMedia {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.buttonSocial {
+  color: rgb(251, 251, 251);
+  background-color: rgb(172, 106, 235);
+  margin-right: 10px;
+  margin-top: 10px;
 }
 
-.username { 
-        margin-top: 15px;
-        margin-bottom: 15px;
+.username {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-
-/* .profile-img-top { 
-   
-        background: rgb(87, 4, 87);
-        width: 200px;
-        height: 200px;
-        margin: 5px;
-        padding: 5px;
-    
-} */
-
-.myfavoritestitle{ 
-        margin-bottom: 25px;
+.profile-avatar {
+  background-size: contain;
+  padding-top: 20px;
+  width: 200px;
+  height: 200px;
 }
 
-
+.myfavoritestitle {
+  margin-bottom: 25px;
+}

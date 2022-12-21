@@ -151,7 +151,6 @@ export const Categories = () => {
                             CLICK TO VIEW
                           </Link>
                         </div>
-
                         <button
                           onClick={(e) => {
                             actions.addFav(filteredAuxiliar.title);

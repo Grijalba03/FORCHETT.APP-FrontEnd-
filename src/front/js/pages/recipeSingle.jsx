@@ -67,23 +67,26 @@ export const Recipesingle = (props) => {
 
   return (
     <>
-      <div className="container my-5">
+      <div className="container pt-5 my-5">
+
         {single ? (
-          <div className="d-flex flex-row">
-            <div className="d-flex flex-column mx-5">
-              {" "}
+          <div className="row">
+            {/* <div className="d-flex flex-row"> */}
+            <div className="col-12 col-md-8">
               {/* Columna 1*/}
-              {/* Título 1*/}
+  
+              { /* Título 1*/}
               <div className="my-3">
-                <Link to={`/categories/${single.category}`}>
+                <h1 className="recipetitle">{single.title}</h1>
+              </div>
+              <div>
+              <Link to={`/categories/${single.category}`}>
                   <p className="btn btn-outline-info categoryname">
                     {single.category_name}
                   </p>
                 </Link>
               </div>
-              <div className="my-1">
-                <h1 className="recipetitle">{single.title}</h1>
-              </div>
+
               <div>{single.rating}</div>
               <div className="d-flex flex-row justify-content-evenly">
                 {/* Nutritional Facts 1*/}
@@ -165,17 +168,11 @@ export const Recipesingle = (props) => {
             </div>
 
             {/* Columna 2*/}
-            <div className="d-flex flex-column mx-5">
+            <div className="col-6 col-md-4">
+              {/* <div className="d-flex flex-column mx-5"> */}
               {/* Recipe Image*/}
-              <div className="container spacing">
-                <div>
-                  <div className="d-flex mt-3 mb-3">
-                    <img
-                      src={single.image}
-                      className="img-fluid card-img-top rounded"
-                    />
-                  </div>
-                </div>
+              <div className="recepyImg border rounded">
+                <img src={single.image} className="img-fluid rounded" />
               </div>
 
               <div className="d-flex flex-column">
@@ -183,15 +180,15 @@ export const Recipesingle = (props) => {
                 <div className="d-flex flex-column">
                   {store.username ? ( // User Account
                     <div className="btn btn-outline-info usernamebox rounded my-3 d-flex flex-row justify-content-middle">
-                      <div className="usercircle p-5 rounded-circle">
-                        <img src={userInfo.image} />
-                      </div>
+                      <div
+                        className="usercircle p-5 rounded-circle usernameAvatar"
+                        style={{ backgroundImage: `url(${single.image})` }}
+                      ></div>
                       <div className="usernameinfo">
-                        <p>
-                          {userInfo.username}
-                          <br></br>
-                          {userInfo.dietaryPreferences}
-                        </p>
+                        <Link to="/userprofile">
+                          <h4>{single.username}</h4>
+                        </Link>
+                        <h6>{single.dietaryPreferences}</h6>
                       </div>
                     </div>
                   ) : (
@@ -223,72 +220,86 @@ export const Recipesingle = (props) => {
                   )}
                 </div>
               </div>
-              <div className="d-flex flex-column">
-                {/* Social media share box*/}
-                <h2>SHARE</h2>
-                {/* <div className="btn btn-outline-info my-2 favorite">SHARE</div> */}
-                <FacebookShareButton
-                  url={window.location.href}
-                  quote={document.title}
-                  hashtag={"#Forchett.app"}
-                >
-                  <FacebookIcon size={32} round />
-                </FacebookShareButton>
-                <PinterestShareButton
-                  url={window.location.href}
-                  media={document.title}
-                >
-                  <PinterestIcon size={32} round />
-                </PinterestShareButton>
-                <RedditShareButton
-                  url={window.location.href}
-                  title={document.title}
-                >
-                  <RedditIcon size={32} round />
-                </RedditShareButton>
-                <TelegramShareButton
-                  url={window.location.href}
-                  title={document.title}
-                >
-                  <TelegramIcon size={32} round />
-                </TelegramShareButton>
-                <TumblrShareButton
-                  url={window.location.href}
-                  title={document.title}
-                >
-                  <TumblrIcon size={32} round />
-                </TumblrShareButton>
-                <TwitterShareButton
-                  url={window.location.href}
-                  title={document.title}
-                >
-                  <TwitterIcon size={32} round />
-                </TwitterShareButton>
-                <WhatsappShareButton
-                  url={window.location.href}
-                  title={document.title}
-                  separator=":: "
-                >
-                  <WhatsappIcon size={32} round />
-                </WhatsappShareButton>
-                <PocketShareButton
-                  url={window.location.href}
-                  title={"Next Share"}
-                >
-                  <PocketIcon size={32} round />
-                </PocketShareButton>
-              </div>
-              <EmailShareButton
-                url={window.location.href}
-                subject={"Recipe from Forchett.App"}
-                body="body"
-              >
-                <EmailIcon size={32} round />
-              </EmailShareButton>
+
               {/* Ingredients box*/}
               <div className="shadow p-3 mb-5 bg-white rounded my-5 sidebox">
                 <h1>Ingredients List</h1>
                 <p>{single.ingredients}</p>
+              </div>
+
+              <div className="d-flex flex-column shadow p-3 mb-5 bg-white rounded my-5 sidebox rounded">
+                {/* Social media share box*/}
+                <h1>SHARE</h1>
+                {/* <div className="btn btn-outline-info my-2 favorite">SHARE</div> */}
+                <div className="socialIcons">
+                  <div className="btnSocial">
+                    <FacebookShareButton
+                      url={window.location.href}
+                      quote={document.title}
+                      hashtag={"#Forchett.app"}
+                    >
+                      <FacebookIcon size={32} round />
+                    </FacebookShareButton>
+                  </div>
+                  <div className="btnSocial">
+                    <PinterestShareButton
+                      url={window.location.href}
+                      media={document.title}
+                    >
+                      <PinterestIcon size={32} round />
+                    </PinterestShareButton>
+                  </div>
+                  <div className="btnSocial">
+                    <RedditShareButton
+                      url={window.location.href}
+                      title={document.title}
+                    >
+                      <RedditIcon size={32} round />
+                    </RedditShareButton>
+                  </div>
+                  <div className="btnSocial">
+                    <TelegramShareButton
+                      url={window.location.href}
+                      title={document.title}
+                    >
+                      <TelegramIcon size={32} round />
+                    </TelegramShareButton>
+                  </div>
+                  <div className="btnSocial">
+                    <TumblrShareButton
+                      url={window.location.href}
+                      title={document.title}
+                    >
+                      <TumblrIcon size={32} round />
+                    </TumblrShareButton>
+                  </div>
+                  <div className="btnSocial">
+                    <TwitterShareButton
+                      url={window.location.href}
+                      title={document.title}
+                    >
+                      <TwitterIcon size={32} round />
+                    </TwitterShareButton>
+                  </div>
+                  <div className="btnSocial">
+                    <WhatsappShareButton
+                      url={window.location.href}
+                      title={document.title}
+                      separator=":: "
+                    >
+                      <WhatsappIcon size={32} round />
+                    </WhatsappShareButton>
+                  </div>
+                  <div className="btnSocial">
+                    <EmailShareButton
+                      url={window.location.href}
+                      subject={"Recipe from Forchett.App"}
+                      body="body"
+                    >
+                      <EmailIcon size={32} round />
+                    </EmailShareButton>
+                  </div>
+                </div>
               </div>
 
               {/* Free of box*/}

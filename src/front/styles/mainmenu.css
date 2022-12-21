@@ -1,9 +1,9 @@
 .container-menu {
-  position: absolute;
+  position: fixed;
   width: 100px;
   left: 0px;
   background: rgba(98, 0, 232, 0.08);
-  height: 93%;
+  height: 100vh;
   padding-top: 10px;
   box-shadow: 4px 2px 5px 0px rgba(201, 201, 201, 0.75);
   -webkit-box-shadow: 4px 2px 5px 0px rgba(201, 201, 201, 0.75);

@@ -7,30 +7,24 @@ export const Login = () => {
   const { store, actions } = useContext(Context);
   const history = useNavigate();
   const [token, setToken] = useState("");
-  const registrar = async (e) => {
+  const userLogin = async (e) => {
     e.preventDefault();
-    console.log("Entramos en la función de registrar");
+    console.log("Entramos en la función de userLogin");
 
     const data = new FormData(e.target);
-    let email = data.get("email");
+    // let email = data.get("email");
+    let username = data.get("username");
     let password = data.get("password");
 
-    console.log(email, password);
+    // console.log(email, password);
+    console.log(username, password);
 
     let obj = {
-      email: email,
+      // email: email,
+      username: username,
       password: password,
     };
 
-    /*  let BACKEND_URL = process.env.BACKEND_URL;
-    console.log(BACKEND_URL);
-
-    let response = await fetch(`${BACKEND_URL}/signup`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(obj),
-    });
- */
     console.log("hola4");
     let response = await actions.login("/login", obj, "POST"); //response es una promesa
     console.log("36: ", response);
@@ -40,14 +34,14 @@ export const Login = () => {
       Swal.fire({
         icon: "success",
         title: "Welcome",
-        text: `Bienvenido, ${email}`,
-        footer: '<a href="">Why do I have this issue?</a>',
+        text: `Hello, ${username}`,
+        footer: `FORCHETT.APP Member's Area`,
       });
     } else {
       Swal.fire({
         icon: "error",
         title: "Oops...",
-        text: "No pudo iniciar sesión",
+        text: "Error, failed to login.",
         footer: '<a href="">Why do I have this issue?</a>',
       });
     }
@@ -75,21 +69,27 @@ export const Login = () => {
   return (
     <>
       <div className="container">
+        <div className="row">
+          <div className="col-12 pt-5 pb-5 text-center">
+            <h2>Login</h2>
+          </div>
+        </div>
         <form
           onSubmit={(evento) => {
-            registrar(evento);
+            userLogin(evento);
+            history("/");
           }}
         >
           <div className="row d-flex">
             <div className="col mx-2">
               <div className="row">
-                <h1>Email</h1>
+                <h1>Username</h1>
               </div>
               <div className="row">
                 <input
-                  name="email"
-                  placeholder="agregue su email"
-                  type="email"
+                  name="username"
+                  placeholder="Username"
+                  type="text"
                   required
                 />
               </div>
@@ -115,14 +115,14 @@ export const Login = () => {
           </div>
         </form>
         <Link to="/">Ir a Home</Link>
-        {store.email ? (
+        {store.username ? (
           <button type="button" onClick={() => prueba()}>
             Endpoint protegida
           </button>
         ) : (
           <h1>No ha iniciado sesión</h1>
         )}
-        {store.email ? (
+        {store.username ? (
           <button
             type="button"
             onClick={() => {
@@ -131,6 +131,20 @@ export const Login = () => {
             }}
           >
             Cerrar Sesión
+          </button>
+        ) : (
+          <></>
+        )}
+
+        {store.username ? (
+          <button
+            type="button"
+            onClick={() => {
+              // actions.logout();
+              history("/user/account");
+            }}
+          >
+            User Account
           </button>
         ) : (
           <></>

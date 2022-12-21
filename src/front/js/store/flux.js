@@ -16,12 +16,17 @@ const getState = ({ getStore, getActions, setStore }) => {
         },
       ],
       cat: [],
+      memberlist: [],
+      catsingle: {},
       recipes: [],
+      recipesingle: {},
       person: [],
       favorites: [],
-      vehicles: [],
-      character: [],
-      vehicle: [],
+      userProfile: [],
+      userDetails: [],
+      //images:[],
+      //recipesimages: [],
+
       ...userStore,
     },
     actions: {
@@ -73,56 +78,50 @@ const getState = ({ getStore, getActions, setStore }) => {
         //en este punto response es una promesa
         return response;
       },
-      addFav: (item) => {
-        let aux = getStore().favorites;
-        aux.push(item);
-        setStore({ favorites: aux });
+
+      addFav: async (
+        endpoint = "/user/favorites",
+        data = undefined,
+        metodo = "POST"
+      ) => {
+        //data y metodo son parámetros opcionales
+        let BACKEND_URL = process.env.BACKEND_URL;
+        const store = getStore(); //traerse el store
+        let tokenStore = store.token;
+        // const tokenLocalStorage = localStorage.getItem("token");
+        // const tokenSessionStorage = sessionStorage.getItem("token");
+        console.log("data", data);
+        let response = await fetch(BACKEND_URL + endpoint, {
+          method: metodo,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + tokenStore,
+          },
+
+          body: data ? JSON.stringify(data) : undefined,
+        });
+        //en este punto response es una promesa
+        return response;
+          },
+      removeFav: async (id, endpoint = "/user/favorites/", data = undefined, metodo = "DELETE") => {
+        //data y metodo son parámetros opcionales
+        let BACKEND_URL = process.env.BACKEND_URL;
+        const store = getStore(); //traerse el store
+        let tokenStore = store.token;
+        // const tokenLocalStorage = localStorage.getItem("token");
+        // const tokenSessionStorage = sessionStorage.getItem("token");
+        console.log("data",data)
+        let response = await fetch(BACKEND_URL + endpoint + id, {
+          method: metodo,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: "Bearer " + tokenStore,
+          },
+        });
+        //en este punto response es una promesa
+        return response;
+
       },
-      removeFav: (uid) => {
-        let aux = getStore().favorites;
-        let x = aux.filter((element, i) => element.uid != uid);
-        setStore({ favorites: x });
-      },
-
-      // getCharacter: async (uid) => {
-      //   let BACKEND_URL = process.env.BACKEND_URL;
-      //   fetch(`${BACKEND_URL}${uid}`)
-      //     .then((resp) => resp.json())
-      //     .then((resp) => setStore({ character: resp.result.properties }))
-      //     .catch((err) => console.error(err));
-      // },
-      // getPlanet: async (uid) => {
-      //   let BACKEND_URL = process.env.BACKEND_URL;
-      //   fetch(`${BACKEND_URL}${uid}`)
-      //     .then((resp) => resp.json())
-      //     .then((resp) => setStore({ planet: resp.result.properties }))
-      //     .catch((err) => console.error(err));
-      // },
-      // getSpaceship: async (uid) => {
-      //   let BACKEND_URL = process.env.BACKEND_URL;
-      //   fetch(`${BACKEND_URL}${uid}`)
-      //     .then((resp) => resp.json())
-      //     .then((resp) => setStore({ vehicle: resp.result.properties }))
-      //     .catch((err) => console.error(err));
-      // },
-      // getMessage: async () => {
-      //   let BACKEND_URL = process.env.BACKEND_URL;
-      //   fetch(`${BACKEND_URL}/people`)
-      //     .then((resp) => resp.json())
-      //     .then((resp) => setStore({ characters: resp.results }))
-      //     .catch((err) => console.error(err));
-
-      //   fetch(`${BACKEND_URL}/planets`)
-      //     .then((resp) => resp.json())
-      //     .then((resp) => setStore({ planets: resp.results }))
-      //     .catch((err) => console.error(err));
-
-      //   fetch(`${BACKEND_URL}/vehicles`)
-      //     .then((resp) => resp.json())
-      //     .then((resp) => setStore({ vehicles: resp.results }))
-      //     .catch((err) => console.error(err));
-      // },
-
     },
   };
 };

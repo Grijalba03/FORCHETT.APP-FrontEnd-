@@ -1,3 +1,14 @@
 .btnmod {
   float: right;
 }
+.bg-white {
+  background-color: blueviolet !important;
+}
+.btnSubmit {
+  font-size: 22px !important;
+  background-color: white !important;
+}
+
+.btnSubmit i {
+  color: blueviolet !important;
+}

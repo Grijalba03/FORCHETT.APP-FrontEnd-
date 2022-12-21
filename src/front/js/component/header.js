@@ -1,10 +1,9 @@
 import { Context } from "../store/appContext";
 import React, { useState, useEffect, useContext } from "react";
-import logourl from "../../img/forchettapp.png";
+// import logourl from "../../img/forchettapp.png";
 import "../../styles/header.css";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-
 
 export const Header = () => {
   const { store, actions } = useContext(Context);
@@ -19,13 +18,11 @@ export const Header = () => {
     let title = data.get("searchQuery");
     console.log("obj: ", title);
 
-
     let obj = {
       title: title,
     };
 
-    console.log('obj ', obj);
-    
+    console.log("obj ", obj);
 
     let response = await actions.fetchProtegido("/search", obj, "POST");
     console.log("Response: ", response);
@@ -53,7 +50,6 @@ export const Header = () => {
           text: "No result :(",
         });
       }
-      
     } else {
       // error
       Swal.fire({
@@ -69,33 +65,37 @@ export const Header = () => {
       <div className="row p-3 bg-white">
         <div className="col-4">
           <Link to="/" className="sd-link">
-            <img src={logourl} />
+            {/* <img src={logourl} /> */}
+            {/* <img src="https://iili.io/HznrJEJ.png" /> */}
+            {/* <img src="https://iili.io/HznPDFa.png" /> */}
+            <img src="https://iili.io/HzoaKSp.png" />
           </Link>
         </div>
         <div className="col-4">
           <div className="row">
             <div className="col-md-5 mx-auto">
               <div className="input-group">
-              <form
-                onSubmit={(data) => {
-                  userSearch(data);
-                  // history("/");
-                }}
-              >
-                <input
-                  className="form-control border-end-0 border"
-                  type="search"
-                  name="searchQuery"
-                  // onSubmit={(data) => {
-                  //   userSearch(data);
-                  //   // history("/");
-                  // }}
-                  //onClick={userSearch}
-                  // value="search"
-                  // id="example-search-input"
-                />
-                <span className="input-group-append">
-                  <button
+                <form
+                  onSubmit={(data) => {
+                    userSearch(data);
+                    // history("/");
+                  }}
+                >
+                  <input
+                    className="form-control border-end-0 border"
+                    type="search"
+                    name="searchQuery"
+                    placeholder="write and press enter to search..."
+                    // onSubmit={(data) => {
+                    //   userSearch(data);
+                    //   // history("/");
+                    // }}
+                    //onClick={userSearch}
+                    // value="search"
+                    // id="example-search-input"
+                  />
+                  <span className="input-group-append">
+                    {/* <button
                     className="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5"
                     type="button"
                     // onClick={(data) => {
@@ -104,8 +104,8 @@ export const Header = () => {
                     // }}
                   >
                     <i className="fa fa-search"></i>
-                  </button>
-                </span>
+                  </button> */}
+                  </span>
                 </form>
               </div>
             </div>
@@ -113,7 +113,10 @@ export const Header = () => {
         </div>
         <div className="col-4">
           <Link to="/submit">
-            <button type="button" className="btn btn-primary btnmod">
+            <button
+              type="button"
+              className="btn btnmod rounded-circle btnSubmit"
+            >
               <i className="fa-solid fa-plus"></i>
             </button>
           </Link>

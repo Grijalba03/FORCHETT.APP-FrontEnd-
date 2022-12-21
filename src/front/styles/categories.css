@@ -1,4 +1,5 @@
 .circle {
+  display: inline-block;
   background-color: rgb(172, 106, 235);
   width:100px;
   height:100px;
@@ -54,4 +55,11 @@ h1 {
 }
 .heart i:target {
   color: rgba(98, 0, 232, 0.08);
+}
+
+.gridmod {
+  display: inline !important; 
+  width: 200px;
+  height: 200px;
+  padding: 10px;
 }

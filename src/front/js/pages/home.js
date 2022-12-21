@@ -31,7 +31,7 @@ export const Home = () => {
       <div className="container">
         <h1 className="text-center">Categories</h1>
         <p className="text-center">Choose your favorite category</p>
-        <div className="d-flex justify-content-evenly">
+        <div className="gridmod">
           {store.cat && store.cat.length > 0 ? (
             store.cat.map((item, index) => {
               return (

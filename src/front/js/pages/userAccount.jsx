@@ -69,6 +69,7 @@ export const UserAccount = () => {
     console.log("change user profile data");
 
     const data = new FormData(e.target);
+    let avatar = data.get("Avatar");
     let dietaryPreference = data.get("Dietary-Preference");
     let title = data.get("Title");
     let description = data.get("Description");
@@ -80,6 +81,7 @@ export const UserAccount = () => {
     // console.log(currentPassword, newPassword, confirmPassword);
 
     let obj = {};
+    obj["Avatar"] = avatar;
     obj["Dietary-Preference"] = dietaryPreference;
     obj["Title"] = title;
     obj["Description"] = description;
@@ -126,7 +128,6 @@ export const UserAccount = () => {
     <div className="container">
       <div className="row">
         <div className="col-12 avatarHead">
-
           {/* <Link to="/upload">
             <button
               className="btn btn-outline-info categoryname home my-5"
@@ -140,7 +141,6 @@ export const UserAccount = () => {
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Wikipedia_Logo_1.0.png/600px-Wikipedia_Logo_1.0.png"
             alt="Test"
           /> */}
-          <input name="image" placeholder="Add your profile image URL here" type="text" required />
 
           <span className="username d-inline-block">Username</span>
         </div>
@@ -224,6 +224,18 @@ export const UserAccount = () => {
             }}
           >
             <div className="row">
+              <div className="col-12">
+                <div className="row">
+                  <h1>User Avatar</h1>
+                </div>
+                <div className="row">
+                  <input
+                    name="Avatar"
+                    placeholder="Avatar image URL here"
+                    type="text"
+                  />
+                </div>
+              </div>
               <div className="col-12">
                 <div className="row">
                   <h1>Dietary Preference</h1>

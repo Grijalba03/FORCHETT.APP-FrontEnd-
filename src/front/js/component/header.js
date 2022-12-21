@@ -1,6 +1,6 @@
 import { Context } from "../store/appContext";
 import React, { useState, useEffect, useContext } from "react";
-// import logourl from "../../img/forchettapp.png";
+import logourl from "../../img/forchettapp.png";
 import "../../styles/header.css";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -65,10 +65,7 @@ export const Header = () => {
       <div className="row p-3 bg-white">
         <div className="col-4">
           <Link to="/" className="sd-link">
-            {/* <img src={logourl} /> */}
-            {/* <img src="https://iili.io/HznrJEJ.png" /> */}
-            {/* <img src="https://iili.io/HznPDFa.png" /> */}
-            <img src="https://iili.io/HzoaKSp.png" />
+            <img src={logourl} />
           </Link>
         </div>
         <div className="col-4">
@@ -82,7 +79,7 @@ export const Header = () => {
                   }}
                 >
                   <input
-                    className="form-control border-end-0 border"
+                    className="form-control border-end-0 border formod"
                     type="search"
                     name="searchQuery"
                     placeholder="write and press enter to search..."

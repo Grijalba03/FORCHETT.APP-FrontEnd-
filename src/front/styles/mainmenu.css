@@ -3,8 +3,11 @@
   width: 100px;
   left: 0px;
   background: rgba(98, 0, 232, 0.08);
-  height: 92vh;
-  padding-top: 30px;
+  height: 93%;
+  padding-top: 10px;
+  box-shadow: 4px 2px 5px 0px rgba(201, 201, 201, 0.75);
+  -webkit-box-shadow: 4px 2px 5px 0px rgba(201, 201, 201, 0.75);
+  -moz-box-shadow: 4px 2px 5px 0px rgba(201, 201, 201, 0.75);
 }
 .text-primary {
   color: #5a8dee !important;
@@ -88,4 +91,29 @@
 .cattitle {
   text-decoration: none;
   color: black;
+}
+
+.menubtn {
+  border-color: #ffffff !important;
+  background-color: #ae89d1 !important;
+  color: #fff;
+}
+.menubtn:hover {
+  color: #ffc69c;
+}
+
+.menutxtcolor {
+  color: #ae89d1 !important;
+}
+.fixspace {
+  padding: 30px 5px;
+}
+
+.btncolormod {
+  border-color: #ae89d1 !important;
+  background-color: #ae89d1 !important;
+  color: #fff;
+}
+.formod {
+  height: 49px;
 }

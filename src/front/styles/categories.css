@@ -1,5 +1,23 @@
 .circle {
-  background: rgb(252, 177, 134);
+  background-color: rgb(172, 106, 235);
+  width:100px;
+  height:100px;
+  margin: 5px;
+  padding: 5px;
+  
+}
+
+.circle:hover {
+  background-color: rgb(195, 145, 241);
+  width:100px;
+  height:100px;
+  margin: 5px;
+  padding: 5px;
+  
+}
+
+.circle:active {
+  background-color: rgb(243, 157, 100);
   width:100px;
   height:100px;
   margin: 5px;
@@ -8,7 +26,7 @@
 }
 
  .category-name {
-  color: black;
+  color: #ffffff;
   text-align: center;
   margin-top: 30px;
   font-weight: bold;

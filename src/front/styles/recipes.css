@@ -7,6 +7,7 @@
 
 .heart {
   border: none;
+  background-color: #f6f6f6;
 }
 
 .heart i:hover {
@@ -191,4 +192,14 @@ div h1 {
 }
 .star:active {
   color: rgb(74, 15, 236);
+}
+
+.containingimage{
+  width:250px;
+  height:200px;
+}
+.card-img-top{
+  width:250;
+  height:200px;
+  object-fit: cover;
 }

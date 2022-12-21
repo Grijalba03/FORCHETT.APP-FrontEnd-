@@ -98,14 +98,18 @@ export const Categories = () => {
                           </Link>
                         </div>
 
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="fa-solid fa-heart heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -151,14 +155,18 @@ export const Categories = () => {
                             CLICK TO VIEW
                           </Link>
                         </div>
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="far fa-heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -205,14 +213,18 @@ export const Categories = () => {
                           </Link>
                         </div>
 
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="far fa-heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -259,14 +271,18 @@ export const Categories = () => {
                           </Link>
                         </div>
 
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="far fa-heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -313,14 +329,18 @@ export const Categories = () => {
                           </Link>
                         </div>
 
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="far fa-heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -367,14 +387,18 @@ export const Categories = () => {
                           </Link>
                         </div>
 
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="far fa-heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -421,14 +445,18 @@ export const Categories = () => {
                           </Link>
                         </div>
 
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="far fa-heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -475,14 +503,18 @@ export const Categories = () => {
                           </Link>
                         </div>
 
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="far fa-heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -529,14 +561,18 @@ export const Categories = () => {
                           </Link>
                         </div>
 
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="far fa-heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -583,14 +619,18 @@ export const Categories = () => {
                           </Link>
                         </div>
 
-                        <button
-                          onClick={(e) => {
-                            actions.addFav(filteredAuxiliar.title);
-                          }}
-                          className="heart align-items-end"
-                        >
-                          <i className="far fa-heart"></i>
-                        </button>
+                        {store.username ? ( // User Account
+                          <button
+                            onClick={(e) => {
+                              actions.addFav(filteredAuxiliar.title);
+                            }}
+                            className="heart align-items-end"
+                          >
+                            <i className="fa-solid fa-heart heart"></i>
+                          </button>
+                        ) : (
+                          <></>
+                        )}
                       </div>
                     </div>
                   </div>

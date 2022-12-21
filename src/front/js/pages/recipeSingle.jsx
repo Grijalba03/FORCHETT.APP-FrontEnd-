@@ -77,7 +77,7 @@ export const Recipesingle = (props) => {
   
               { /* Título 1*/}
               <div className="my-3">
-                <h1 className="recipetitle">{single.title}</h1>
+                <h1 className="recipetitle tipo">{single.title}</h1>
               </div>
               <div>
               <Link to={`/categories/${single.category}`}>

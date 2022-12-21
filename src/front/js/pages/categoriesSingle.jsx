@@ -43,7 +43,7 @@ export const Categoriessingle = (props) => {
         <div className="container spacing">
           {singlecat ? (
             <div>
-              <h1 className="display-4">
+              <h1 className="display-4 tipo">
                 {singlecat.category_name ? singlecat.category_name : "Loading"}
               </h1>
               <div className="container spacing">

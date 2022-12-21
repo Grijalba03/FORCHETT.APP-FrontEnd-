@@ -29,7 +29,7 @@ export const Home = () => {
   return (
     <>
 
-      <div className="container pt-5 my-5">
+      <div className="container pt-1 my-3">
         <h1 className="text-center tipo my-5">Categories</h1>
         <p className="text-center tipo2">Choose your favorite category</p>
 
@@ -45,7 +45,7 @@ export const Home = () => {
               );
             })
           ) : (
-            <h1 className="text-center tipo">No categories available</h1>
+            <h1 className="text-center tipo2">No categories available</h1>
           )}
         </div>
 

@@ -9,20 +9,25 @@
   -webkit-box-shadow: 4px 2px 5px 0px rgba(201, 201, 201, 0.75);
   -moz-box-shadow: 4px 2px 5px 0px rgba(201, 201, 201, 0.75);
 }
+
 .text-primary {
   color: #5a8dee !important;
 }
+
 .btn-primary {
   border-color: #5a8dee !important;
   background-color: #5a8dee !important;
   color: #fff;
 }
+
 .shadow-md {
   box-shadow: 0px 5px 10px rgba(90, 116, 148, 0.3);
 }
+
 .navbar {
   border-radius: 5px;
 }
+
 .sidebar {
   width: 280px;
   min-height: 100vh;

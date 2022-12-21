@@ -3,11 +3,32 @@ import PropTypes from "prop-types";
 import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/recipes.css";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  PinterestShareButton,
+  PinterestIcon,
+  RedditShareButton,
+  RedditIcon,
+  TelegramShareButton,
+  TelegramIcon,
+  TumblrShareButton,
+  TumblrIcon,
+  TwitterShareButton,
+  TwitterIcon,
+  WhatsappShareButton,
+  WhatsappIcon,
+  PocketShareButton,
+  PocketIcon,
+  EmailShareButton,
+  EmailIcon,
+} from "next-share";
 
 export const Recipesingle = (props) => {
   const { store, actions } = useContext(Context);
   const params = useParams();
   const [single, setSingle] = useState("");
+  const [userInfo, setuserInfo] = useState([]);
 
   useEffect(() => {
     async function fetchsingleRecipe() {
@@ -15,14 +36,34 @@ export const Recipesingle = (props) => {
       if (response.status == 200) {
         response = await response.json();
         setSingle(response);
-        console.log(response);
+        console.log("ressss", response);
       } else {
         response = await response.json();
         console.log(response);
       }
     }
     fetchsingleRecipe();
+
+    async function fetchUserInfo() {
+      let userInfo = await actions.fetchProtegido(`/profile/` + store.username);
+      if (userInfo.status == 200) {
+        userInfo = await userInfo.json();
+        console.log("prueba", userInfo);
+        setuserInfo(userInfo);
+        store.userDetails = userInfo;
+
+        return userInfo;
+      } else {
+        userInfo = await userInfo.json();
+        console.log("si funco", userInfo);
+      }
+    }
+    fetchUserInfo();
   }, []);
+
+  useEffect(() => {
+    document.title = single.title;
+  }, [single.title]);
 
   return (
     <>
@@ -124,32 +165,132 @@ export const Recipesingle = (props) => {
             </div>
 
             {/* Columna 2*/}
-            <div className="column mx-5">
+            <div className="d-flex flex-column mx-5">
               {/* Recipe Image*/}
-              <div className="recipeimage rounded"></div>
-              {/* Username box*/}
-              <div className="btn btn-outline-info usernamebox rounded my-3 d-flex flex-row justify-content-middle">
-                <div className="usercircle p-5 rounded-circle"></div>
-                <div className="usernameinfo">
-                  <p>
-                    Username<br></br>Dietary Preferences
-                  </p>
+              <div className="container spacing">
+                <div>
+                  <div className="d-flex mt-3 mb-3">
+                    <img
+                      src={single.image}
+                      className="img-fluid card-img-top rounded"
+                    />
+                  </div>
                 </div>
               </div>
 
+              {/* Username box*/}
+              {store.username ? ( // User Account
+                <div className="btn btn-outline-info usernamebox rounded my-3 d-flex flex-row justify-content-middle">
+                  <div className="usercircle p-5 rounded-circle">
+                    <img src={userInfo.image} />
+                  </div>
+                  <div className="usernameinfo">
+                    <p>
+                      {userInfo.username}
+                      <br></br>
+                      {userInfo.dietaryPreferences}
+                    </p>
+                    {/* Favorites box*/}
+                    <div
+                      className="btn btn-outline-info my-2 favorite"
+                      onClick={(e) => {
+                        actions.addFav(
+                          "/user/favorites",
+                          {
+                            recipe_id: single.id,
+                            // user_id: user.id
+                          },
+                          "POST"
+                        );
+                      }}
+                    >
+                      FAVORITE
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <></>
+              )}
+
               <div className="d-flex flex-column">
+
                 {/* Favorites box*/}
-                <div
-                  className="btn btn-outline-info my-2 favorite"
+                <div className="btn btn-outline-info my-2 favorite"
                   onClick={(e) => {
-                    actions.addFav(item.id);
+                    actions.addFav(
+                      "/user/favorites",
+                      {
+                        recipe_id: single.id,
+                        // user_id: user.id
+                      },
+                      "POST"
+                    );
                   }}
                 >
                   FAVORITE
                 </div>
+
                 {/* Social media share box*/}
-                <div className="btn btn-outline-info my-2 favorite">SHARE</div>
+                <h2>SHARE</h2>
+                {/* <div className="btn btn-outline-info my-2 favorite">SHARE</div> */}
+                <FacebookShareButton
+                  url={window.location.href}
+                  quote={document.title}
+                  hashtag={"#Forchett.app"}
+                >
+                  <FacebookIcon size={32} round />
+                </FacebookShareButton>
+                <PinterestShareButton
+                  url={window.location.href}
+                  media={document.title}
+                >
+                  <PinterestIcon size={32} round />
+                </PinterestShareButton>
+                <RedditShareButton
+                  url={window.location.href}
+                  title={document.title}
+                >
+                  <RedditIcon size={32} round />
+                </RedditShareButton>
+                <TelegramShareButton
+                  url={window.location.href}
+                  title={document.title}
+                >
+                  <TelegramIcon size={32} round />
+                </TelegramShareButton>
+                <TumblrShareButton
+                  url={window.location.href}
+                  title={document.title}
+                >
+                  <TumblrIcon size={32} round />
+                </TumblrShareButton>
+                <TwitterShareButton
+                  url={window.location.href}
+                  title={document.title}
+                >
+                  <TwitterIcon size={32} round />
+                </TwitterShareButton>
+                <WhatsappShareButton
+                  url={window.location.href}
+                  title={document.title}
+                  separator=":: "
+                >
+                  <WhatsappIcon size={32} round />
+                </WhatsappShareButton>
+                <PocketShareButton
+                  url={window.location.href}
+                  title={"Next Share"}
+                >
+                  <PocketIcon size={32} round />
+                </PocketShareButton>
               </div>
+              <EmailShareButton
+                url={window.location.href}
+                subject={"Recipe from Forchett.App"}
+                body="body"
+              >
+                <EmailIcon size={32} round />
+              </EmailShareButton>
               {/* Ingredients box*/}
               <div className="shadow p-3 mb-5 bg-white rounded my-5 sidebox">
                 <h1>Ingredients List</h1>

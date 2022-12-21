@@ -4,6 +4,7 @@ import React, { useState, useEffect, useContext } from "react";
 import ReactDOM from "react-dom";
 import "../../styles/mainmenu.css";
 
+
 export const MainMenu = () => {
   const [isOpen, setIsopen] = useState(false);
   const { store, actions } = useContext(Context);
@@ -34,6 +35,17 @@ export const MainMenu = () => {
       ) : (
         <></>
       )}
+
+      {store.username ? ( // User Account
+        <div className="text-center">
+          <Link to="/userprofile" className="sd-link">
+            <i class="fa-regular fa-address-card iconmod"></i>
+          </Link>
+        </div>
+      ) : (
+        <></>
+      )}
+
       {store.username ? ( //Login
         <></>
       ) : (
@@ -61,7 +73,7 @@ export const MainMenu = () => {
       )}
       {store.username ? ( // Favorites
         <div className="text-center">
-          <Link to="/user/favorites/:theid" className="sd-link">
+          <Link to={`/user/favorites/${store.user_id}`} className="sd-link">
             <i className="fa-solid fa-heart iconmod"></i>
           </Link>
         </div>
@@ -92,7 +104,11 @@ export const MainMenu = () => {
                 Random
               </Link>
             </li>
-            <h4>Categories</h4>
+            <h4>
+              <Link to="/categories" className="sd-link cattitle">
+                Categories
+              </Link>
+            </h4>
             <li>
               <Link to="/categories/1" className="sd-link">
                 Breakfast
@@ -125,10 +141,11 @@ export const MainMenu = () => {
             </li>
             <h4>Extra</h4>
             <li>
-              <Link to="/register" className="sd-link">
-                Recommendations
+              <Link to="/userlist" className="sd-link">
+                Explore members
               </Link>
             </li>
+
           </ul>
         </div>
       </div>

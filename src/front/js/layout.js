@@ -9,19 +9,20 @@ import { SignUp } from "./pages/signup.jsx"; //Este es el componente de la pági
 import { Login } from "./pages/login.jsx";
 import { Categories } from "./pages/categories.jsx";
 import { Categoriessingle } from "./pages/categoriesSingle.jsx";
-import { ListaUsuarios } from "./pages/listaUsuarios.jsx";
+import { UserList } from "./pages/userList.jsx";
 import { Favorites } from "./pages/favorites";
 // import { Planet } from "./pages/planet.jsx";
 import { UserProfile } from "./pages/userProfile.jsx";
-
 import injectContext from "./store/appContext";
-
 import { Header } from "./component/header";
 import { Footer } from "./component/footer";
 import { MainMenu } from "./component/mainmenu";
 import { RecipesList } from "./component/recipes";
 import { Recipesingle } from "./pages/recipeSingle.jsx";
 import { UserAccount } from "./pages/userAccount.jsx";
+import { SubmitRecipe } from "./pages/submitRecipe.jsx";
+//import {CloudUpload} from "./component/cloudinary";
+//import {CloudUploadRecipes} from "./component/cloudinaryrecipes";
 
 //create your first component
 const Layout = () => {
@@ -41,21 +42,16 @@ const Layout = () => {
             <Route element={<Single />} exact path="/single/:theid" />
             <Route element={<SignUp />} exact path="/signup" />
             <Route element={<Login />} exact path="/login" />
-            <Route element={<ListaUsuarios />} exact path="/listaUsuarios" />
+            <Route element={<UserList />} exact path="/userlist" />
             <Route element={<Recipesingle />} exact path="/recipes/:theid" />
             <Route element={<Categories />} path="/categories" />
-            <Route
-              element={<Categoriessingle />}
-              exact
-              path="/categories/:theid"
-            />
-            <Route
-              element={<Favorites />}
-              exact
-              path="/user/favorites/:theid"
-            />
+            <Route element={<SubmitRecipe />} path="/submit" />
+            <Route element={<Categoriessingle />} exact path="/categories/:theid" />
+            <Route element={<Favorites />} exact path="/user/favorites/:theid" />
             <Route element={<UserProfile />} path="/userprofile" />
             <Route element={<UserAccount />} path="/user/account" />
+            {/* <Route element={<CloudUpload />} path="/upload" />
+            <Route element={<CloudUploadRecipes />} path="/upload-recipe-image" /> */}
             <Route element={<h1>Not found!</h1>} />
           </Routes>
           {/* <Footer /> */}

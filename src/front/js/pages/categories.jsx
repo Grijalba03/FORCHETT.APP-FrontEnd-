@@ -77,7 +77,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -104,7 +104,7 @@ export const Categories = () => {
                           }}
                           className="heart align-items-end"
                         >
-                          <i className="far fa-heart"></i>
+                          <i className="fa-solid fa-heart heart"></i>
                         </button>
                       </div>
                     </div>
@@ -131,7 +131,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -151,7 +151,6 @@ export const Categories = () => {
                             CLICK TO VIEW
                           </Link>
                         </div>
-
                         <button
                           onClick={(e) => {
                             actions.addFav(filteredAuxiliar.title);
@@ -185,7 +184,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -239,7 +238,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -293,7 +292,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -347,7 +346,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -401,7 +400,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -455,7 +454,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -509,7 +508,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />
@@ -563,7 +562,7 @@ export const Categories = () => {
                       <div>
                         {/* Cajita con imagen y rating */}
                         <img
-                          src="https://via.placeholder.com/400x200"
+                          src={filteredAuxiliar.image}
                           className="card-img-top rounded"
                           alt="..."
                         />

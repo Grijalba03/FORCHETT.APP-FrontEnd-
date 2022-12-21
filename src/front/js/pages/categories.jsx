@@ -104,7 +104,7 @@ export const Categories = () => {
                           }}
                           className="heart align-items-end"
                         >
-                          <i className="far fa-heart"></i>
+                          <i className="fa-solid fa-heart heart"></i>
                         </button>
                       </div>
                     </div>
@@ -151,7 +151,6 @@ export const Categories = () => {
                             CLICK TO VIEW
                           </Link>
                         </div>
-
                         <button
                           onClick={(e) => {
                             actions.addFav(filteredAuxiliar.title);

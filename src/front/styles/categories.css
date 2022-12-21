@@ -19,3 +19,21 @@ h1 {
   color: black;
 
 }
+
+.heart {
+  border: none;
+}
+
+.heart i:hover {
+  color: blueviolet;
+}
+
+.heart i:active {
+  color:rgba(98, 0, 232, 0.08);
+}
+.heart i:focus {
+  color:  rgba(98, 0, 232, 0.08);
+}
+.heart i:target {
+  color: rgba(98, 0, 232, 0.08);
+}
